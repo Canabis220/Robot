@@ -1,0 +1,57 @@
+﻿FUNCTION "MotorProcess" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = FA1_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "Tag_3" , 
+         Motor_X_Input_2             := "Tag_8" , 
+         Motor_X_AUTO_START          := "FA1_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA1_1_manual_start" , 
+         Motor_X_SPEED               := W#5000 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         Motor_X_Output_1            := "Tag_6" , 
+         Motor_X_Output_2            := "Tag_9" , 
+         Motor_X_OK                  := "FA1_1_is_ok" , 
+         Motor_X_RUNNING             := "FA1_1_start"
+      );
+
+NETWORK
+TITLE = FA2_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "Tag_3" , 
+         Motor_X_Input_2             := "Tag_8" , 
+         Motor_X_AUTO_START          := "FA2_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA2_1_manual_start" , 
+         Motor_X_SPEED               := W#5000 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         Motor_X_Output_1            := "Tag_6" , 
+         Motor_X_Output_2            := "Tag_9" , 
+         Motor_X_OK                  := "FA2_1_is_ok" , 
+         Motor_X_RUNNING             := "FA2_1_start"
+      );
+
+
+NETWORK
+TITLE = FA3_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "Tag_3" , 
+         Motor_X_Input_2             := "Tag_8" , 
+         Motor_X_AUTO_START          := "FA3_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA3_1_manual_start" , 
+         Motor_X_SPEED               := W#5000 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         Motor_X_Output_1            := "Tag_6" , 
+         Motor_X_Output_2            := "Tag_9" , 
+         Motor_X_OK                  := "FA3_1_is_ok" , 
+         Motor_X_RUNNING             := "FA3_1_start"
+      );
+
+
+END_FUNCTION
+

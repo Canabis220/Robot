@@ -1,0 +1,96 @@
+﻿FUNCTION "00_Motors_control" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Motor_X_Input_1 : Word;
+      Motor_X_Input_2 : Word;
+      Motor_X_AUTO_START : Bool;
+      Motor_X_MANUAL_START : Bool;
+      Motor_X_SPEED : Word;
+      Stop_sensor : Bool;
+      PRESS_RESET_ERROR_BUTTON : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      Motor_X_Output_1 : Word;
+      Motor_X_Output_2 : Word;
+   END_VAR
+
+   VAR_IN_OUT 
+      Motor_X_OK : Bool;
+      Motor_X_RUNNING : Bool;
+   END_VAR
+
+   VAR_TEMP 
+      temp_input1 : Word;
+      temp_output1 : Word;
+      temp_output2 : Word;
+   END_VAR
+
+
+BEGIN
+NETWORK
+TITLE = input to temp
+      L #Motor_X_Input_1;
+      T #temp_output1;
+
+
+NETWORK
+TITLE = //READY AND NOT (ALARM AND FAULT)
+      A %L1.1              ;//READY AND NOT (ALARM AND FAULT)
+      AN %L1.7;
+      AN %L1.3;
+      = #Motor_X_OK;
+
+
+NETWORK
+TITLE = RUNNING AND NOT ZERO SPEED
+      A %L1.2;
+      A #Motor_X_OK;
+      = #Motor_X_RUNNING;
+NETWORK
+TITLE = Empty output
+      L 0;
+      T #temp_output1;
+      T #temp_output2;
+
+
+NETWORK
+TITLE = IF FAULT (OR ALARM) - RESET FAULT
+      AN #Motor_X_OK;
+      A #PRESS_RESET_ERROR_BUTTON;
+      A(;
+      O %L1.7;
+      O %L1.3;
+      );
+      = %L3.7;
+
+NETWORK
+TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
+      A #Motor_X_OK;
+      AN #Stop_sensor;
+      AN "Error_Global";
+      O(;// авто
+      A "Auto";
+      AN "Manual";
+      A "System_started";
+      A #Motor_X_AUTO_START;
+      );
+      O(;// ручной
+      AN "Auto";
+      A "Manual";
+      A #Motor_X_MANUAL_START;
+      );
+      = %L3.0;
+
+NETWORK
+TITLE = temp to out
+
+      L #temp_output1;
+      T #Motor_X_Output_1;
+
+      L #Motor_X_SPEED;
+      T #Motor_X_Output_1;
+
+END_FUNCTION
+
