@@ -54,10 +54,6 @@ TITLE = Световая колонна 14 робота. Красный цвет
       );
       = "KAR2_3";
 NETWORK
-TITLE = 
-
-
-NETWORK
 TITLE = Световая колонна 16 робота. Желтый цвет
       A "Robot16".UO1;
       AN "Robot16".UO4;
@@ -82,5 +78,30 @@ TITLE = Световая колонна 16 робота. Красный цвет
       A "Meandr 0.5s";
       );
       = "KAR3_7";
+NETWORK
+TITLE = Световая колонна 18 робота. Желтый цвет
+      A "Robot18".UO1;
+      AN "Robot18".UO4;
+      AN "Robot18".UO2;
+      = "KAR4_2";
+
+NETWORK
+TITLE = Световая колонна 18 робота. Зеленый цвет
+      A "Robot18".UO1;
+      AN "Robot18".UO4;
+      A "Robot18".UO2;
+      = "KAR4_1";
+
+NETWORK
+TITLE = Световая колонна 18 робота. Красный цвет
+      O(;
+      A "Robot18".UO1;
+      A "Robot18".UO4;
+      );
+      O(;
+      AN "Robot18".UO1;
+      A "Meandr 0.5s";
+      );
+      = "KAR4_3";
 END_FUNCTION
 
