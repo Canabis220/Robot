@@ -26,5 +26,26 @@ TITLE = DI3 Паллета на месте 2
       A "SW3_1";
       = "Robot12".TDI03;
 
+NETWORK
+TITLE = EnableMove Разрешено двигаться
+      O "Auto1";
+      O "Manual1";
+      AN "Error_Global";
+      = "Robot12".UI3;
+      = "Robot12".UI5;
+
+NETWORK
+TITLE = IMSTP Экстренный останов
+      AN "Emergency_Security";
+      = "Robot12".UI1;
+
+NETWORK
+TITLE = Hold временный останов
+      O "Manual1";
+      O(;
+      A "Auto1";
+      A "System_started";
+      );
+      = "Robot12".UI2;
 END_FUNCTION
 
