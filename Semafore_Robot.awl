@@ -57,5 +57,30 @@ NETWORK
 TITLE = 
 
 
+NETWORK
+TITLE = Световая колонна 16 робота. Желтый цвет
+      A "Robot16".UO1;
+      AN "Robot16".UO4;
+      AN "Robot16".UO2;
+      = "KAR3_6";
+
+NETWORK
+TITLE = Световая колонна 16 робота. Зеленый цвет
+      A "Robot16".UO1;
+      AN "Robot16".UO4;
+      A "Robot16".UO2;
+      = "KAR3_5";
+
+NETWORK
+TITLE = Световая колонна 16 робота. Красный цвет
+      O(;
+      A "Robot16".UO1;
+      A "Robot16".UO4;
+      );
+      O(;
+      AN "Robot16".UO1;
+      A "Meandr 0.5s";
+      );
+      = "KAR3_7";
 END_FUNCTION
 
