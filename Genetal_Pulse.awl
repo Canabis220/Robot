@@ -1,0 +1,27 @@
+﻿FUNCTION "Genetal_Pulse" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = 
+      AN "Meandr 0.5s";
+      FR "T9";
+      L s5t#0.5s;
+      SD "T9";
+      A "T9";
+      S "Meandr 0.5s";
+
+      A "Meandr 0.5s";
+      FR "T10";
+      L s5t#0.5s;
+      SD "T10";
+      A "T10";
+      R "Meandr 0.5s";
+
+NETWORK
+TITLE = 
+
+
+END_FUNCTION
+

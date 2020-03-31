@@ -1,0 +1,61 @@
+﻿FUNCTION "Semafore_Robot" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = Световая колонна 12 робота. Желтый цвет
+      A "Robot12".UO1;
+      AN "Robot12".UO4;
+      AN "Robot12".UO2;
+      = "KAR1_6";
+
+NETWORK
+TITLE = Световая колонна 12 робота. Зеленый цвет
+      A "Robot12".UO1;
+      AN "Robot12".UO4;
+      A "Robot12".UO2;
+      = "KAR1_5";
+
+NETWORK
+TITLE = Световая колонна 12 робота. Красный цвет
+      O(;
+      A "Robot12".UO1;
+      A "Robot12".UO4;
+      );
+      O(;
+      AN "Robot12".UO1;
+      A "Meandr 0.5s";
+      );
+      = "KAR1_7";
+NETWORK
+TITLE = Световая колонна 14 робота. Желтый цвет
+      A "Robot14".UO1;
+      AN "Robot14".UO4;
+      AN "Robot14".UO2;
+      = "KAR2_2";
+
+NETWORK
+TITLE = Световая колонна 14 робота. Зеленый цвет
+      A "Robot14".UO1;
+      AN "Robot14".UO4;
+      A "Robot14".UO2;
+      = "KAR2_1";
+
+NETWORK
+TITLE = Световая колонна 14 робота. Красный цвет
+      O(;
+      A "Robot14".UO1;
+      A "Robot14".UO4;
+      );
+      O(;
+      AN "Robot14".UO1;
+      A "Meandr 0.5s";
+      );
+      = "KAR2_3";
+NETWORK
+TITLE = 
+
+
+END_FUNCTION
+
