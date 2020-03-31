@@ -1,0 +1,30 @@
+﻿FUNCTION "Robot12_main" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = DI13 Заблокировал смену стопки паллет
+      A "Robot12".FDO12;
+      S "Robot12".TDI13;
+
+      A "Robot12".FDO13;
+      R "Robot12".TDI13;
+NETWORK
+TITLE = РТК1 - Закрыть захват паллеты
+      A "Robot12".FDO07;
+      AN "Robot12".FDO06;
+      = "КА12_3";
+
+NETWORK
+TITLE = DI2 Паллета на месте 1
+      A "SW2_1";
+      = "Robot12".TDI02;
+
+NETWORK
+TITLE = DI3 Паллета на месте 2
+      A "SW3_1";
+      = "Robot12".TDI03;
+
+END_FUNCTION
+
