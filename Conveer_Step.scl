@@ -1,0 +1,42 @@
+﻿FUNCTION "Conveer_Step" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+	CASE "Conveer_status"."01_step" OF//db6.dbw0 
+	    0://стоп
+	        "FA1_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        
+	        IF "SW1_2"= FALSE AND "SW1_3" = FALSE THEN //если на входе и выходе нет паллет, то след шаг
+	            "Conveer_status"."01_step":=10;
+	        END_IF;
+	        
+	        ;
+	    10://нет на входе
+	        "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "SW1_2" = TRUE AND "KA1_1" = TRUE THEN //если на входе есть и кнопка "новые палеты положили", то след шаг
+	            "Conveer_status"."01_step" := 20;
+	        END_IF;
+	        
+	        ;
+	    20://есть на входе и не готово
+	        
+	        ;
+	    30://загружаем
+	        
+	        ;
+	    40://подсчет и проверка
+	        
+	        ;
+	    50://выполненно
+	        
+	        ;
+	    60://забирают
+	        
+	        ;
+	    ELSE:
+	        ;
+	END_CASE;
+	    
+END_FUNCTION
+
