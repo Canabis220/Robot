@@ -1,6 +1,16 @@
 ﻿FUNCTION "00_Motors_control" : Void
 { S7_Optimized_Access := 'FALSE' }
 VERSION : 0.1
+//L1.1 READY
+//L1.2 KM
+//L1.3 IS_FAULT
+//L1.4 POWER_ON
+//L1.7 IS_ALARM
+//
+//L2.3 DIRECTION
+//L3.0 SWITCH_ON
+//L3.1 TH
+//L3.7 RESET_ALARM
    VAR_INPUT 
       Motor_X_Input_1 : Word;
       Motor_X_Input_2 : Word;
@@ -37,20 +47,20 @@ TITLE = input to temp
 
 NETWORK
 TITLE = //READY AND NOT (ALARM AND FAULT)
-      A %L1.1              ;//READY AND NOT (ALARM AND FAULT)
-      AN %L1.7;
-      AN %L1.3;
+      A %L1.1              ;//READY
+      AN %L1.7;// not alarm
+      AN %L1.3;// not fault
       = #Motor_X_OK;
 
 
 NETWORK
 TITLE = RUNNING AND NOT ZERO SPEED
-      A %L1.2;
+      A %L1.2;//RV
       A #Motor_X_OK;
       = #Motor_X_RUNNING;
 NETWORK
 TITLE = Empty output
-      L 0;
+      L 0;//очищаем команды
       T #temp_output1;
       T #temp_output2;
 
@@ -60,10 +70,10 @@ TITLE = IF FAULT (OR ALARM) - RESET FAULT
       AN #Motor_X_OK;
       A #PRESS_RESET_ERROR_BUTTON;
       A(;
-      O %L1.7;
-      O %L1.3;
+      O %L1.7;//ALARM
+      O %L1.3;// FAULT
       );
-      = %L3.7;
+      = %L3.7;//RESET
 
 NETWORK
 TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
@@ -81,7 +91,7 @@ TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
       A "Manual";
       A #Motor_X_MANUAL_START;
       );
-      = %L3.0;
+      = %L3.0;//SWITCH ON
 
 NETWORK
 TITLE = temp to out
