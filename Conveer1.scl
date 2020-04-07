@@ -1,4 +1,4 @@
-﻿FUNCTION "Conveer_Step" : Void
+﻿FUNCTION "Conveer1" : Void
 { S7_Optimized_Access := 'FALSE' }
 VERSION : 0.1
 
@@ -9,6 +9,9 @@ BEGIN
 	        
 	        IF "SW1_2"= FALSE AND "SW1_3" = FALSE THEN //если на входе нет и на выходе нет, тогда другой шаг
 	            "Conveer_status"."01_step":=10;
+	        END_IF;
+	        IF "SW1_2" = TRUE AND "SW1_3" = FALSE THEN //если на входе есть и на выходе нет, тогда другой шаг
+	            "Conveer_status"."01_step" := 20;
 	        END_IF;
 	        
 	        ;
