@@ -69,7 +69,7 @@ BEGIN
 	        ;
 	    60://забирают
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW2_4" = TRUE OR "SW2_3" = FALSE THEN //если кара уехала и палеты нет то забрал
+	        IF "SW2_4" = TRUE OR "SW2_3" = FALSE OR "SW2_1" = TRUE THEN //если кара или забрали или поставили то
 	            "Conveer_status"."02_step" := 0;
 	        END_IF;
 	         
