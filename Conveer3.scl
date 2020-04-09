@@ -1,0 +1,88 @@
+﻿FUNCTION "Conveer3" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+	CASE "Conveer_status"."03_step" OF//db6.dbw0 
+	    0://стоп
+	        "FA3_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        
+	        IF "SW3_1"= FALSE AND "SW3_3" = FALSE THEN //если на входе нет и на выходе нет, тогда другой шаг
+	            "Conveer_status"."03_step":=10;
+	        END_IF;
+	        IF "SW3_1" = TRUE AND "SW3_3" = FALSE THEN //если на входе есть и на выходе нет, тогда другой шаг
+	            "Conveer_status"."03_step" := 20;
+	        END_IF;
+	        
+	        ;
+	    10://нет на входе
+	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        "KA3_1" := FALSE; //не вытолкнуть
+	        "KA3_2" := FALSE; //не фиксировать
+	        
+	        IF "SW3_1" = TRUE AND "Robot12".FDO03 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
+	            "Conveer_status"."03_step" := 20;
+	        END_IF;
+	        
+	        ;
+	    20://есть на входе и не готово
+	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        "KA3_1" := TRUE; //вытолкнуть
+	        "KA3_2" := TRUE; //зафиксировать
+	        IF "SW3_1"= TRUE AND "SW3_3" = FALSE AND "Robot12".FDO11 = TRUE THEN
+	            //если на входе есть, на выходе нет и робот закончил, тогда загружаем
+	            "Conveer_status"."03_step" := 30;
+	        END_IF;
+	        
+	        ;
+	    30://загружаем
+	        "KA3_1" := FALSE; //не вытолкнуть
+	        "KA3_2" := FALSE; //не фиксировать
+	        
+	        IF "SW3_4" = TRUE  THEN //если кара уехала 
+	            "FA3_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        ELSE    //если кара близко
+	            "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        END_IF;
+	        
+	        IF "SW3_3" = TRUE THEN //если  на выходе есть, тогда проверка
+	            "Conveer_status"."03_step" := 40;
+	        END_IF;
+	        ;
+	    40://подсчет и проверка
+	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        "KA3_1" := FALSE; //не вытолкнуть
+	        "KA3_2" := FALSE; //не фиксировать
+	        
+	        IF "SW3_3" = TRUE THEN //если  на выходе есть, то все проверили
+	            "Conveer_status"."03_step" := 50;
+	        END_IF;
+	        
+	        ;
+	    50://выполненно
+	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "SW3_4" = FALSE OR "SW3_3" = FALSE THEN //если кара то она забирает паллету
+	            "Conveer_status"."03_step" := 0;// не будем ждать пока заберут, робота нужно обслуживать
+	        END_IF;
+	       
+	        
+	        ;
+	    60://забирают
+	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "SW3_4" = TRUE OR "SW3_3" = FALSE OR "SW3_1" = TRUE THEN //если кара или забрали или поставили то
+	            "Conveer_status"."03_step" := 0;
+	        END_IF;
+	         
+	        ;
+	        
+	    70://возврата нет
+	               "Conveer_status"."03_step" := 0;
+	        ;
+	        
+	        ;
+	    ELSE:
+	        ;
+	END_CASE;
+	    
+END_FUNCTION
+
