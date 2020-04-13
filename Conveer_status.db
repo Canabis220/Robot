@@ -1,0 +1,41 @@
+﻿DATA_BLOCK "Conveer_status"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   STRUCT 
+      "01_step" : Int;
+      "01_oldStep" : Int;
+      "02_step" : Int;
+      "02_oldStep" : Int;
+      "03_step" : Int;
+      "03_oldStep" : Int;
+      "04_step" : Int;
+      "04_oldStep" : Int;
+      "05_step" : Int;
+      "05_oldStep" : Int;
+      "06_step" : Int;
+      "06_oldStep" : Int;
+      "07_step" : Int;
+      "07_oldStep" : Int;
+      "08_step" : Int;
+      "08_oldStep" : Int;
+      "09_step" : Int;
+      "09_oldStep" : Int;
+      "10_step" : Int;
+      "10_oldStep" : Int;
+      "20_step" : Int;
+      "20_oldStep" : Int;
+      "23_step" : Int;
+      "23_oldStep" : Int;
+      "24_step" : Int;
+      "24_oldStep" : Int;
+      "25_1_step" : Int;
+      "25_1_oldStep" : Int;
+      "25_2_step" : Int;
+      "25_2_oldStep" : Int;
+   END_STRUCT;
+
+
+BEGIN
+
+END_DATA_BLOCK
+
