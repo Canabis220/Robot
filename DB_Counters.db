@@ -1,0 +1,32 @@
+﻿DATA_BLOCK "DB_Counters"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   STRUCT 
+      SW23 : "UDT_Counter Integer";
+      SW24 : "UDT_Counter Integer";
+      _03 : "UDT_Counter Integer";
+      _04 : "UDT_Counter Integer";
+      _05 : "UDT_Counter Integer";
+      _06 : "UDT_Counter Integer";
+      _07 : "UDT_Counter Integer";
+      _08 : "UDT_Counter Integer";
+      _09 : "UDT_Counter Integer";
+      _10 : "UDT_Counter Integer";
+      _30 : "UDT_Counter Integer";
+      _31 : "UDT_Counter Integer";
+      _32 : "UDT_Counter Integer";
+      _33 : "UDT_Counter Integer";
+      _34 : "UDT_Counter Integer";
+      _35 : "UDT_Counter Integer";
+      _36 : "UDT_Counter Integer";
+      _37 : "UDT_Counter Integer";
+      _38 : "UDT_Counter Integer";
+      _39 : "UDT_Counter Integer";
+      _40 : "UDT_Counter Integer";
+   END_STRUCT;
+
+
+BEGIN
+
+END_DATA_BLOCK
+

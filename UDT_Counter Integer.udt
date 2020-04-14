@@ -1,0 +1,18 @@
+﻿TYPE "UDT_Counter Integer"
+VERSION : 0.1
+   STRUCT
+      ACT : Int;   // CURRENT COUNT
+      SP : Int;   // SET POINT
+      GEAR : Bool;   // RUNNING
+      RESET : Bool;   // RESET
+      SET_OK : Bool;   // SET OK(+RUNNING)
+      FDS_Clock : Bool;   // The up front of the Count, used internally
+      SET_OK_1 : Bool;   // SET OK(NORUNNING)
+      _06 : Bool;
+      _07 : Bool;
+      _08 : Bool;
+      _09 : Byte;
+   END_STRUCT;
+
+END_TYPE
+
