@@ -1,0 +1,87 @@
+﻿FUNCTION "Conveer5" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+	CASE "Conveer_status"."05_step" OF//db6.dbw0 
+	    0://стоп
+	        "FA5_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        
+	        IF "SW5_2"= FALSE AND "SW5_3" = FALSE THEN //если на входе нет и на выходе нет, тогда другой шаг
+	            "Conveer_status"."05_step":=10;
+	        END_IF;
+	        IF "SW5_2" = TRUE AND "SW5_3" = FALSE THEN //если на входе есть и на выходе нет, тогда другой шаг
+	            "Conveer_status"."05_step" := 20;
+	        END_IF;
+	        
+	        ;
+	    10://нет на входе
+	        "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "SW5_2" = TRUE AND "KA1_1" = TRUE THEN //если на входе есть и кнопка "новые палеты положили", то след шаг
+	            "Conveer_status"."05_step" := 20;
+	        END_IF;
+	        
+	        ;
+	    20://есть на входе и не готово
+	        "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "SW5_2"= TRUE AND "SW5_3" = FALSE THEN //если на входе есть а на выходе нет, тогда загружаем
+	            "Conveer_status"."05_step" := 30;
+	        END_IF;
+	        
+	        ;
+	    30://загружаем
+	        IF "SW5_1" = TRUE AND "Robot14".TDI13 = FALSE THEN //если кара уехала и не заблокирована смена стопки паллет
+	            "FA5_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        ELSE    //если кара близко или заблокирована смена стопки паллет
+	            "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        END_IF;
+	        
+	        IF "SW5_3" = TRUE THEN //если  на выходе есть, тогда проверка
+	            "Conveer_status"."05_step" := 40;
+	        END_IF;
+	        ;
+	    40://подсчет и проверка
+	        "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "SW5_3" = TRUE THEN //если  на выходе есть, то все проверили
+	            "Conveer_status"."05_step" := 50;
+	        END_IF;
+	        
+	        ;
+	    50://выполненно
+	        "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "Robot14".TDI13 = TRUE THEN //если робот заблокировал смену то он забирает паллету
+	            "Conveer_status"."05_step" := 60;
+	        END_IF;
+	        IF "KA1_2" = TRUE THEN //если возврат паллет
+	            "Conveer_status"."05_step" := 70;
+	        END_IF;
+	        
+	        ;
+	    60://забирают
+	        "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF "Robot14".FDO13 = TRUE THEN //если робот забрал
+	            "Conveer_status"."05_step" := 0;
+	        END_IF;
+	         
+	        ;
+	        
+	    70://возврат
+	        IF "SW5_1" = TRUE AND "Robot14".TDI13 = FALSE THEN //если кара уехала и не заблокирована смена стопки паллет
+	            "FA5_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	            //добавить реверс!!!!!!
+	        ELSE    //если кара близко или заблокирована смена стопки паллет
+	            "FA5_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        END_IF;
+	        
+	        IF "SW5_2" = TRUE THEN //если  на входе есть, тогда проверка
+	            "Conveer_status"."05_step" := 40;
+	        END_IF;
+	        ;
+	        
+	        ;
+	    ELSE:
+	        ;
+	END_CASE;
+	    
+END_FUNCTION
+
