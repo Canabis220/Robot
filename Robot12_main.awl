@@ -4,17 +4,31 @@ VERSION : 0.1
 
 BEGIN
 NETWORK
-TITLE = DI13 Заблокировал смену стопки паллет
-      A "Robot12".FDO12;
-      S "Robot12".TDI13;
+TITLE = РТК1 - Закрыть захват продукта
+      A "Robot12".FDO05;
+      AN "Robot12".FDO04;
+      = "КА12_5";
+      NOT;
+      = "КА12_4";
 
-      A "Robot12".FDO13;
-      R "Robot12".TDI13;
 NETWORK
 TITLE = РТК1 - Закрыть захват паллеты
       A "Robot12".FDO07;
       AN "Robot12".FDO06;
       = "КА12_3";
+      NOT;
+      = "КА12_2";
+NETWORK
+TITLE = РТК1 - Включить вакуум.
+      A "Robot12".FDO08;
+      = "КА12_1";
+NETWORK
+TITLE = РТК1 - Захват картона опустить
+      A "Robot12".FDO19;
+      = "КА12_6";
+
+      A "Robot12".FDO20;
+      = "КА12_7";
 
 NETWORK
 TITLE = DI2 Паллета на месте 1
@@ -25,6 +39,67 @@ NETWORK
 TITLE = DI3 Паллета на месте 2
       A "SW3_1";
       = "Robot12".TDI03;
+
+NETWORK
+TITLE = DI4 Захват открыт (продукт)
+      A "SW12_4";
+      = "Robot12".TDI04;
+
+      A "SW12_5";
+      = "Robot12".TDI05;
+
+NETWORK
+TITLE = DI6 Паллета отпущена захватом
+      A "SW12_2";
+      = "Robot12".TDI06;
+
+      A "SW12_3";
+      = "Robot12".TDI07;
+
+
+NETWORK
+TITLE = DI8 Наличие вакуума в присоске(объект захвачен)
+      A "SW12_1";
+      = "Robot12".TDI08;
+
+NETWORK
+TITLE = DI12 Наличие стопки паллет
+      A "SW1_3";
+      = "Robot12".TDI12;
+
+
+
+NETWORK
+TITLE = DI13 Заблокировал смену стопки паллет
+      A "Robot12".FDO12;
+      S "Robot12".TDI13;
+
+      A "Robot12".FDO13;
+      R "Robot12".TDI13;
+
+
+NETWORK
+TITLE = DI15 Датчик 1го ряда линия 1
+      A "SW2_2";
+      = "Robot12".TDI15;
+
+NETWORK
+TITLE = DI16 Датчик 1го ряда линия 2
+      A "SW3_2";
+      = "Robot12".TDI16;
+
+NETWORK
+TITLE = DI19 Присоски опущены (датчик поиска)
+      A "SW12_6";
+      = "Robot12".TDI19;
+
+      A "SW12_7";
+      = "Robot12".TDI20;
+
+NETWORK
+TITLE = DI21 Картон в наличии
+      A "SW19_1";
+      = "Robot12".TDI21;
 
 NETWORK
 TITLE = EnableMove Разрешено двигаться
