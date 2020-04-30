@@ -3,7 +3,7 @@
 VERSION : 0.1
 
 BEGIN
-	CASE "Conveer_status"."02_step" OF//db6.dbw0 
+	CASE "Conveer_status"."02_step" OF//
 	    0://стоп
 	        "FA2_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
 	        
@@ -17,8 +17,8 @@ BEGIN
 	        ;
 	    10://нет на входе
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        "KA2_1" := FALSE; //не вытолкнуть
-	        "KA2_2" := FALSE; //не фиксировать
+	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA2_2_AUTO" := FALSE; //не фиксировать
 	        
 	        IF "SW2_1" = TRUE AND "Robot12".FDO02 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
 	            "Conveer_status"."02_step" := 20;
@@ -27,8 +27,8 @@ BEGIN
 	        ;
 	    20://есть на входе и не готово
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        "KA2_1" := TRUE; //вытолкнуть
-	        "KA2_2" := TRUE; //зафиксировать
+	        "KA2_1_AUTO" := TRUE; //вытолкнуть
+	        "KA2_2_AUTO" := TRUE; //зафиксировать
 	        IF "SW2_1"= TRUE AND "SW2_3" = FALSE AND "Robot12".FDO10 = TRUE THEN
 	            //если на входе есть, на выходе нет и робот закончил, тогда загружаем
 	            "Conveer_status"."02_step" := 30;
@@ -36,8 +36,8 @@ BEGIN
 	        
 	        ;
 	    30://загружаем
-	        "KA2_1" := FALSE; //не вытолкнуть
-	        "KA2_2" := FALSE; //не фиксировать
+	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA2_2_AUTO" := FALSE; //не фиксировать
 	        
 	        IF "SW2_4" = TRUE  THEN //если кара уехала 
 	            "FA2_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
@@ -51,8 +51,8 @@ BEGIN
 	        ;
 	    40://подсчет и проверка
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        "KA2_1" := FALSE; //не вытолкнуть
-	        "KA2_2" := FALSE; //не фиксировать
+	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA2_2_AUTO" := FALSE; //не фиксировать
 	        
 	        IF "SW2_3" = TRUE THEN //если  на выходе есть, то все проверили
 	            "Conveer_status"."02_step" := 50;
@@ -83,6 +83,12 @@ BEGIN
 	    ELSE:
 	        ;
 	END_CASE;
-	    
+	
+	IF "Auto1" THEN
+	    "KA2_1" := "KA2_1_AUTO";
+	    "KA2_2" := "KA2_2_AUTO";
+	END_IF;
+	
+	
 END_FUNCTION
 
