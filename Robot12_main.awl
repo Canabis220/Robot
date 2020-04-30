@@ -6,28 +6,35 @@ BEGIN
 NETWORK
 TITLE = РТК1 - Закрыть захват продукта
       A "Robot12".FDO05;
-      AN "Robot12".FDO04;
+      A "Auto1";
       = "КА12_5";
-      NOT;
+
+      A "Robot12".FDO04;
+      A "Auto1";
       = "КА12_4";
 
 NETWORK
 TITLE = РТК1 - Закрыть захват паллеты
       A "Robot12".FDO07;
-      AN "Robot12".FDO06;
+      A "Auto1";
       = "КА12_3";
-      NOT;
+
+      A "Robot12".FDO06;
+      A "Auto1";
       = "КА12_2";
 NETWORK
 TITLE = РТК1 - Включить вакуум.
       A "Robot12".FDO08;
+      A "Auto1";
       = "КА12_1";
 NETWORK
 TITLE = РТК1 - Захват картона опустить
       A "Robot12".FDO19;
+      A "Auto1";
       = "КА12_6";
 
       A "Robot12".FDO20;
+      A "Auto1";
       = "КА12_7";
 
 NETWORK
