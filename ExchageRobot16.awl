@@ -1,0 +1,89 @@
+﻿FUNCTION "ExchageRobot16" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = 
+      CALL PNIO_RECV
+      (  CPLADDR                     := 256 , 
+         MODE                        := 16#0 , 
+         LEN                         := 16 , 
+         IOPS                        := P#DB103.DBX33.0 BYTE 4 , 
+         NDR                         := "Tag_26" , 
+         ERROR                       := "ErrorReciev" , 
+         STATUS                      := "StatReciev" , 
+         CHECK_IOPS                  := "Tag_32" , 
+         ADD_INFO                    := "Tag_30" , 
+         RECV                        := P#DB103.DBX0.0 BYTE 16
+      );
+
+   // BEU
+
+      CALL PNIO_SEND
+      (  CPLADDR                     := 256 , 
+         MODE                        := 16#0 , 
+         LEN                         := 16 , 
+         IOCS                        := P#DB103.DBX33.0 BYTE 4 , 
+         DONE                        := "Tag_34" , 
+         ERROR                       := "ErrorSend" , 
+         STATUS                      := "StatusSend" , 
+         CHECK_IOCS                  := "Tag_37" , 
+         SEND                        := P#DB103.DBX16.0 BYTE 16
+      );
+
+
+
+      L "PN-INOUT16".b01;
+      T %DB4.DBB3          ;//захват команды
+
+      L "PN-INOUT16".c01;
+      T %DB4.DBB4          ;//состояния
+
+      L "PN-INOUT16".d01;
+      T %DB4.DBB5          ;//ошибки
+
+
+      L %DB4.DBB0          ;//датчики захвата
+      T "PN-INOUT16".R01;
+
+      L %DB4.DBB1          ;//датчики паллет
+      T "PN-INOUT16".S01;
+
+      L %DB4.DBB2          ;//присоски
+      T "PN-INOUT16".T01;
+
+
+      L "Robot16".FDI_BYTE1          ;//Скорость
+      T "PN-INOUT16".b2;
+
+
+      L "PN-INOUT16".f01;
+      T "Robot16".FDO_BYTE1         ;//тек ряд 1
+
+      L "PN-INOUT16".g01;
+      T "Robot16".FDO_BYTE2         ;//тек поз 1
+
+      L "PN-INOUT16".h01;
+      T "Robot16".FDO_BYTE3         ;//тек ряд 2
+
+
+      L "PN-INOUT16".i01;
+      T "Robot16".FDO_BYTE4         ;//тек поз 2
+
+      L "PN-INOUT16".J01;
+      T "Robot16".FDO_BYTE5         ;//тек мото 1
+
+      L "PN-INOUT16".K01;
+      T "Robot16".FDO_BYTE6         ;//тек мото 2
+
+
+      L "PN-INOUT16".e01        ;//UO
+      T %DB4.DBB19;
+
+
+      L %DB4.DBB18         ;//UI
+      T "PN-INOUT16".a2;
+
+END_FUNCTION
+
