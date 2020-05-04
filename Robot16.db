@@ -1,0 +1,87 @@
+﻿DATA_BLOCK "Robot16"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   STRUCT 
+      TDI00 : Bool;   // DI0 Забери короба с 1 конвейера
+      TDI01 : Bool;   // DI1 Забери короба с 2 конвейера
+      TDI02 : Bool;   // DI2 Паллета на месте 1
+      TDI03 : Bool;   // DI3 Паллета на месте 2
+      TDI04 : Bool;   // DI4 Захват открыт (продукт)
+      TDI05 : Bool;   // DI5 Захват закрыт (продукт)
+      TDI06 : Bool;   // DI6 Паллета отпущена захватом
+      TDI07 : Bool;   // DI7 Паллета свачена захватом
+      TDI08 : Bool;   // DI8 Наличие вакуума в присоске(объект захвачен)
+      TDI09 : Bool;   // DI9
+      TDI10 : Bool;   // DI10 Необходимо сбросить паллету 1
+      TDI11 : Bool;   // DI11 Необходимо сбросить паллету 2
+      TDI12 : Bool;   // DI12 Наличие стопки паллет
+      TDI13 : Bool;   // DI13 Заблокировал смену стопки паллет
+      TDI14 : Bool;   // DI14 Новая стопка паллет
+      TDI15 : Bool;   // DI15 Датчик 1го ряда линия 1
+      TDI16 : Bool;   // DI16 Датчик 1го ряда линия 2
+      TDI17 : Bool;   // DI17 Снятие ошибки пропала 1
+      TDI18 : Bool;   // DI18 Снятие ошибки пропала 2
+      TDI19 : Bool;   // DI19 Присоски опущены (датчик поиска)
+      TDI20 : Bool;   // DI20 Присоски подняты
+      TDI21 : Bool;   // DI21 Картон в наличии
+      TDI22 : Bool;   // DI22
+      TDI23 : Bool;   // DI23 резерв
+      FDO00 : Bool;   // DO0 Забрал короба с 1 конвейера
+      FDO01 : Bool;   // DO1 Забрал короба с 2 конвейера
+      FDO02 : Bool;   // DO2 Установил паллету 1
+      FDO03 : Bool;   // DO3 Установил паллету 2
+      FDO04 : Bool;   // DO4 Открой захват (продукт)
+      FDO05 : Bool;   // DO5 Закрой захват (продукт)
+      FDO06 : Bool;   // DO6 Захват отпусти паллету
+      FDO07 : Bool;   // DO7 Захват зафиксируй паллету
+      FDO08 : Bool;   // DO8 Включи вакуум присоски
+      FDO09 : Bool;   // DO9
+      FDO10 : Bool;   // DO10 Закончил укладку 1
+      FDO11 : Bool;   // DO11 Закончил укладку 2
+      FDO12 : Bool;   // DO12 Собираюсь забрать паллету из стопки
+      FDO13 : Bool;   // DO13 Забрал паллету из стопки
+      FDO14 : Bool;   // DO14 Робот включен
+      FDO15 : Bool;   // DO15 Ошибка по датчику 1
+      FDO16 : Bool;   // DO16 Ошибка по датчику 2
+      FDO17 : Bool;   // DO17 Ошибка пропала паллета 1
+      FDO18 : Bool;   // DO18 Ошибка пропала паллета 2
+      FDO19 : Bool;   // DO19 Опустить присоски
+      FDO20 : Bool;   // DO20 Подними присоски
+      FDO21 : Bool;   // DO21
+      FDO22 : Bool;   // DO22
+      FDO23 : Bool;   // DO23
+      FDI_BYTE1 : Byte;   // DI_BYTE1 Скорость робота
+      FDI_BYTE2 : Byte;   // DI_BYTE2
+      FDI_BYTE3 : Byte;   // DI_BYTE3
+      FDI_BYTE4 : Byte;   // DI_BYTE4
+      FDO_BYTE1 : Byte;   // DO_BYTE1 Текущий ряд, линия 1
+      FDO_BYTE2 : Byte;   // DO_BYTE2 Позиция в ряду, линия 1
+      FDO_BYTE3 : Byte;   // DO_BYTE3 Текущий ряд, линия 2
+      FDO_BYTE4 : Byte;   // DO_BYTE4 Позиция в ряду, линия 2
+      FDO_BYTE5 : Byte;   // DO_BYTE5 Моточасы1
+      FDO_BYTE6 : Byte;   // DO_BYTE6 Моточасы2
+      FDO_BYTE7 : Byte;   // DO_BYTE7
+      FDO_BYTE8 : Byte;   // DO_BYTE8
+      UI1 : Bool;   // IMSTP Экстренный останов
+      UI2 : Bool;   // Hold временный останов
+      UI3 : Bool;   // SFSPD Дверь открыли
+      UI4 : Bool;   // FaultReset сброс ошибок
+      UI5 : Bool;   // EnableMove Разрешено двигаться
+      UI6 : Bool;   // Start Продолжаем
+      UI7 : Bool;
+      UI8 : Bool;
+      UO1 : Bool;   // SystemReady питание серво
+      UO2 : Bool;   // PrgRunning выполняется
+      UO3 : Bool;   // MotionHeld есть HOLD
+      UO4 : Bool;   // Fault активная ошибка
+      UO5 : Bool;   // TP Enable пульт робота включен
+      UO6 : Bool;   // Batt Alarm батарейки сели
+      UO7 : Bool;
+      UO8 : Bool;
+   END_STRUCT;
+
+
+BEGIN
+
+END_DATA_BLOCK
+
