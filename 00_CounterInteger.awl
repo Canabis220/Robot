@@ -1,0 +1,110 @@
+﻿FUNCTION "00_CounterInteger" : Void
+TITLE = Counter
+{ S7_Optimized_Access := 'FALSE' }
+NAME : S_COUNT
+VERSION : 0.1
+   VAR_INPUT 
+      DB_Counter : Block_DB;
+      FirstByte : Int;
+      SetValue : Int;   // Set value
+      Count : Bool;   // Increment the counter
+      ValueIncrement : Int;
+   END_VAR
+
+   VAR_IN_OUT 
+      CountCurrent : Int;   // Value count current
+   END_VAR
+
+   VAR_TEMP 
+      AUX_FrontRising : Bool;
+   END_VAR
+
+
+BEGIN
+NETWORK
+TITLE = Open the DB Counter and Initialize the AR1
+
+
+      OPN #DB_Counter;
+
+      L #FirstByte;
+      SLD 3;
+      LAR1;
+
+NETWORK
+TITLE = Transfer CountCurrent -> ACT , SetValue-> SP
+
+      L #CountCurrent;
+      T DBW[ AR1, P#0.0];// ACT (Current value of Count)
+
+      L #SetValue;
+      T DBW[ AR1, P#2.0];// SP (Value of Set Point)
+
+NETWORK
+TITLE = Count -> AUX_FrontRising
+
+
+      A #Count;
+      FP DBX[ AR1, P#4.3];// FDS_Clock
+      = #AUX_FrontRising;
+
+NETWORK
+TITLE = Increment ACT (with check RUN_COUNT&AUX_FrontRising)
+
+
+      A DBX[ AR1, P#4.0];// RUN_COUNT (Running Counter)
+      A #AUX_FrontRising;
+      JCN INC;
+      L DBW[ AR1, P#0.0];// ACT (Current value of Count)
+      L #ValueIncrement;
+      +I;
+      T DBW[ AR1, P#0.0];// ACT (Current value of Count)
+INC:      NOP 0;
+NETWORK
+TITLE = Control value ACT <= 32767 (WTF?)
+
+      L DBW[ AR1, P#0.0];// Current value of Count
+      L 32767;// Maximum value
+      <=I;
+      JC MAX;
+      L 32767;// Maximum value
+      T DBW[ AR1, P#0.0];// Current value of Count
+MAX:      NOP 0;
+NETWORK
+TITLE = Reset ACT by RESET(DBX4.1)=1
+
+      AN DBX[ AR1, P#4.1];// Reset Counter
+      JC RSET;
+      L 0;
+      T DBW[ AR1, P#0.0];// Current value of Count
+RSET:      NOP 0;
+NETWORK
+TITLE = Set SET_OK(DBX4.2) if ACT => SP (with check RUN_COUNT)
+
+      A(;
+      L DBW[ AR1, P#0.0];// Current value of Count
+      L DBW[ AR1, P#2.0];// Value SetPoint
+      >=I;
+      );
+      A DBX[ AR1, P#4.0];// Running Counter
+      = DBX[ AR1, P#4.2];// Set OK with Running
+NETWORK
+TITLE = Set SET_OK_N(DBX4.4) if ACT => SP (without check RUN_COUNT)
+
+      A(;
+      L DBW[ AR1, P#0.0];// Current value of Count
+      L DBW[ AR1, P#2.0];// Value SetPoint
+      >=I;
+      );
+      = DBX[ AR1, P#4.4];// Set OK without Running
+NETWORK
+TITLE = Transfer ACT -> CountCurrent
+
+// Rewrite the count value of the current for display in the recall
+
+      L DBW[ AR1, P#0.0];//  Current value of Count
+      T #CountCurrent;
+
+
+END_FUNCTION
+
