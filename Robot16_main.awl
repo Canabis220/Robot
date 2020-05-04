@@ -1,0 +1,133 @@
+﻿FUNCTION "Robot16_main" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = РТК1 - Закрыть захват продукта
+      A "Robot16".FDO05;
+      A "Auto3";
+      = "КА16_5";
+
+      A "Robot16".FDO04;
+      A "Auto3";
+      = "КА16_4";
+
+NETWORK
+TITLE = РТК1 - Закрыть захват паллеты
+      A "Robot16".FDO07;
+      A "Auto3";
+      = "КА16_3";
+
+      A "Robot16".FDO06;
+      A "Auto3";
+      = "КА16_2";
+NETWORK
+TITLE = РТК1 - Включить вакуум.
+      A "Robot16".FDO08;
+      A "Auto3";
+      = "КА16_1";
+NETWORK
+TITLE = РТК1 - Захват картона опустить
+      A "Robot16".FDO19;
+      A "Auto3";
+      = "КА16_6";
+
+      A "Robot16".FDO20;
+      A "Auto3";
+      = "КА16_7";
+
+NETWORK
+TITLE = DI2 Паллета на месте 1
+      A "SW7_1";
+      = "Robot16".TDI02;
+
+NETWORK
+TITLE = DI3 Паллета на месте 2
+      A "SW8_1";
+      = "Robot16".TDI03;
+
+NETWORK
+TITLE = DI4 Захват открыт (продукт)
+      A "SW16_4";
+      = "Robot16".TDI04;
+
+      A "SW16_5";
+      = "Robot16".TDI05;
+
+NETWORK
+TITLE = DI6 Паллета отпущена захватом
+      A "SW16_2";
+      = "Robot16".TDI06;
+
+      A "SW16_3";
+      = "Robot16".TDI07;
+
+
+NETWORK
+TITLE = DI8 Наличие вакуума в присоске(объект захвачен)
+      A "SW16_1";
+      = "Robot16".TDI08;
+
+NETWORK
+TITLE = DI12 Наличие стопки паллет
+      A "SW7_3";
+      = "Robot16".TDI12;
+
+
+
+NETWORK
+TITLE = DI13 Заблокировал смену стопки паллет
+      A "Robot16".FDO12;
+      S "Robot16".TDI13;
+
+      A "Robot16".FDO13;
+      R "Robot16".TDI13;
+
+
+NETWORK
+TITLE = DI15 Датчик 1го ряда линия 1
+      A "SW7_2";
+      = "Robot16".TDI15;
+
+NETWORK
+TITLE = DI16 Датчик 1го ряда линия 2
+      A "SW8_2";
+      = "Robot16".TDI16;
+
+NETWORK
+TITLE = DI19 Присоски опущены (датчик поиска)
+      A "SW16_6";
+      = "Robot16".TDI19;
+
+      A "SW16_7";
+      = "Robot16".TDI20;
+
+NETWORK
+TITLE = DI21 Картон в наличии
+      A "SW21_1";
+      = "Robot16".TDI21;
+
+NETWORK
+TITLE = EnableMove Разрешено двигаться
+      O "Auto3";
+      O "Manual3";
+      AN "Error_Global";
+      = "Robot16".UI3;
+      = "Robot16".UI5;
+
+NETWORK
+TITLE = IMSTP Экстренный останов
+      AN "Emergency_Security";
+      = "Robot16".UI1;
+
+NETWORK
+TITLE = Hold временный останов
+      O "Manual3";
+      O(;
+      A "Auto3";
+      A "System_started";
+      );
+      = "Robot16".UI2;
+END_FUNCTION
+
