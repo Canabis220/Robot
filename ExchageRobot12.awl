@@ -78,12 +78,12 @@ TITLE =
       T "Robot12".FDO_BYTE6;//тек мото 2
 
 
-      L "PN-INOUT12".L01;//UO
+      L "PN-INOUT12".e01    ;//UO
       T %DB1.DBB19;
 
 
       L %DB1.DBB18;//UI
-      T "PN-INOUT12".c2;
+      T "PN-INOUT12".a2;
 
 END_FUNCTION
 
