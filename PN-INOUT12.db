@@ -6,14 +6,14 @@ VERSION : 0.1
       b01 : Byte;   // захват команды
       c01 : Byte;   // состояния
       d01 : Byte;   // ошибки
-      e01 : Byte;
+      e01 : Byte;   // UO
       f01 : Byte;   // DO_BYTE1 Текущий ряд, линия 1
       g01 : Byte;   // DO_BYTE2 Позиция в ряду, линия 1
       h01 : Byte;   // DO_BYTE3 Текущий ряд, линия 2
       i01 : Byte;   // DO_BYTE4 Позиция в ряду, линия 2
       J01 : Byte;   // DO_BYTE5 Моточасы1
       K01 : Byte;   // DO_BYTE6 Моточасы2
-      L01 : Byte;   // UO
+      L01 : Byte;
       M01 : Byte;
       N01 : Byte;
       O01 : Byte;
@@ -22,9 +22,9 @@ VERSION : 0.1
       R01 : Byte;   // датчики захвата
       S01 : Byte;   // датчики паллет
       T01 : Byte;   // присоски
-      a2 : Byte;
+      a2 : Byte;   // UI
       b2 : Byte;   // DI_BYTE1 Скорость робота
-      c2 : Byte;   // UI
+      c2 : Byte;
       d2 : Byte;
       e2 : Byte;
       f2 : Byte;
