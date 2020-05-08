@@ -1,0 +1,72 @@
+﻿FUNCTION "ExchageRobot18" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = 
+
+
+
+      L "PN-INPUT-robot".a4;
+      T %DB5.DBB3          ;//захват команды
+
+      L "PN-INPUT-robot".b4;
+      T %DB5.DBB4          ;//состояния
+
+      L "PN-INPUT-robot".c4;
+      T %DB5.DBB5          ;//ошибки
+
+      L "PN-INPUT-robot".d4;
+      T %DB5.DBB19;//UO
+
+      L "PN-INPUT-robot".e4;
+      T "Robot18".FDO_BYTE1;//тек ряд 1
+
+      L "PN-INPUT-robot".f4;
+      T "Robot18".FDO_BYTE2;//тек поз 1
+
+      L "PN-INPUT-robot".g4;
+      T "Robot18".FDO_BYTE3;//тек ряд 2
+
+
+      L "PN-INPUT-robot".h4;
+      T "Robot18".FDO_BYTE4;//тек поз 2
+
+      L "PN-INPUT-robot".i4;
+      T "Robot18".FDO_BYTE5;//тек мото 1
+
+      L "PN-INPUT-robot".J4;
+      T "Robot18".FDO_BYTE6;//тек мото 2
+
+
+
+
+
+
+
+
+
+
+      L %DB5.DBB0          ;//датчики захвата
+      T "PN-OUTPUT-robot".a4;
+
+      L %DB5.DBB1          ;//датчики паллет
+      T "PN-OUTPUT-robot".b4;
+
+      L %DB5.DBB2          ;//присоски
+      T "PN-OUTPUT-robot".c4;
+
+      L %DB5.DBB18         ;//UI
+      T "PN-OUTPUT-robot".d4;
+
+
+      L "Robot18".FDI_BYTE1;//Скорость
+      T "PN-OUTPUT-robot".e4;
+
+
+
+
+
+END_FUNCTION
+
