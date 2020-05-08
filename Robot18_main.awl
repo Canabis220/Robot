@@ -1,0 +1,137 @@
+﻿FUNCTION "Robot18_main" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = РТК1 - Закрыть захват продукта
+      AN "Auto4";
+      JC M4;
+
+
+      A "Robot18".FDO05;
+      A "Auto4";
+      = "КА18_5";
+
+      A "Robot18".FDO04;
+      A "Auto4";
+      = "КА18_4";
+
+NETWORK
+TITLE = РТК1 - Закрыть захват паллеты
+      A "Robot18".FDO07;
+      A "Auto4";
+      = "КА18_3";
+
+      A "Robot18".FDO06;
+      A "Auto4";
+      = "КА18_2";
+NETWORK
+TITLE = РТК1 - Включить вакуум.
+      A "Robot18".FDO08;
+      A "Auto4";
+      = "КА18_1";
+NETWORK
+TITLE = РТК1 - Захват картона опустить
+      A "Robot18".FDO19;
+      A "Auto4";
+      = "КА18_6";
+
+      A "Robot18".FDO20;
+      A "Auto4";
+      = "КА18_7";
+
+NETWORK
+TITLE = DI2 Паллета на месте 1
+M4:      A "SW9_1";
+      = "Robot18".TDI02;
+
+NETWORK
+TITLE = DI3 Паллета на месте 2
+      A "SW10_1";
+      = "Robot18".TDI03;
+
+NETWORK
+TITLE = DI4 Захват открыт (продукт)
+      A "SW18_4";
+      = "Robot18".TDI04;
+
+      A "SW18_5";
+      = "Robot18".TDI05;
+
+NETWORK
+TITLE = DI6 Паллета отпущена захватом
+      A "SW18_2";
+      = "Robot18".TDI06;
+
+      A "SW18_3";
+      = "Robot18".TDI07;
+
+
+NETWORK
+TITLE = DI8 Наличие вакуума в присоске(объект захвачен)
+      A "SW18_1";
+      = "Robot18".TDI08;
+
+NETWORK
+TITLE = DI12 Наличие стопки паллет
+      A "SW9_3";
+      = "Robot18".TDI12;
+
+
+
+NETWORK
+TITLE = DI13 Заблокировал смену стопки паллет
+      A "Robot18".FDO12;
+      S "Robot18".TDI13;
+
+      A "Robot18".FDO13;
+      R "Robot18".TDI13;
+
+
+NETWORK
+TITLE = DI15 Датчик 1го ряда линия 1
+      A "SW9_2";
+      = "Robot18".TDI15;
+
+NETWORK
+TITLE = DI16 Датчик 1го ряда линия 2
+      A "SW10_2";
+      = "Robot18".TDI16;
+
+NETWORK
+TITLE = DI19 Присоски опущены (датчик поиска)
+      A "SW18_6";
+      = "Robot18".TDI19;
+
+      A "SW18_7";
+      = "Robot18".TDI20;
+
+NETWORK
+TITLE = DI21 Картон в наличии
+      A "SW22_1";
+      = "Robot18".TDI21;
+
+NETWORK
+TITLE = EnableMove Разрешено двигаться
+      O "Auto4";
+      O "Manual4";
+      AN "Error_Global";
+      = "Robot18".UI3;
+      = "Robot18".UI5;
+
+NETWORK
+TITLE = IMSTP Экстренный останов
+      AN "Emergency_Security";
+      = "Robot18".UI1;
+
+NETWORK
+TITLE = Hold временный останов
+      O "Manual4";
+      O(;
+      A "Auto4";
+      A "System_started";
+      );
+      = "Robot18".UI2;
+END_FUNCTION
+
