@@ -1,0 +1,23 @@
+﻿DATA_BLOCK "PN_TEMP"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   STRUCT 
+      A1 : DWord;
+      B1 : DWord;
+      C1 : DWord;
+      D1 : DWord;
+      E1 : DWord;
+      F1 : DWord;
+      G1 : DWord;
+      H1 : DWord;
+      I1 : DWord;
+      J1 : DWord;
+      K1 : DWord;
+      L1 : DWord;
+   END_STRUCT;
+
+
+BEGIN
+
+END_DATA_BLOCK
+
