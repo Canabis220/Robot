@@ -1,0 +1,39 @@
+﻿FUNCTION "PN_IN_OUT" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = 
+      CALL PNIO_RECV
+      (  CPLADDR                     := 256 , 
+         MODE                        := 16#0 , 
+         LEN                         := 160 , 
+         IOPS                        := P#DB9.DBX0.0 BYTE 44 , 
+         NDR                         := "Tag_26" , 
+         ERROR                       := "ErrorReciev" , 
+         STATUS                      := "StatReciev" , 
+         CHECK_IOPS                  := "Tag_32" , 
+         ADD_INFO                    := "Tag_30" , 
+         RECV                        := P#DB105.DBX0.0 BYTE 160
+      );
+
+    //BEU
+
+      CALL PNIO_SEND
+      (  CPLADDR                     := 256 , 
+         MODE                        := 16#0 , 
+         LEN                         := 88 , 
+         IOCS                        := P#DB9.DBX0.0 BYTE 12 , 
+         DONE                        := "Tag_34" , 
+         ERROR                       := "ErrorSend" , 
+         STATUS                      := "StatusSend" , 
+         CHECK_IOCS                  := "Tag_37" , 
+         SEND                        := P#DB106.DBX0.0 BYTE 88
+      );
+
+
+
+
+END_FUNCTION
+
