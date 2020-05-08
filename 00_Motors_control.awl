@@ -19,6 +19,7 @@ VERSION : 0.1
       Motor_X_SPEED : Word;
       Stop_sensor : Bool;
       PRESS_RESET_ERROR_BUTTON : Bool;
+      REVERS : Bool;
    END_VAR
 
    VAR_OUTPUT 
@@ -80,7 +81,7 @@ TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
       A #Motor_X_OK;
       AN #Stop_sensor;
       AN "Error_Global";
-      O(;// авто
+      A(                       ;// авто
       A "Auto";
       AN "Manual";
       A "System_started";
@@ -91,7 +92,13 @@ TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
       A "Manual";
       A #Motor_X_MANUAL_START;
       );
-      = %L3.0;//SWITCH ON
+      = %L3.0              ;//SWITCH ON
+    //=     %L3.0
+  //  =     %L2.3
+      A %L3.0;
+      A #REVERS;
+      = %L3.4              ;//REVERS FEED
+      R %L0.3;//
 
 NETWORK
 TITLE = temp to out
@@ -100,7 +107,7 @@ TITLE = temp to out
       T #Motor_X_Output_1;
 
       L #Motor_X_SPEED;
-      T #Motor_X_Output_1;
+      T #Motor_X_Output_2;
 
 END_FUNCTION
 
