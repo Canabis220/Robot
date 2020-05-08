@@ -19,14 +19,29 @@ VERSION : 0.1
 BEGIN
 NETWORK
 TITLE = "MotorProcess"
-      CALL "Genetal_Pulse";
+
+      CALL "00_Pulse";
+
       CALL "MotorProcess";
       NOP 0;
-NETWORK
-TITLE = 
-      CALL "Semafore_Robot";
+      CALL "PN_IN_OUT";
+
 
 NETWORK
 TITLE = 
+//    
+// 
+//    CALL  "ExchageRobot18"
+//    CALL  "Robot16_main"
+      CALL "ExchageRobot12";
+      CALL "Robot12_main";
+
+      CALL "ExchageRobot18";
+      CALL "Robot18_main";
+NETWORK
+TITLE = 
+      CALL "Semafore_Robot";
+      CALL "Conveer_Process";
+
 END_ORGANIZATION_BLOCK
 
