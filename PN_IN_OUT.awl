@@ -6,30 +6,30 @@ BEGIN
 NETWORK
 TITLE = 
       CALL PNIO_RECV
-      (  CPLADDR                     := 256 , 
+      (  CPLADDR                     := 320 , 
          MODE                        := 16#0 , 
-         LEN                         := 160 , 
-         IOPS                        := P#DB9.DBX0.0 BYTE 44 , 
+         LEN                         := 280 , 
+         IOPS                        := P#DB9.DBX0.0 BYTE 40 , 
          NDR                         := "Tag_26" , 
          ERROR                       := "ErrorReciev" , 
          STATUS                      := "StatReciev" , 
          CHECK_IOPS                  := "Tag_32" , 
          ADD_INFO                    := "Tag_30" , 
-         RECV                        := P#DB105.DBX0.0 BYTE 160
+         RECV                        := P#DB105.DBX0.0 BYTE 280
       );
 
-    //BEU
+
 
       CALL PNIO_SEND
-      (  CPLADDR                     := 256 , 
+      (  CPLADDR                     := 320 , 
          MODE                        := 16#0 , 
-         LEN                         := 88 , 
-         IOCS                        := P#DB9.DBX0.0 BYTE 12 , 
+         LEN                         := 280 , 
+         IOCS                        := P#DB9.DBX0.0 BYTE 40 , 
          DONE                        := "Tag_34" , 
          ERROR                       := "ErrorSend" , 
          STATUS                      := "StatusSend" , 
          CHECK_IOCS                  := "Tag_37" , 
-         SEND                        := P#DB106.DBX0.0 BYTE 88
+         SEND                        := P#DB106.DBX0.0 BYTE 280
       );
 
 
