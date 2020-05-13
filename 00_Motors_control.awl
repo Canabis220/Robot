@@ -43,7 +43,7 @@ BEGIN
 NETWORK
 TITLE = input to temp
       L #Motor_X_Input_1;
-      T #temp_output1;
+      T #temp_input1;
 
 
 NETWORK
@@ -98,7 +98,7 @@ TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
       A %L3.0;
       A #REVERS;
       = %L3.4              ;//REVERS FEED
-      R %L0.3;//
+      R %L3.0              ;//
 
 NETWORK
 TITLE = temp to out
