@@ -8,35 +8,35 @@ TITLE =
 
 
 
-      L "PN-INPUT-robot".a1;
+      L "PN-INPUT".a1;
       T %DB1.DBB3          ;//захват команды
 
-      L "PN-INPUT-robot".b1;
+      L "PN-INPUT".b1;
       T %DB1.DBB4          ;//состояния
 
-      L "PN-INPUT-robot".c1;
+      L "PN-INPUT".c1;
       T %DB1.DBB5          ;//ошибки
 
-      L "PN-INPUT-robot".d1;
+      L "PN-INPUT".d1;
       T %DB1.DBB19         ;//UO
 
-      L "PN-INPUT-robot".e1;
+      L "PN-INPUT".e1;
       T "Robot12".FDO_BYTE1;//тек ряд 1
 
-      L "PN-INPUT-robot".f1;
+      L "PN-INPUT".f1;
       T "Robot12".FDO_BYTE2;//тек поз 1
 
-      L "PN-INPUT-robot".g1;
+      L "PN-INPUT".g1;
       T "Robot12".FDO_BYTE3;//тек ряд 2
 
 
-      L "PN-INPUT-robot".h1;
+      L "PN-INPUT".h1;
       T "Robot12".FDO_BYTE4;//тек поз 2
 
-      L "PN-INPUT-robot".i1;
+      L "PN-INPUT".i1;
       T "Robot12".FDO_BYTE5;//тек мото 1
 
-      L "PN-INPUT-robot".J1;
+      L "PN-INPUT".J1;
       T "Robot12".FDO_BYTE6;//тек мото 2
 
 
@@ -49,20 +49,20 @@ TITLE =
 
 
       L %DB1.DBB0          ;//датчики захвата
-      T "PN-OUTPUT-robot".a1;
+      T "PN-OUTPUT".a1;
 
       L %DB1.DBB1          ;//датчики паллет
-      T "PN-OUTPUT-robot".b1;
+      T "PN-OUTPUT".b1;
 
       L %DB1.DBB2          ;//присоски
-      T "PN-OUTPUT-robot".c1;
+      T "PN-OUTPUT".c1;
 
       L %DB1.DBB18         ;//UI
-      T "PN-OUTPUT-robot".d1;
+      T "PN-OUTPUT".d1;
 
 
       L "Robot12".FDI_BYTE1;//Скорость
-      T "PN-OUTPUT-robot".e1;
+      T "PN-OUTPUT".e1;
 
 
 
