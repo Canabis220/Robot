@@ -1,0 +1,130 @@
+﻿DATA_BLOCK "PN-OUTPUT"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   STRUCT 
+      "00" : Byte;   // Заглушка
+      a1 : Byte;   // 1DI_BYTE1 датчики захвата
+      b1 : Byte;   // 1DI_BYTE2 датчики паллет
+      c1 : Byte;   // 1DI_BYTE3 присоски
+      d1 : Byte;   // 1DI_BYTE4 UI
+      e1 : Byte;   // 1DI_BYTE5 Скорость робота
+      f1 : Byte;   // 1
+      g1 : Byte;   // 1
+      K1 : DWord;   // 1
+      O1 : DWord;   // 1
+      P1 : Byte;   // RTK1-----------------------
+      a2 : Byte;   // 2DI_BYTE1 датчики захвата
+      b2 : Byte;   // 2DI_BYTE2 датчики паллет
+      c2 : Byte;   // 2DI_BYTE3 присоски
+      d2 : Byte;   // 2DI_BYTE4 UI
+      e2 : Byte;   // 2DI_BYTE5 Скорость робота
+      f2 : Byte;   // 2
+      g2 : Byte;   // 2
+      N2 : DWord;   // 2
+      O2 : DWord;   // 2
+      P2 : Byte;   // RTK2-----------------------------
+      a3 : Byte;   // 3DI_BYTE1 датчики захвата
+      b3 : Byte;   // 3DI_BYTE2 датчики паллет
+      c3 : Byte;   // 3DI_BYTE3 присоски
+      d3 : Byte;   // 3DI_BYTE4 UI
+      e3 : Byte;   // 3DI_BYTE5 Скорость робота
+      f3 : Byte;   // 3
+      g3 : Byte;   // 3
+      N3 : DWord;   // 3
+      O3 : DWord;   // 3
+      P3 : Byte;   // RTK3--------------------------------
+      a4 : Byte;   // 4DI_BYTE1 датчики захвата
+      b4 : Byte;   // 4DI_BYTE2 датчики паллет
+      c4 : Byte;   // 4DI_BYTE3 присоски
+      d4 : Byte;   // 4DI_BYTE4 UI
+      e4 : Byte;   // 4DI_BYTE5 Скорость робота
+      f4 : Byte;   // 4
+      g4 : Byte;   // 4
+      N4 : DWord;   // 4
+      O4 : DWord;   // 4
+      P4 : Byte;   // RTK4
+      a7 : Byte;   // заглушка четности
+      c7 : DWord;   // FA1------------------------------------------------
+      g7 : DWord;   // FA1
+      FA1_1_cmd : Word;   // FA1_1_cmd
+      FA1_1_bSpeed : Word;   // FA1_1_bSpeed
+      b7 : DWord;   // FA2------------------------------------------------------
+      c8 : DWord;   // FA2
+      FA2_1_cmd : Word;   // FA2_1_cmd
+      FA2_1_bSpeed : Word;   // FA2_1_bSpeed
+      f7 : DWord;   // FA3------------------------------------------------
+      g8 : DWord;   // FA3
+      FA3_1_cmd : Word;   // FA3_1_cmd
+      FA3_1_bSpeed : Word;   // FA3_1_bSpeed
+      J7 : DWord;   // FA23------------------------------------------------------
+      K8 : DWord;   // FA23
+      FA23_1_cmd : Word;   // FA23_1_cmd
+      FA23_1_bSpeed : Word;   // FA23_1_bSpeed
+      c9 : DWord;   // FA24------------------------------------------------
+      g9 : DWord;   // FA24
+      FA24_1_cmd : Word;   // FA24_1_cmd
+      FA24_1_bSpeed : Word;   // FA24_1_bSpeed
+      b8 : DWord;   // FA4------------------------------------------------------
+      c10 : DWord;   // FA4
+      d8 : Word;   // FA4_1_cmd
+      e8 : Word;   // FA4_1_bSpeed
+      f8 : DWord;   // FA5------------------------------------------------
+      g10 : DWord;   // FA5
+      h8 : Word;   // FA5_1_cmd
+      i8 : Word;   // FA5_1_bSpeed
+      J8 : DWord;   // FA20------------------------------------------------------
+      K10 : DWord;   // FA20
+      L8 : Word;   // FA20_1_cmd
+      M6 : Word;   // FA20_1_bSpeed
+      c11 : DWord;   // FA25_1------------------------------------------------
+      g11 : DWord;   // FA25_1
+      K11 : Word;   // FA25_1_cmd
+      a10 : Word;   // FA25_1_bSpeed
+      b9 : DWord;   // FA25_2------------------------------------------------------
+      c12 : DWord;   // FA25_2
+      d9 : Word;   // FA25_2_cmd
+      e9 : Word;   // FA25_2_bSpeed
+      f9 : DWord;   // FA6------------------------------------------------
+      g12 : DWord;   // FA6
+      h9 : Word;   // FA6_1_cmd
+      i9 : Word;   // FA6_1_bSpeed
+      J9 : DWord;   // FA7------------------------------------------------------
+      K12 : DWord;   // FA7
+      L9 : Word;   // FA7_1_cmd
+      M7 : Word;   // FA7_1_bSpeed
+      c13 : DWord;   // FA8------------------------------------------------
+      g13 : DWord;   // FA8
+      K13 : Word;   // FA8_1_cmd
+      a11 : Word;   // FA8_1_bSpeed
+      b10 : DWord;   // FA26------------------------------------------------------
+      c14 : DWord;   // FA26
+      d10 : Word;   // FA26_1_cmd
+      e10 : Word;   // FA26_1_bSpeed
+      f10 : DWord;   // FA27------------------------------------------------
+      g14 : DWord;   // FA27
+      h10 : Word;   // FA27_1_cmd
+      i10 : Word;   // FA27_1_bSpeed
+      J10 : DWord;   // FA9------------------------------------------------------
+      K14 : DWord;   // FA9
+      L10 : Word;   // FA9_1_cmd
+      M8 : Word;   // FA9_1_bSpeed
+      J11 : DWord;   // FA10------------------------------------------------------
+      K15 : DWord;   // FA10
+      L11 : Word;   // FA10_1_cmd
+      M9 : Word;   // FA10_1_bSpeed
+      f11 : DWord;   // FA28------------------------------------------------
+      g15 : DWord;   // FA28
+      h11 : Word;   // FA28_1_cmd
+      i11 : Word;   // FA28_1_bSpeed
+      N5 : Word;
+      O5 : Word;
+      temp_1 : DWord;
+      temp3 : DWord;
+      temp4 : DWord;
+   END_STRUCT;
+
+
+BEGIN
+
+END_DATA_BLOCK
+
