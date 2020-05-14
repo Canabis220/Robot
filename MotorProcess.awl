@@ -100,5 +100,66 @@ TITLE = FA24_1
       );
 
 
+NETWORK
+TITLE = FA9_1
+      A "Auto4";
+      = "Auto";
+      = "System_started";
+      A "Manual4";
+      = "Manual";
+
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA9_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA9_1_Speed , 
+         Motor_X_AUTO_START          := "FA9_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA9_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA9_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA9_1_bSpeed , 
+         Motor_X_OK                  := "FA9_1_is_ok" , 
+         Motor_X_RUNNING             := "FA9_1_start"
+      );
+
+
+
+NETWORK
+TITLE = FA10_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA10_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA10_1_Speed , 
+         Motor_X_AUTO_START          := "FA10_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA10_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA10_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA10_1_bSpeed , 
+         Motor_X_OK                  := "FA10_1_is_ok" , 
+         Motor_X_RUNNING             := "FA10_1_start"
+      );
+
+
+NETWORK
+TITLE = FA28_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA28_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA28_1_Speed , 
+         Motor_X_AUTO_START          := "FA28_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA28_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA28_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA28_1_bSpeed , 
+         Motor_X_OK                  := "FA28_1_is_ok" , 
+         Motor_X_RUNNING             := "FA28_1_start"
+      );
+
+
 END_FUNCTION
 
