@@ -106,16 +106,16 @@ VERSION : 0.1
       i10 : Word;   // FA27_1_bSpeed
       J10 : DWord;   // FA9------------------------------------------------------
       K14 : DWord;   // FA9
-      L10 : Word;   // FA9_1_cmd
-      M8 : Word;   // FA9_1_bSpeed
+      FA9_1_cmd : Word;   // FA9_1_cmd
+      FA9_1_bSpeed : Word;   // FA9_1_bSpeed
       J11 : DWord;   // FA10------------------------------------------------------
       K15 : DWord;   // FA10
-      L11 : Word;   // FA10_1_cmd
-      M9 : Word;   // FA10_1_bSpeed
+      FA10_1_cmd : Word;   // FA10_1_cmd
+      FA10_1_bSpeed : Word;   // FA10_1_bSpeed
       f11 : DWord;   // FA28------------------------------------------------
       g15 : DWord;   // FA28
-      h11 : Word;   // FA28_1_cmd
-      i11 : Word;   // FA28_1_bSpeed
+      FA28_1_cmd : Word;   // FA28_1_cmd
+      FA28_1_bSpeed : Word;   // FA28_1_bSpeed
       N5 : Word;
       O5 : Word;
       temp_1 : DWord;
