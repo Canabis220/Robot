@@ -43,7 +43,7 @@ TITLE = РТК1 - Захват картона опустить
 
 NETWORK
 TITLE = DI2 Паллета на месте 1
-M4:      A "SW9_1";
+M4:      A "SW10_1";
       = "Robot18".TDI02;
 
 NETWORK
@@ -91,7 +91,7 @@ TITLE = DI13 Заблокировал смену стопки паллет
 
 NETWORK
 TITLE = DI15 Датчик 1го ряда линия 1
-      A "SW9_2";
+      A "SW10_2";
       = "Robot18".TDI15;
 
 NETWORK
