@@ -19,7 +19,7 @@ TITLE = FA1_1
          Motor_X_SPEED               := 16#0580 , 
          Stop_sensor                 := "StopSw" , 
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
-         REVERS                      := 0 , 
+         REVERS                      := "FA1_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA1_1_cmd , 
          Motor_X_Output_2            := "PN-OUTPUT".FA1_1_bSpeed , 
          Motor_X_OK                  := "FA1_1_is_ok" , 
@@ -38,7 +38,7 @@ TITLE = FA2_1
          Motor_X_SPEED               := 16#0580 , 
          Stop_sensor                 := "StopSw" , 
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
-         REVERS                      := "FA1_1_reversmode" , 
+         REVERS                      := "FA2_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA2_1_cmd , 
          Motor_X_Output_2            := "PN-OUTPUT".FA2_1_bSpeed , 
          Motor_X_OK                  := "FA2_1_is_ok" , 
@@ -56,7 +56,7 @@ TITLE = FA3_1
          Motor_X_SPEED               := 16#0580 , 
          Stop_sensor                 := "StopSw" , 
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
-         REVERS                      := 0 , 
+         REVERS                      := "FA3_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA3_1_cmd , 
          Motor_X_Output_2            := "PN-OUTPUT".FA3_1_bSpeed , 
          Motor_X_OK                  := "FA3_1_is_ok" , 
@@ -108,6 +108,24 @@ TITLE = FA9_1
       A "Manual4";
       = "Manual";
 
+      A(;
+      A "FA9_TO_PRESS";
+      A "SW9_3";
+      );
+      O(;
+      A "FA9_FROM_PRESS";
+      A "SW9_2";
+      );
+      = "FA9_1_manual_start";
+
+      A "FA9_FROM_PRESS";
+      A "Manual4";
+      S "FA9_1_reversmode";
+      A "FA9_TO_PRESS";
+      A "Manual4";
+      R "FA9_1_reversmode";
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA9_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA9_1_Speed , 
@@ -116,7 +134,7 @@ TITLE = FA9_1
          Motor_X_SPEED               := 16#0580 , 
          Stop_sensor                 := "StopSw" , 
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
-         REVERS                      := 0 , 
+         REVERS                      := "FA9_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA9_1_cmd , 
          Motor_X_Output_2            := "PN-OUTPUT".FA9_1_bSpeed , 
          Motor_X_OK                  := "FA9_1_is_ok" , 
@@ -127,6 +145,25 @@ TITLE = FA9_1
 
 NETWORK
 TITLE = FA10_1
+      A(;
+      A "FA10_TO_PRESS";
+      A "SW10_1";
+      );
+      O(;
+      A "FA10_FROM_PRESS";
+      A "SW10_3";
+      );
+      = "FA10_1_manual_start";
+
+      A "FA10_FROM_PRESS";
+      A "Manual4";
+      S "FA10_1_reversmode";
+      A "FA10_TO_PRESS";
+      A "Manual4";
+      R "FA10_1_reversmode";
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA10_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA10_1_Speed , 
@@ -135,7 +172,7 @@ TITLE = FA10_1
          Motor_X_SPEED               := 16#0580 , 
          Stop_sensor                 := "StopSw" , 
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
-         REVERS                      := 0 , 
+         REVERS                      := "FA10_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA10_1_cmd , 
          Motor_X_Output_2            := "PN-OUTPUT".FA10_1_bSpeed , 
          Motor_X_OK                  := "FA10_1_is_ok" , 
