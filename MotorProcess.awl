@@ -11,6 +11,28 @@ TITLE = FA1_1
       A "Manual1";
       = "Manual";
 
+      A(;
+      A "FA1_TO_PRESS";
+      A "SW1_3";
+      );
+      O(;
+      A "FA1_FROM_PRESS";
+      A "SW1_2";
+      );
+      = "FA1_1_manual_start";
+
+      A "FA1_FROM_PRESS";
+      A "Manual1";
+      S "FA1_1_reversmode";
+      A "FA1_TO_PRESS";
+      A "Manual1";
+      R "FA1_1_reversmode";
+
+
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA1_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA1_1_Speed , 
@@ -30,6 +52,26 @@ TITLE = FA1_1
    // BEU
 NETWORK
 TITLE = FA2_1
+      A(;
+      A "FA2_TO_PRESS";
+      A "SW2_1";
+      );
+      O(;
+      A "FA2_FROM_PRESS";
+      A "SW2_3";
+      );
+      = "FA2_1_manual_start";
+
+      A "FA2_FROM_PRESS";
+      A "Manual1";
+      S "FA2_1_reversmode";
+      A "FA2_TO_PRESS";
+      A "Manual1";
+      R "FA2_1_reversmode";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA2_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA2_1_Speed , 
@@ -48,6 +90,26 @@ TITLE = FA2_1
 
 NETWORK
 TITLE = FA3_1
+      A(;
+      A "FA3_TO_PRESS";
+      A "SW3_1";
+      );
+      O(;
+      A "FA3_FROM_PRESS";
+      A "SW3_3";
+      );
+      = "FA3_1_manual_start";
+
+      A "FA3_FROM_PRESS";
+      A "Manual1";
+      S "FA3_1_reversmode";
+      A "FA3_TO_PRESS";
+      A "Manual1";
+      R "FA3_1_reversmode";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA3_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA3_1_Speed , 
