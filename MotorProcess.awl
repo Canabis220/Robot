@@ -4,7 +4,7 @@ VERSION : 0.1
 
 BEGIN
 NETWORK
-TITLE = FA1_1
+TITLE = RTK1 FA1_1
       A "Auto1";
       = "Auto";
       = "System_started";
@@ -35,7 +35,7 @@ TITLE = FA1_1
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA1_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA1_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA1_1_BSpeed , 
          Motor_X_AUTO_START          := "FA1_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA1_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -43,7 +43,7 @@ TITLE = FA1_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := "FA1_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA1_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA1_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA1_1_Speed , 
          Motor_X_OK                  := "FA1_1_is_ok" , 
          Motor_X_RUNNING             := "FA1_1_start"
       );
@@ -51,7 +51,7 @@ TITLE = FA1_1
 
    // BEU
 NETWORK
-TITLE = FA2_1
+TITLE = RTK1 FA2_1
       A(;
       A "FA2_TO_PRESS";
       A "SW2_1";
@@ -74,7 +74,7 @@ TITLE = FA2_1
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA2_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA2_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA2_1_BSpeed , 
          Motor_X_AUTO_START          := "FA2_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA2_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -82,14 +82,14 @@ TITLE = FA2_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := "FA2_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA2_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA2_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA2_1_Speed , 
          Motor_X_OK                  := "FA2_1_is_ok" , 
          Motor_X_RUNNING             := "FA2_1_start"
       );
 
 
 NETWORK
-TITLE = FA3_1
+TITLE = RTK1 FA3_1
       A(;
       A "FA3_TO_PRESS";
       A "SW3_1";
@@ -112,7 +112,7 @@ TITLE = FA3_1
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA3_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA3_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA3_1_BSpeed , 
          Motor_X_AUTO_START          := "FA3_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA3_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -120,17 +120,17 @@ TITLE = FA3_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := "FA3_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA3_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA3_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA3_1_Speed , 
          Motor_X_OK                  := "FA3_1_is_ok" , 
          Motor_X_RUNNING             := "FA3_1_start"
       );
 
 
 NETWORK
-TITLE = FA23_1
+TITLE = RTK1 FA23_1
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA23_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA23_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA23_1_BSpeed , 
          Motor_X_AUTO_START          := "FA23_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA23_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -138,17 +138,17 @@ TITLE = FA23_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := 0 , 
          Motor_X_Output_1            := "PN-OUTPUT".FA23_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA23_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA23_1_Speed , 
          Motor_X_OK                  := "FA23_1_is_ok" , 
          Motor_X_RUNNING             := "FA23_1_start"
       );
 
 
 NETWORK
-TITLE = FA24_1
+TITLE = RTK1 FA24_1
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA24_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA24_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA24_1_BSpeed , 
          Motor_X_AUTO_START          := "FA24_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA24_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -156,14 +156,198 @@ TITLE = FA24_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := 0 , 
          Motor_X_Output_1            := "PN-OUTPUT".FA24_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA24_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA24_1_Speed , 
          Motor_X_OK                  := "FA24_1_is_ok" , 
          Motor_X_RUNNING             := "FA24_1_start"
       );
 
 
 NETWORK
-TITLE = FA9_1
+TITLE = RTK2 FA4_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA4_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA4_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA4_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA4_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := "FA4_1_reversmode" , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA4_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA4_1_Speed , 
+         Motor_X_OK                  := "FA4_1_is_ok" , 
+         Motor_X_RUNNING             := "FA4_1_start"
+      );
+
+
+NETWORK
+TITLE = RTK2 FA5_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA5_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA5_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA5_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA5_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := "FA5_1_reversmode" , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA5_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA5_1_Speed , 
+         Motor_X_OK                  := "FA5_1_is_ok" , 
+         Motor_X_RUNNING             := "FA5_1_start"
+      );
+
+
+NETWORK
+TITLE = RTK2 FA20_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA20_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA20_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA20_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA20_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := "FA20_1_reversmode" , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA20_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA20_1_Speed , 
+         Motor_X_OK                  := "FA20_1_is_ok" , 
+         Motor_X_RUNNING             := "FA20_1_start"
+      );
+
+
+NETWORK
+TITLE = RTK2 FA25_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA25_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA25_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA25_1_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA25_1_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA25_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA25_1_Speed , 
+         Motor_X_OK                  := "FA25_1_1_is_ok" , 
+         Motor_X_RUNNING             := "FA25_1_1_start"
+      );
+
+
+NETWORK
+TITLE = RTK2 FA25_2
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA25_2_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA25_2_BSpeed , 
+         Motor_X_AUTO_START          := "FA25_2_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA25_2_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA25_2_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA25_2_Speed , 
+         Motor_X_OK                  := "FA25_2_1_is_ok" , 
+         Motor_X_RUNNING             := "FA25_2_1_start"
+      );
+
+
+
+NETWORK
+TITLE = RTK3 FA6_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA6_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA6_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA6_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA6_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := "FA6_1_reversmode" , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA6_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA6_1_Speed , 
+         Motor_X_OK                  := "FA6_1_is_ok" , 
+         Motor_X_RUNNING             := "FA6_1_start"
+      );
+
+
+
+NETWORK
+TITLE = RTK3 FA7_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA7_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA7_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA7_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA7_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := "FA7_1_reversmode" , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA7_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA7_1_Speed , 
+         Motor_X_OK                  := "FA7_1_is_ok" , 
+         Motor_X_RUNNING             := "FA7_1_start"
+      );
+
+
+
+NETWORK
+TITLE = RTK3 FA8_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA8_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA8_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA8_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA8_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := "FA8_1_reversmode" , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA8_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA8_1_Speed , 
+         Motor_X_OK                  := "FA8_1_is_ok" , 
+         Motor_X_RUNNING             := "FA8_1_start"
+      );
+
+
+
+NETWORK
+TITLE = RTK3 FA26_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA26_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA26_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA26_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA26_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA26_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA26_1_Speed , 
+         Motor_X_OK                  := "FA26_1_is_ok" , 
+         Motor_X_RUNNING             := "FA26_1_start"
+      );
+
+
+NETWORK
+TITLE = RTK3 FA27_1
+      CALL "00_Motors_control"
+      (  Motor_X_Input_1             := "PN-INPUT".FA27_1_ETA , 
+         Motor_X_Input_2             := "PN-INPUT".FA27_1_BSpeed , 
+         Motor_X_AUTO_START          := "FA27_1_auto_start" , 
+         Motor_X_MANUAL_START        := "FA27_1_manual_start" , 
+         Motor_X_SPEED               := 16#0580 , 
+         Stop_sensor                 := "StopSw" , 
+         PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
+         REVERS                      := 0 , 
+         Motor_X_Output_1            := "PN-OUTPUT".FA27_1_cmd , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA27_1_Speed , 
+         Motor_X_OK                  := "FA27_1_is_ok" , 
+         Motor_X_RUNNING             := "FA27_1_start"
+      );
+
+
+NETWORK
+TITLE = RTK4 FA9_1
       A "Auto4";
       = "Auto";
       = "System_started";
@@ -190,7 +374,7 @@ TITLE = FA9_1
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA9_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA9_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA9_1_BSpeed , 
          Motor_X_AUTO_START          := "FA9_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA9_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -198,7 +382,7 @@ TITLE = FA9_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := "FA9_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA9_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA9_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA9_1_Speed , 
          Motor_X_OK                  := "FA9_1_is_ok" , 
          Motor_X_RUNNING             := "FA9_1_start"
       );
@@ -206,7 +390,7 @@ TITLE = FA9_1
 
 
 NETWORK
-TITLE = FA10_1
+TITLE = RTK4 FA10_1
       A(;
       A "FA10_TO_PRESS";
       A "SW10_1";
@@ -228,7 +412,7 @@ TITLE = FA10_1
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA10_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA10_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA10_1_BSpeed , 
          Motor_X_AUTO_START          := "FA10_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA10_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -236,17 +420,17 @@ TITLE = FA10_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := "FA10_1_reversmode" , 
          Motor_X_Output_1            := "PN-OUTPUT".FA10_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA10_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA10_1_Speed , 
          Motor_X_OK                  := "FA10_1_is_ok" , 
          Motor_X_RUNNING             := "FA10_1_start"
       );
 
 
 NETWORK
-TITLE = FA28_1
+TITLE = RTK4 FA28_1
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA28_1_ETA , 
-         Motor_X_Input_2             := "PN-INPUT".FA28_1_Speed , 
+         Motor_X_Input_2             := "PN-INPUT".FA28_1_BSpeed , 
          Motor_X_AUTO_START          := "FA28_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA28_1_manual_start" , 
          Motor_X_SPEED               := 16#0580 , 
@@ -254,7 +438,7 @@ TITLE = FA28_1
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := 0 , 
          Motor_X_Output_1            := "PN-OUTPUT".FA28_1_cmd , 
-         Motor_X_Output_2            := "PN-OUTPUT".FA28_1_bSpeed , 
+         Motor_X_Output_2            := "PN-OUTPUT".FA28_1_Speed , 
          Motor_X_OK                  := "FA28_1_is_ok" , 
          Motor_X_RUNNING             := "FA28_1_start"
       );
