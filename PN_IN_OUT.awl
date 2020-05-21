@@ -8,14 +8,14 @@ TITLE =
       CALL PNIO_RECV
       (  CPLADDR                     := 320 , 
          MODE                        := 16#0 , 
-         LEN                         := 280 , 
+         LEN                         := 282 , 
          IOPS                        := P#DB9.DBX0.0 BYTE 40 , 
-         NDR                         := "Tag_26" , 
+         NDR                         := "ndr" , 
          ERROR                       := "ErrorReciev" , 
          STATUS                      := "StatReciev" , 
-         CHECK_IOPS                  := "Tag_32" , 
-         ADD_INFO                    := "Tag_30" , 
-         RECV                        := P#DB105.DBX0.0 BYTE 280
+         CHECK_IOPS                  := "CHECK_IOPS" , 
+         ADD_INFO                    := "ADD_INFO" , 
+         RECV                        := P#DB105.DBX0.0 BYTE 282
       );
 
 
@@ -23,13 +23,13 @@ TITLE =
       CALL PNIO_SEND
       (  CPLADDR                     := 320 , 
          MODE                        := 16#0 , 
-         LEN                         := 280 , 
+         LEN                         := 282 , 
          IOCS                        := P#DB9.DBX0.0 BYTE 40 , 
-         DONE                        := "Tag_34" , 
+         DONE                        := "DONE" , 
          ERROR                       := "ErrorSend" , 
          STATUS                      := "StatusSend" , 
-         CHECK_IOCS                  := "Tag_37" , 
-         SEND                        := P#DB106.DBX0.0 BYTE 280
+         CHECK_IOCS                  := "CHECK_IOCS" , 
+         SEND                        := P#DB106.DBX0.0 BYTE 282
       );
 
 
