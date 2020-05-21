@@ -10,6 +10,10 @@ TITLE = RTK1 FA1_1
       = "System_started";
       A "Manual1";
       = "Manual";
+      = "RTK1_MAN";
+
+      AN "RTK1_OK";
+      = "StopSw";
 
       A(;
       A "FA1_TO_PRESS";
@@ -164,6 +168,19 @@ TITLE = RTK1 FA24_1
 
 NETWORK
 TITLE = RTK2 FA4_1
+      A "Auto2";
+      = "Auto";
+      = "System_started";
+      A "Manual2";
+      = "Manual";
+      = "RTK2_MAN";
+
+      AN "RTK2_OK";
+      = "StopSw";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA4_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA4_1_BSpeed , 
@@ -255,6 +272,19 @@ TITLE = RTK2 FA25_2
 
 NETWORK
 TITLE = RTK3 FA6_1
+      A "Auto3";
+      = "Auto";
+      = "System_started";
+      A "Manual3";
+      = "Manual";
+      = "RTK3_MAN";
+
+      AN "RTK3_OK";
+      = "StopSw";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA6_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA6_1_BSpeed , 
@@ -353,6 +383,11 @@ TITLE = RTK4 FA9_1
       = "System_started";
       A "Manual4";
       = "Manual";
+      = "RTK4_MAN";
+
+      AN "RTK4_OK";
+      = "StopSw";
+
 
       A(;
       A "FA9_TO_PRESS";
