@@ -47,75 +47,75 @@ VERSION : 0.1
       c7 : DWord;   // FA1------------------------------------------------
       g7 : DWord;   // FA1
       FA1_1_cmd : Word;   // FA1_1_cmd
-      FA1_1_bSpeed : Word;   // FA1_1_bSpeed
+      FA1_1_Speed : Word;   // FA1_1_Speed
       b7 : DWord;   // FA2------------------------------------------------------
       c8 : DWord;   // FA2
       FA2_1_cmd : Word;   // FA2_1_cmd
-      FA2_1_bSpeed : Word;   // FA2_1_bSpeed
+      FA2_1_Speed : Word;   // FA2_1_Speed
       f7 : DWord;   // FA3------------------------------------------------
       g8 : DWord;   // FA3
       FA3_1_cmd : Word;   // FA3_1_cmd
-      FA3_1_bSpeed : Word;   // FA3_1_bSpeed
+      FA3_1_Speed : Word;   // FA3_1_Speed
       J7 : DWord;   // FA23------------------------------------------------------
       K8 : DWord;   // FA23
       FA23_1_cmd : Word;   // FA23_1_cmd
-      FA23_1_bSpeed : Word;   // FA23_1_bSpeed
+      FA23_1_Speed : Word;   // FA23_1_Speed
       c9 : DWord;   // FA24------------------------------------------------
       g9 : DWord;   // FA24
       FA24_1_cmd : Word;   // FA24_1_cmd
-      FA24_1_bSpeed : Word;   // FA24_1_bSpeed
+      FA24_1_Speed : Word;   // FA24_1_Speed
       b8 : DWord;   // FA4------------------------------------------------------
       c10 : DWord;   // FA4
-      d8 : Word;   // FA4_1_cmd
-      e8 : Word;   // FA4_1_bSpeed
+      FA4_1_cmd : Word;   // FA4_1_cmd
+      FA4_1_Speed : Word;   // FA4_1_Speed
       f8 : DWord;   // FA5------------------------------------------------
       g10 : DWord;   // FA5
-      h8 : Word;   // FA5_1_cmd
-      i8 : Word;   // FA5_1_bSpeed
+      FA5_1_cmd : Word;   // FA5_1_cmd
+      FA5_1_Speed : Word;   // FA5_1_Speed
       J8 : DWord;   // FA20------------------------------------------------------
       K10 : DWord;   // FA20
-      L8 : Word;   // FA20_1_cmd
-      M6 : Word;   // FA20_1_bSpeed
+      FA20_1_cmd : Word;   // FA20_1_cmd
+      FA20_1_Speed : Word;   // FA20_1_Speed
       c11 : DWord;   // FA25_1------------------------------------------------
       g11 : DWord;   // FA25_1
-      K11 : Word;   // FA25_1_cmd
-      a10 : Word;   // FA25_1_bSpeed
+      FA25_1_cmd : Word;   // FA25_1_cmd
+      FA25_1_Speed : Word;   // FA25_1_Speed
       b9 : DWord;   // FA25_2------------------------------------------------------
       c12 : DWord;   // FA25_2
-      d9 : Word;   // FA25_2_cmd
-      e9 : Word;   // FA25_2_bSpeed
+      FA25_2_cmd : Word;   // FA25_2_cmd
+      FA25_2_Speed : Word;   // FA25_2_Speed
       f9 : DWord;   // FA6------------------------------------------------
       g12 : DWord;   // FA6
-      h9 : Word;   // FA6_1_cmd
-      i9 : Word;   // FA6_1_bSpeed
+      FA6_1_cmd : Word;   // FA6_1_cmd
+      FA6_1_Speed : Word;   // FA6_1_Speed
       J9 : DWord;   // FA7------------------------------------------------------
       K12 : DWord;   // FA7
-      L9 : Word;   // FA7_1_cmd
-      M7 : Word;   // FA7_1_bSpeed
+      FA7_1_cmd : Word;   // FA7_1_cmd
+      FA7_1_Speed : Word;   // FA7_1_Speed
       c13 : DWord;   // FA8------------------------------------------------
       g13 : DWord;   // FA8
-      K13 : Word;   // FA8_1_cmd
-      a11 : Word;   // FA8_1_bSpeed
+      FA8_1_cmd : Word;   // FA8_1_cmd
+      FA8_1_Speed : Word;   // FA8_1_Speed
       b10 : DWord;   // FA26------------------------------------------------------
       c14 : DWord;   // FA26
-      d10 : Word;   // FA26_1_cmd
-      e10 : Word;   // FA26_1_bSpeed
+      FA26_1_cmd : Word;   // FA26_1_cmd
+      FA26_1_Speed : Word;   // FA26_1_Speed
       f10 : DWord;   // FA27------------------------------------------------
       g14 : DWord;   // FA27
-      h10 : Word;   // FA27_1_cmd
-      i10 : Word;   // FA27_1_bSpeed
+      FA27_1_cmd : Word;   // FA27_1_cmd
+      FA27_1_Speed : Word;   // FA27_1_Speed
       J10 : DWord;   // FA9------------------------------------------------------
       K14 : DWord;   // FA9
       FA9_1_cmd : Word;   // FA9_1_cmd
-      FA9_1_bSpeed : Word;   // FA9_1_bSpeed
+      FA9_1_Speed : Word;   // FA9_1_Speed
       J11 : DWord;   // FA10------------------------------------------------------
       K15 : DWord;   // FA10
       FA10_1_cmd : Word;   // FA10_1_cmd
-      FA10_1_bSpeed : Word;   // FA10_1_bSpeed
+      FA10_1_Speed : Word;   // FA10_1_Speed
       f11 : DWord;   // FA28------------------------------------------------
       g15 : DWord;   // FA28
       FA28_1_cmd : Word;   // FA28_1_cmd
-      FA28_1_bSpeed : Word;   // FA28_1_bSpeed
+      FA28_1_Speed : Word;   // FA28_1_Speed
       N5 : Word;
       O5 : Word;
       temp_1 : DWord;
