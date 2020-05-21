@@ -78,23 +78,21 @@ TITLE = IF FAULT (OR ALARM) - RESET FAULT
 
 NETWORK
 TITLE = Если Мотор ОК - и надо ехать - ЗАПУСК
-      A #Motor_X_OK;
-      AN #Stop_sensor;
-      AN "Error_Global";
       A(                       ;// авто
       A "Auto";
-      AN "Manual";
       A "System_started";
       A #Motor_X_AUTO_START;
       );
-      O(;// ручной
-      AN "Auto";
+      O(                       ;// ручной
       A "Manual";
       A #Motor_X_MANUAL_START;
       );
+      A #Motor_X_OK;
+      AN #Stop_sensor;
+      AN "Error_Global";
+
       = %L3.0              ;//SWITCH ON
-    //=     %L3.0
-  //  =     %L2.3
+
       A %L3.0;
       A #REVERS;
       = %L3.4              ;//REVERS FEED
