@@ -12,8 +12,10 @@ TITLE = RTK1 FA1_1
       = "Manual";
       = "RTK1_MAN";
 
+
       AN "RTK1_OK";
-      = "StopSw";
+      SET;
+      R "StopSw";
 
       A(;
       A "FA1_TO_PRESS";
@@ -30,6 +32,7 @@ TITLE = RTK1 FA1_1
       S "FA1_1_reversmode";
       A "FA1_TO_PRESS";
       A "Manual1";
+      O "Auto1";
       R "FA1_1_reversmode";
 
 
@@ -68,6 +71,7 @@ TITLE = RTK1 FA2_1
 
       A "FA2_FROM_PRESS";
       A "Manual1";
+      O "Auto1";
       S "FA2_1_reversmode";
       A "FA2_TO_PRESS";
       A "Manual1";
@@ -106,6 +110,7 @@ TITLE = RTK1 FA3_1
 
       A "FA3_FROM_PRESS";
       A "Manual1";
+      O "Auto1";
       S "FA3_1_reversmode";
       A "FA3_TO_PRESS";
       A "Manual1";
@@ -279,8 +284,8 @@ TITLE = RTK3 FA6_1
       = "Manual";
       = "RTK3_MAN";
 
-      AN "RTK3_OK";
-      = "StopSw";
+//      AN    "RTK3_OK"
+//     =     "StopSw"
 
 
 
@@ -385,8 +390,8 @@ TITLE = RTK4 FA9_1
       = "Manual";
       = "RTK4_MAN";
 
-      AN "RTK4_OK";
-      = "StopSw";
+//      AN    "RTK4_OK"
+//      =     "StopSw"
 
 
       A(;
