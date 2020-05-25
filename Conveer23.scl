@@ -34,7 +34,7 @@ BEGIN
 	                        ET=>#stop_box_time);
 	
 	
-	"GEN_CounterInteger"(DB_Counter:= "DB_Counters",
+	"00_CounterInteger"(DB_Counter:= "DB_Counters",
 	                     FirstByte:= 0,
 	                     SetValue:= "DB_Counters".SW23.SP,
 	                     Count:= "SW23_1",
