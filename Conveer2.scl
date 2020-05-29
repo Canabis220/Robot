@@ -38,6 +38,12 @@ BEGIN
 	            "Conveer_status"."02_step" := 30;
 	        END_IF;
 	        
+	        IF "SW2_1" = TRUE  THEN
+	            //если на входе нет, тогда сброс
+	            "Conveer_status"."02_step" := 0;
+	        END_IF;
+	        
+	        
 	        ;
 	    30://загружаем
 	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
