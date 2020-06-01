@@ -6,7 +6,7 @@ BEGIN
 NETWORK
 TITLE = RTK1
 
-   // CALL  "Conveer1"
+      CALL "Conveer1";
       CALL "Conveer2";
       CALL "Conveer3";
       CALL "Conveer23";
@@ -30,9 +30,9 @@ TITLE = RTK3
 
 NETWORK
 TITLE = RTK4
-//      CALL  "Conveer9"
-//     CALL  "Conveer10"
-//     CALL  "Conveer28"
+      CALL "Conveer9";
+      CALL "Conveer10";
+      CALL "Conveer28";
 
 
 END_FUNCTION
