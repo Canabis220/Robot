@@ -37,7 +37,7 @@ BEGIN
 	
 	
 	"00_CounterInteger"(DB_Counter:= "DB_Counters",
-	                     FirstByte:= 0,
+	                     FirstByte:= 36,
 	                     SetValue:= "DB_Counters".SW28.SP,
 	                     Count:= "SW28.1",
 	                     ValueIncrement:= 1,
