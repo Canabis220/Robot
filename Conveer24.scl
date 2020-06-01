@@ -1,0 +1,60 @@
+﻿FUNCTION "Conveer24" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_TEMP 
+      run : Bool;
+      error : Bool;
+      form : Bool;
+      formLeft : Bool;
+      formRight : Bool;
+      sensorCount : Bool;
+      sensorBrake : Bool;
+      Brake : Bool;
+      workRight : Bool;
+      workLeft : Bool;
+      FlowLeft : Bool;
+      cutoff : Bool;
+      "counter" : Int;
+      quantityLeft : Int;
+      quantityRight : Int;
+      stop_box_time : Time;
+   END_VAR
+
+
+BEGIN
+	
+	
+	"DB_Counters".SW24.GEAR := TRUE;
+	"DB_Counters".SW24.SP := 4;
+	"DB_Counters".SW24.RESET := FALSE;
+	
+	"FA24_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	
+	"IEC_Timer_24tr_DB".TON(IN:=#sensorBrake,
+	                        PT:=T#3s,
+	                        Q=>#Brake,
+	                        ET=>#stop_box_time);
+	                        
+	
+	                        
+	// IF "Robot14".FDO00 = TRUE THEN
+	"DB_Counters".SW24.RESET := "Robot14".FDO00;
+	//END_IF;
+	
+	"00_CounterInteger"(DB_Counter:= "DB_Counters",
+	                     FirstByte:= 6,
+	                     SetValue:= "DB_Counters".SW24.SP,
+	                     Count:= "SW24_2",
+	                     ValueIncrement:= 1,
+	                     CountCurrent:= "DB_Counters".SW24.ACT);
+	
+	 
+	 "KA24_1" := "SW24_2";
+	 IF "DB_Counters".SW24.SET_OK THEN
+	     "KA24_1" := TRUE;
+	 END_IF;
+	
+	
+	
+END_FUNCTION
+
