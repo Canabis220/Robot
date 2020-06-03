@@ -25,8 +25,19 @@ BEGIN
 	
 	
 	"DB_Counters".SW24.GEAR := TRUE;
-	"DB_Counters".SW24.SP := 4;
 	"DB_Counters".SW24.RESET := FALSE;
+	
+	
+	IF "Robot12".FDO23 //если крайний то по 8
+	THEN
+	    "DB_Counters".SW24.SP := 8;
+	    "KA24_2_auto":=TRUE;
+	ELSE
+	    "DB_Counters".SW24.SP := 10;//обычно по 10
+	    "KA24_2_auto":=FALSE;
+	END_IF;
+	
+	
 	
 	"FA24_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	
@@ -37,24 +48,30 @@ BEGIN
 	                        
 	
 	                        
-	// IF "Robot14".FDO00 = TRUE THEN
-	"DB_Counters".SW24.RESET := "Robot14".FDO00;
-	//END_IF;
+	
+	"DB_Counters".SW24.RESET := "Robot12".FDO01;
+	"Robot12".TDI01 := "DB_Counters".SW24.SET_OK;
+	
 	
 	"00_CounterInteger"(DB_Counter:= "DB_Counters",
 	                     FirstByte:= 6,
 	                     SetValue:= "DB_Counters".SW24.SP,
-	                     Count:= "SW24_2",
+	                     Count:= "SW24_1",
 	                     ValueIncrement:= 1,
 	                     CountCurrent:= "DB_Counters".SW24.ACT);
 	
 	 
-	 "KA24_1" := "SW24_2";
+	 "KA24_1_auto" := "SW24_1";
 	 IF "DB_Counters".SW24.SET_OK THEN
-	     "KA24_1" := TRUE;
+	     "KA24_1_auto" := TRUE;
 	 END_IF;
 	
-	
+	 IF "Auto1" THEN
+	     "KA24_1" := "KA24_1_auto";
+	     "KA24_2" := "KA24_2_auto";
+	 END_IF;
+	 
+	 
 	
 END_FUNCTION
 
