@@ -3,83 +3,57 @@
 VERSION : 0.1
 
 BEGIN
+	IF NOT "KA1.3" THEN
+	    SET(S_BIT := "FA1_Pause",
+	        N := 1);
+	END_IF;
+	                
+	IF "KA1_2" OR "KA1_1" THEN
+	    RESET(S_BIT := "FA1_Pause",
+	          N := 1);
+	END_IF;
+	
+	"FA1_reversAuto" := FALSE;
+	
 	CASE "Conveer_status"."01_step" OF//db6.dbw0 
 	    0://стоп
 	        "FA1_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
 	        
-	        IF "SW1_2"= TRUE AND "SW1_3" = TRUE THEN //если на входе нет и на выходе нет, тогда другой шаг
-	            "Conveer_status"."01_step":=10;
-	        END_IF;
-	        IF "SW1_2" = FALSE AND "SW1_3" = TRUE THEN //если на входе есть и на выходе нет, тогда другой шаг
-	            "Conveer_status"."01_step" := 20;
-	        END_IF;
-	        
-	        ;
-	    10://нет на входе
-	        "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW1_2" = FALSE AND "KA1_1" = TRUE THEN //если на входе есть и кнопка "новые палеты положили", то след шаг
-	            "Conveer_status"."01_step" := 20;
+	        IF "KA1_1"  //если кнопка к_роботу
+	            AND NOT "Robot12".TDI13 //и нет блокировки
+	        THEN
+	            "Conveer_status"."01_step":=30;
 	        END_IF;
 	        
-	        ;
-	    20://есть на входе и не готово
-	        "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW1_2"= FALSE AND "SW1_3" = TRUE THEN //если на входе есть а на выходе нет, тогда загружаем
-	            "Conveer_status"."01_step" := 30;
-	        END_IF;
-	        
-	        ;
-	    30://загружаем
-	        IF "SW1_1" = TRUE AND "Robot12".TDI13 = FALSE THEN //если кара уехала и не заблокирована смена стопки паллет
-	            "FA1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
-	        ELSE    //если кара близко или заблокирована смена стопки паллет
-	            "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        END_IF;
-	        
-	        IF "SW1_3" = FALSE THEN //если  на выходе есть, тогда проверка
-	            "Conveer_status"."01_step" := 40;
-	        END_IF;
-	        ;
-	    40://подсчет и проверка
-	        "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW1_3" = FALSE THEN //если  на выходе есть, то все проверили
-	            "Conveer_status"."01_step" := 50;
-	        END_IF;
-	        
-	        ;
-	    50://выполненно
-	        "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "Robot12".TDI13 = TRUE THEN //если робот заблокировал смену то он забирает паллету
-	            "Conveer_status"."01_step" := 60;
-	        END_IF;
-	        IF "KA1_2" = TRUE THEN //если возврат паллет
+	        IF "KA1_2"//если кнопка от_робота
+	            AND NOT "Robot12".TDI13 //и нет блокировки
+	        THEN 
 	            "Conveer_status"."01_step" := 70;
 	        END_IF;
 	        
-	        ;
-	    60://забирают
-	        "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "Robot12".FDO13 = TRUE THEN //если робот забрал
-	            "Conveer_status"."01_step" := 0;
-	        END_IF;
-	         
-	        ;
+	     
+	    30://к роботу
+	        "FA1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA1_reversAuto" := FALSE;// реверс к роботу   
 	        
-	    70://возврат
-	        IF "SW1_1" = TRUE AND "Robot12".TDI13 = FALSE THEN //если кара уехала и не заблокирована смена стопки паллет
-	            "FA1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
-	            //добавить реверс!!!!!!
-	        ELSE    //если кара близко или заблокирована смена стопки паллет
-	            "FA1_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        IF     NOT "SW1_1"//если кара
+	            OR NOT "KA1.3"// или кнопка СТОП
+	            OR NOT "SW1_3"// или приехали
+	        THEN 
+	            "Conveer_status"."01_step" := 0;//стоп
 	        END_IF;
 	        
-	        IF "SW1_2" = FALSE THEN //если  на входе есть, тогда проверка
-	            "Conveer_status"."01_step" := 40;
-	        END_IF;
-	        ;
+	    70://от робота
+	        "FA1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA1_reversAuto" := TRUE;// реверс к роботу   
 	        
-	        ;
-	    ELSE:
+	        IF     NOT "SW1_1"//если кара
+	            OR NOT "KA1.3"// или кнопка СТОП
+	            OR NOT"SW1_2"// или приехали
+	        THEN
+	            "Conveer_status"."01_step" := 0;//стоп
+	        END_IF;
+	      ELSE:
 	        ;
 	END_CASE;
 	    
