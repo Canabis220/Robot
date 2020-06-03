@@ -27,14 +27,19 @@ TITLE = RTK1 FA1_1
       );
       = "FA1_1_manual_start";
 
-      A "FA1_FROM_PRESS";
-      A "Manual1";
-      S "FA1_1_reversmode";
-      A "FA1_TO_PRESS";
-      A "Manual1";
-      O "Auto1";
-      R "FA1_1_reversmode";
 
+
+      A "FA1_FROM_PRESS";
+      AN "FA1_TO_PRESS";
+      = "FA1_reversManu";
+
+      A "Manual1";
+      A "FA1_reversManu";
+      O(;
+      A "Auto1";
+      A "FA1_reversAuto";
+      );
+      = "FA1_1_reversmode";
 
 
 
@@ -390,8 +395,8 @@ TITLE = RTK4 FA9_1
       = "Manual";
       = "RTK4_MAN";
 
-//      AN    "RTK4_OK"
-//      =     "StopSw"
+      AN "RTK4_OK";
+      = "StopSw";
 
 
       A(;
