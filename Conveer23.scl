@@ -23,8 +23,17 @@ VERSION : 0.1
 
 BEGIN
 	"DB_Counters".SW23.GEAR := TRUE;
-	"DB_Counters".SW23.SP := 4;
 	"DB_Counters".SW23.RESET := FALSE;
+	
+	
+	IF "Robot12".FDO22 //если крайний то по 8
+	THEN
+	    "DB_Counters".SW23.SP := 8;
+	ELSE
+	    "DB_Counters".SW23.SP := 10;//обычно по 10
+	END_IF;
+	
+	
 	
 	"FA23_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	
@@ -34,7 +43,8 @@ BEGIN
 	                        ET=>#stop_box_time);
 	
 	// IF "Robot14".FDO00 = TRUE THEN
-	"DB_Counters".SW23.RESET := "Robot14".FDO00;
+	"DB_Counters".SW23.RESET := "Robot12".FDO00;
+	"Robot12".TDI00 := "DB_Counters".SW23.SET_OK;
 	//END_IF;
 	
 	"00_CounterInteger"(DB_Counter:= "DB_Counters",
@@ -45,12 +55,16 @@ BEGIN
 	                     CountCurrent:= "DB_Counters".SW23.ACT);
 	
 	 
-	 "KA23_1" := "SW23_2";
+	 "KA23_1_auto" := "SW23_2";
 	 IF "DB_Counters".SW23.SET_OK THEN
-	     "KA23_1" := TRUE;
+	     "KA23_1_auto" := TRUE;
 	 END_IF;
 	
-	
+	 IF "Auto1" THEN
+	     "KA23_1" := "KA23_1_auto";
+	    
+	 END_IF;
+	 
 	 
 	CASE "Conveer_status"."23_step" OF//db6.dbw0 
 	    0://стоп
