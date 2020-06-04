@@ -1,0 +1,28 @@
+﻿FUNCTION "SICK" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = режим ручной
+      A "Manual1";
+      O "HalfManual1";
+      = "RTK1_MAN";
+
+      A "Manual2";
+      O "HalfManual2";
+      = "RTK2_MAN";
+
+      A "Manual3";
+      O "HalfManual3";
+      = "RTK3_MAN";
+
+      A "Manual4";
+      O "HalfManual4";
+//    O     "Auto4"
+      = "RTK4_MAN";
+
+
+
+END_FUNCTION
+
