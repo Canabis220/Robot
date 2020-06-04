@@ -34,6 +34,8 @@ BEGIN
 	//                         ET=>#stop_box_time);
 	
 	"DB_Counters".SW28.RESET := "Robot18".FDO00;
+	"KA31_3" := "m302_0";
+	"KA31_4" := "m302_1";
 	
 	
 	"00_CounterInteger"(DB_Counter:= "DB_Counters",
