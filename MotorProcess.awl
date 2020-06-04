@@ -8,14 +8,10 @@ TITLE = RTK1 FA1_1
       A "Auto1";
       = "Auto";
       = "System_started";
+
       A "Manual1";
+      O "HalfManual1";
       = "Manual";
-      = "RTK1_MAN";
-
-
-      AN "RTK1_OK";
-      SET;
-      R "StopSw";
 
       A(;
       A "FA1_TO_PRESS";
@@ -33,10 +29,10 @@ TITLE = RTK1 FA1_1
       AN "FA1_TO_PRESS";
       = "FA1_reversManu";
 
-      A "Manual1";
+      A "Manual";
       A "FA1_reversManu";
       O(;
-      A "Auto1";
+      A "Auto";
       A "FA1_reversAuto";
       );
       = "FA1_1_reversmode";
@@ -75,11 +71,11 @@ TITLE = RTK1 FA2_1
       = "FA2_1_manual_start";
 
       A "FA2_FROM_PRESS";
-      A "Manual1";
-      O "Auto1";
+      A "Manual";
+      O "Auto";
       S "FA2_1_reversmode";
       A "FA2_TO_PRESS";
-      A "Manual1";
+      A "Manual";
       R "FA2_1_reversmode";
 
 
@@ -114,11 +110,11 @@ TITLE = RTK1 FA3_1
       = "FA3_1_manual_start";
 
       A "FA3_FROM_PRESS";
-      A "Manual1";
-      O "Auto1";
+      A "Manual";
+      O "Auto";
       S "FA3_1_reversmode";
       A "FA3_TO_PRESS";
-      A "Manual1";
+      A "Manual";
       R "FA3_1_reversmode";
 
 
@@ -181,13 +177,10 @@ TITLE = RTK2 FA4_1
       A "Auto2";
       = "Auto";
       = "System_started";
+
       A "Manual2";
+      O "HalfManual2";
       = "Manual";
-      = "RTK2_MAN";
-
-      AN "RTK2_OK";
-      = "StopSw";
-
 
 
 
@@ -285,12 +278,12 @@ TITLE = RTK3 FA6_1
       A "Auto3";
       = "Auto";
       = "System_started";
-      A "Manual3";
-      = "Manual";
-      = "RTK3_MAN";
 
-//      AN    "RTK3_OK"
-//     =     "StopSw"
+      A "Manual3";
+      O "HalfManual3";
+      = "Manual";
+
+
 
 
 
@@ -392,11 +385,9 @@ TITLE = RTK4 FA9_1
       = "Auto";
       = "System_started";
       A "Manual4";
+      O "HalfManual4";
       = "Manual";
-      = "RTK4_MAN";
 
-      AN "RTK4_OK";
-      = "StopSw";
 
 
       A(;
@@ -410,11 +401,26 @@ TITLE = RTK4 FA9_1
       = "FA9_1_manual_start";
 
       A "FA9_FROM_PRESS";
-      A "Manual4";
+      A "Manual";
       S "FA9_1_reversmode";
       A "FA9_TO_PRESS";
-      A "Manual4";
+      A "Manual";
       R "FA9_1_reversmode";
+
+
+
+      A "FA9_FROM_PRESS";
+      AN "FA9_TO_PRESS";
+      = "FA9_reversManu";
+
+      A "Manual";
+      A "FA9_reversManu";
+      O(;
+      A "Auto";
+      A "FA9_reversAuto";
+      );
+      = "FA9_1_reversmode";
+
 
 
       CALL "00_Motors_control"
@@ -447,10 +453,10 @@ TITLE = RTK4 FA10_1
       = "FA10_1_manual_start";
 
       A "FA10_FROM_PRESS";
-      A "Manual4";
+      A "Manual";
       S "FA10_1_reversmode";
       A "FA10_TO_PRESS";
-      A "Manual4";
+      A "Manual";
       R "FA10_1_reversmode";
 
 
