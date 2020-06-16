@@ -3,6 +3,10 @@
 VERSION : 0.1
 
 BEGIN
+	IF "resetSW2" THEN
+	    "Conveer_status"."02_step" := 0;
+	END_IF;
+	
 	CASE "Conveer_status"."02_step" OF//
 	    0://стоп
 	        "FA2_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
@@ -10,7 +14,7 @@ BEGIN
 	        IF "SW2_1"= true AND "SW2_3" = true THEN //если на входе нет и на выходе нет, тогда другой шаг
 	            "Conveer_status"."02_step":=10;
 	        END_IF;
-	        IF "SW2_1" = false AND "SW2_3" = true THEN //если на входе есть и на выходе нет, тогда другой шаг
+	        IF "SW2_1" = false  THEN //если на входе есть , тогда другой шаг
 	            "Conveer_status"."02_step" := 20;
 	        END_IF;
 	        
