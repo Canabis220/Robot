@@ -3,6 +3,10 @@
 VERSION : 0.1
 
 BEGIN
+	IF "resetSW3" THEN
+	    "Conveer_status"."03_step" := 0;
+	END_IF;
+	
 	CASE "Conveer_status"."03_step" OF//db6.dbw0 
 	    0://стоп
 	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
@@ -34,6 +38,10 @@ BEGIN
 	        IF "SW3_1" =FALSE AND "SW3_3" = TRUE AND "Robot12".FDO10 = TRUE THEN
 	            //если на входе есть, на выходе нет и робот закончил, тогда загружаем
 	            "Conveer_status"."03_step" := 30;
+	        END_IF;
+	        IF "SW3_1" = TRUE THEN
+	            //если на входе нет, тогда сброс
+	            "Conveer_status"."03_step" := 0;
 	        END_IF;
 	        
 	        ;
