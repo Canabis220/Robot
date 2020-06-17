@@ -10,10 +10,14 @@ BEGIN
 	CASE "Conveer_status"."02_step" OF//
 	    0://стоп
 	        "FA2_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA2_2_AUTO" := FALSE; //не фиксировать
 	        
-	        IF "SW2_1"= true AND "SW2_3" = true THEN //если на входе нет и на выходе нет, тогда другой шаг
+	        
+	        IF "SW2_1"= true  THEN //если на входе нет, тогда другой шаг
 	            "Conveer_status"."02_step":=10;
 	        END_IF;
+	        
 	        IF "SW2_1" = false  THEN //если на входе есть , тогда другой шаг
 	            "Conveer_status"."02_step" := 20;
 	        END_IF;
@@ -75,7 +79,10 @@ BEGIN
 	        ;
 	    50://выполненно
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW2_4" = FALSE OR "SW2_3" = true THEN //если кара то она забирает паллету
+	        IF "SW2_4" = FALSE
+	            OR "SW2_3" = true
+	            OR "SW2_1" = FALSE
+	        THEN //если кара то она забирает паллету
 	            "Conveer_status"."02_step" := 0;// не будем ждать пока заберут, робота нужно обслуживать
 	        END_IF;
 	       
