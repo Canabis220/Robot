@@ -23,43 +23,51 @@ VERSION : 0.1
 
 BEGIN
 	
-	
+	"FA24_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	"DB_Counters".SW24.GEAR := TRUE;
-	"DB_Counters".SW24.RESET := FALSE;
+	//"DB_Counters".SW24.RESET := FALSE;
 	
 	
-	IF "Robot12".FDO23 //если крайний то по 8
+	
+	IF "Robot12".FDO23  //поршень разворота по команде робота "разверни"
 	THEN
-	    "DB_Counters".SW24.SP := 8;
-	    "KA24_2_auto":=TRUE;
+	    "KA24_2_auto":=false;
 	ELSE
-	    "DB_Counters".SW24.SP := 10;//обычно по 10
-	    "KA24_2_auto":=FALSE;
+	    "KA24_2_auto":=TRUE;
 	END_IF;
 	
 	
 	
-	"FA24_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	
-	"IEC_Timer_24tr_DB".TON(IN:=#sensorBrake,
-	                        PT:=T#3s,
-	                        Q=>#Brake,
-	                        ET=>#stop_box_time);
-	                        
-	
-	                        
-	
-	"DB_Counters".SW24.RESET := "Robot12".FDO01;
-	"Robot12".TDI01 := "DB_Counters".SW24.SET_OK;
+	//"Robot12".TDI01 := "DB_Counters".SW24.SET_OK;
 	
 	
-	"00_CounterInteger"(DB_Counter:= "DB_Counters",
+	"00_CounterInteger"(DB_Counter:= "DB_Counters", //считаем бутылки
 	                     FirstByte:= 6,
 	                     SetValue:= "DB_Counters".SW24.SP,
 	                     Count:= "SW24_1",
 	                     ValueIncrement:= 1,
 	                     CountCurrent:= "DB_Counters".SW24.ACT);
 	
+	 "DB_Counters".SW24.RESET := "Robot12".FDO01; //сброс счета по команде робота "забрал"
+	 
+	
+	"IEC_Timer_24tr_DB".TON(IN := "DB_Counters".SW24.SET_OK,//задержка перед командой "готово" чтоб доехала бутылка
+	                        PT := T#4s,
+	                        Q => "Robot12".TDI01,
+	                        ET => #stop_box_time);
+	
+	
+	IF "Robot12".FDO01 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	    IF "Robot12".FDO23 //если крайний то по 8
+	    THEN
+	        "DB_Counters".SW24.SP := 8;
+	        
+	    ELSE
+	        "DB_Counters".SW24.SP := 10;//обычно по 10
+	        
+	    END_IF;
+	END_IF;
 	 
 	 "KA24_1_auto" := "SW24_1";
 	 IF "DB_Counters".SW24.SET_OK THEN
