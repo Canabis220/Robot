@@ -90,7 +90,7 @@ TITLE = DI8 Наличие вакуума в присоске(объект за�
 
 NETWORK
 TITLE = DI12 Наличие стопки паллет
-      A "SW1_3";
+      AN "SW1_3";
       = "Robot12".TDI12;
 
 
@@ -145,7 +145,7 @@ TITLE = Hold временный останов
       O "Manual1";
       O(;
       A "Auto1";
-      A "System_started";
+ //   A     "System_started"
       );
       = "Robot12".UI2;
 END_FUNCTION
