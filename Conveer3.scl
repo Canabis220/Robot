@@ -14,7 +14,7 @@ BEGIN
 	        IF "SW3_1" = TRUE AND "SW3_3" = TRUE THEN //если на входе нет и на выходе нет, тогда другой шаг
 	            "Conveer_status"."03_step" := 10;
 	        END_IF;
-	        IF "SW3_1" = FALSE AND "SW3_3" = TRUE THEN //если на входе есть и на выходе нет, тогда другой шаг
+	        IF "SW3_1" = FALSE  THEN //если на входе есть и на выходе нет, тогда другой шаг
 	            "Conveer_status"."03_step" := 20;
 	        END_IF;
 	        
