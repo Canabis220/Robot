@@ -22,123 +22,52 @@ VERSION : 0.1
 
 
 BEGIN
+	"FA23_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	//"DB_Counters".SW23.RESET := FALSE;
 	"DB_Counters".SW23.GEAR := TRUE;
-	"DB_Counters".SW23.RESET := FALSE;
+	
+	"00_CounterInteger"(DB_Counter := "DB_Counters", //счетчик бутылок для ряда
+	                    FirstByte := 0,
+	                    SetValue := "DB_Counters".SW23.SP,
+	                    Count := "SW23_2",
+	                    ValueIncrement := 1,
+	                    CountCurrent := "DB_Counters".SW23.ACT);
 	
 	
-	IF "Robot12".FDO22 //если крайний то по 8
+	
+	
+	"IEC_Timer_23tr_DB".TON(IN := "DB_Counters".SW23.SET_OK,//выполненно с задержкой чтоб доехала последняя бутылка
+	                        PT := T#3s,
+	                        Q => "Robot12".TDI00,
+	                        ET => #stop_box_time);
+	
+	
+	
+	IF "Robot12".FDO22 AND "Robot12".FDO00//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
 	THEN
-	    "DB_Counters".SW23.SP := 8;
+	    "DB_Counters".SW23.SP := 5;
 	ELSE
-	    "DB_Counters".SW23.SP := 10;//обычно по 10
+	    "DB_Counters".SW23.SP := 6;//обычно по 6
 	END_IF;
 	
 	
 	
-	"FA23_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	
-	"IEC_Timer_23tr_DB".TON(IN:=#sensorBrake,
-	                        PT:=T#3s,
-	                        Q=>#Brake,
-	                        ET=>#stop_box_time);
 	
-	// IF "Robot14".FDO00 = TRUE THEN
-	"DB_Counters".SW23.RESET := "Robot12".FDO00;
-	"Robot12".TDI00 := "DB_Counters".SW23.SET_OK;
-	//END_IF;
 	
-	"00_CounterInteger"(DB_Counter:= "DB_Counters",
-	                     FirstByte:= 0,
-	                     SetValue:= "DB_Counters".SW23.SP,
-	                     Count:= "SW23_2",
-	                     ValueIncrement:= 1,
-	                     CountCurrent:= "DB_Counters".SW23.ACT);
+	//"DB_Counters".SW23.RESET := "Robot12".FDO00;//сброс счетчика по команде робота "забрал"
+	
 	
 	 
-	 "KA23_1_auto" := "SW23_2";
-	 IF "DB_Counters".SW23.SET_OK THEN
+	 "KA23_1_auto" := "SW23_2";//тормозим каждую бутылку чтоб счетчик видел пробелы между бутылками
+	 IF "DB_Counters".SW23.SET_OK THEN //если досчитали то больше не пускаем
 	     "KA23_1_auto" := TRUE;
 	 END_IF;
 	
 	 IF "Auto1" THEN
-	     "KA23_1" := "KA23_1_auto";
-	    
+	     "KA23_1" := "KA23_1_auto";// тормоз бутылок работает только в автомате
 	 END_IF;
 	 
-	 
-	CASE "Conveer_status"."23_step" OF//db6.dbw0 
-	    0://стоп
-	        
-	        
-	        IF "SW3_1"= FALSE AND "SW3_3" = FALSE THEN //если на входе нет коробок
-	            "Conveer_status"."23_step":=10;
-	        END_IF;
-	        IF "SW3_1" = TRUE AND "SW3_3" = FALSE THEN //если на входе есть коробки
-	            "Conveer_status"."23_step" := 20;
-	        END_IF;
-	        
-	        ;
-	    10://нет на входе
-	        
-	        
-	        
-	        IF "SW3_1" = TRUE AND "Robot12".FDO03 = TRUE THEN //если на входе есть коробки
-	            "Conveer_status"."23_step" := 20;
-	        END_IF;
-	        
-	        ;
-	    20://есть на входе и не готово
-	        
-	        
-	        
-	        IF "SW3_1"= TRUE AND "SW3_3" = FALSE AND "Robot12".FDO11 = TRUE THEN
-	            //если стопор чегото там
-	            "Conveer_status"."23_step" := 30;
-	        END_IF;
-	        
-	        ;
-	    30://загружаем
-	        
-	        
-	          
-	        IF "SW3_3" = TRUE THEN //если  счетчик досчитал
-	            "Conveer_status"."23_step" := 40;
-	        END_IF;
-	        ;
-	    40://подсчет и проверка
-	        
-	        
-	        
-	        IF "SW3_3" = TRUE THEN //если  проверка успешна
-	            "Conveer_status"."23_step" := 50;
-	        END_IF;
-	        
-	        ;
-	    50://выполненно
-	        
-	        
-	        IF "SW3_4" = FALSE OR "SW3_3" = FALSE THEN //если кара то она забирает паллету
-	            "Conveer_status"."23_step" := 0;// не будем ждать пока заберут, робота нужно обслуживать
-	        END_IF;
-	        
-	        ;
-	    60://забирают
-	        
-	        
-	        IF "SW3_4" = TRUE OR "SW3_3" = FALSE OR "SW3_1" = TRUE THEN //если кара или забрали или поставили то
-	            "Conveer_status"."23_step" := 0;
-	        END_IF;
-	         
-	        ;
-	        
-	    70://возврата нет
-	               "Conveer_status"."23_step" := 0;
-	        ;
-	        
-	        ;
-	    ELSE:
-	        ;
-	END_CASE;
-	    
+	
 END_FUNCTION
 
