@@ -22,9 +22,6 @@ VERSION : 0.1
 
 
 BEGIN
-	"DB_Counters".SW28.GEAR := TRUE;
-	"DB_Counters".SW28.SP := 4;
-	"DB_Counters".SW28.RESET := FALSE;
 	
 	"FA28_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	
@@ -33,17 +30,44 @@ BEGIN
 	//                         Q=>#Brake,
 	//                         ET=>#stop_box_time);
 	
-	"DB_Counters".SW28.RESET := "Robot18".FDO00;
-	"KA31_3" := "m302_0";
-	"KA31_4" := "m302_1";
+	IF "Auto4" THEN
+	    "KA31_2" := "Robot18".FDO00;//сброс елеватора по команде робота "забрал"
+	    "Robot18".TDI00 := "SW31_1";//готово от елеватора роботу
+	END_IF;
 	
 	
-	"00_CounterInteger"(DB_Counter:= "DB_Counters",
-	                     FirstByte:= 36,
-	                     SetValue:= "DB_Counters".SW28.SP,
-	                     Count:= "SW28.1",
-	                     ValueIncrement:= 1,
-	                     CountCurrent:= "DB_Counters".SW28.ACT);
+	//IF "Robot18".FDO00 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	    IF "Robot18".FDO22 //если крайний то по 3
+	    THEN
+	       "KA31_3" := FALSE;//слои
+	        "KA31_4" := TRUE;//слои
+	       
+	        
+	    ELSE
+	        "KA31_3" := TRUE;//слои
+	        "KA31_4" := TRUE;//слои
+	        
+	        
+	    END_IF;
+	//END_IF;
+	
+	
+	IF "Manual4" THEN
+	    "KA31_3" := "m302_0";//слои
+	    "KA31_4" := "m302_1";//слои
+	END_IF;
+	
+	
+	//"DB_Counters".SW28.GEAR := TRUE;
+	//"DB_Counters".SW28.SP := 4;
+	//"DB_Counters".SW28.RESET := FALSE;
+	
+	//"00_CounterInteger"(DB_Counter:= "DB_Counters",
+	//                     FirstByte:= 36,
+	//                     SetValue:= "DB_Counters".SW28.SP,
+	//                     Count:= "SW28.1",
+	//                     ValueIncrement:= 1,
+	//                     CountCurrent:= "DB_Counters".SW28.ACT);
 	
 	
 	"KA28.1" := "SW28.2";
