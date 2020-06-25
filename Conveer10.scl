@@ -3,14 +3,22 @@
 VERSION : 0.1
 
 BEGIN
+	IF "resetSW10" THEN
+	    "Conveer_status"."10_step" := 0;
+	END_IF;
+	
+	
+	
 	CASE "Conveer_status"."10_step" OF//
 	    0://стоп
 	        "FA10_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        "KA10_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA10_2_AUTO" := FALSE; //не фиксировать
 	        
-	        IF "SW10_1"= TRUE AND "SW10_3" = TRUE THEN //если на входе нет и на выходе нет, тогда другой шаг
+	        IF "SW10_1"= TRUE  THEN //если на входе нет , тогда другой шаг
 	            "Conveer_status"."10_step":=10;
 	        END_IF;
-	        IF "SW10_1" = FALSE AND "SW10_3" = TRUE THEN //если на входе есть и на выходе нет, тогда другой шаг
+	        IF "SW10_1" = FALSE  THEN //если на входе есть, тогда другой шаг
 	            "Conveer_status"."10_step" := 20;
 	        END_IF;
 	        
@@ -35,6 +43,10 @@ BEGIN
 	        IF "SW10_1"= FALSE AND "SW10_3" = TRUE AND "Robot18".FDO10 = TRUE THEN
 	            //если на входе есть, на выходе нет и робот закончил, тогда загружаем
 	            "Conveer_status"."10_step" := 30;
+	        END_IF;
+	        IF "SW10_1" = TRUE THEN
+	            //если на входе нет, тогда сброс
+	            "Conveer_status"."10_step" := 0;
 	        END_IF;
 	        
 	        ;
