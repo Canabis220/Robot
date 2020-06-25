@@ -19,7 +19,7 @@ TITLE = режим ручной
 
       A "Manual4";
       O "HalfManual4";
-//    O     "Auto4"
+      O "Auto4";
       = "RTK4_MAN";
 
 
