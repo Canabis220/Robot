@@ -145,7 +145,7 @@ TITLE = Hold временный останов
       O "Manual1";
       O(;
       A "Auto1";
- //   A     "System_started"
+      A "RTK1_OK";
       );
       = "Robot12".UI2;
 END_FUNCTION
