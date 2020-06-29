@@ -161,7 +161,7 @@ TITLE = RTK1 FA24_1
          Motor_X_Input_2             := "PN-INPUT".FA24_1_BSpeed , 
          Motor_X_AUTO_START          := "FA24_1_auto_start" , 
          Motor_X_MANUAL_START        := "FA24_1_manual_start" , 
-         Motor_X_SPEED               := 16#0580 , 
+         Motor_X_SPEED               := 16#0620 , 
          Stop_sensor                 := "StopSw" , 
          PRESS_RESET_ERROR_BUTTON    := "Press_Reset_Button" , 
          REVERS                      := 0 , 
@@ -182,6 +182,23 @@ TITLE = RTK2 FA4_1
       O "HalfManual2";
       = "Manual";
 
+      A(;
+      A "FA4_TO_PRESS";
+      A "SW4_1";
+      );
+      O(;
+      A "FA4_FROM_PRESS";
+      A "SW4_3";
+      );
+      = "FA4_1_manual_start";
+
+      A "FA4_FROM_PRESS";
+      A "Manual";
+      O "Auto";
+      R "FA4_1_reversmode";
+      A "FA4_TO_PRESS";
+      A "Manual";
+      S "FA4_1_reversmode";
 
 
       CALL "00_Motors_control"
@@ -202,6 +219,33 @@ TITLE = RTK2 FA4_1
 
 NETWORK
 TITLE = RTK2 FA5_1
+      A(;
+      A "FA5_TO_PRESS";
+      A "SW5_3";
+      );
+      O(;
+      A "FA5_FROM_PRESS";
+      A "SW5_2";
+      );
+      = "FA5_1_manual_start";
+
+
+
+      A "FA5_FROM_PRESS";
+      AN "FA5_TO_PRESS";
+      = "FA5_reversManu";
+
+      A "Manual";
+      A "FA5_reversManu";
+      O(;
+      A "Auto";
+      A "FA5_reversAuto";
+      );
+      = "FA5_1_reversmode";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA5_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA5_1_BSpeed , 
