@@ -1,0 +1,687 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<Tagtable name='Default tag table'>
+  <!-- exported by 'Totally Integrated Automation Portal' version 1500.1.301.1   © 2004-2016 Siemens AG - all rights reserved -->
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I0.0'>SW1_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет в буфере' addr='%I2.0'>SW1_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет для работа' addr='%I0.1'>SW1_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Паллеты готовы' addr='%I2.1'>KA1_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Возврат паллет обратно' addr='%I0.2'>KA1_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия пустой паллеты для укладки' addr='%I2.2'>SW2_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличие первого ряда продукции' addr='%I0.3'>SW2_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия собранной паллеты на выгрузке' addr='%I2.3'>SW2_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I0.4'>SW2_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA2.1' addr='%I2.4'>SW2_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA2.1' addr='%I0.5'>SW2_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA2.2' addr='%I2.5'>SW2_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA2.2' addr='%I0.6'>SW2_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия пустой паллеты для укладки' addr='%I2.6'>SW3_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличие первого ряда продукции' addr='%I0.7'>SW3_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия собранной паллеты на выгрузке' addr='%I2.7'>SW3_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I1.0'>SW3_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия прокладочного материала' addr='%I3.0'>SW19_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='датчик отсечки продукции' addr='%I1.1'>SW23_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик затора продукции' addr='%I3.1'>SW23_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='датчик отсечки продукции' addr='%I1.2'>SW24_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик затора продукции' addr='%I3.2'>SW24_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка сброса аварии' addr='%I1.3'>SWR1_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Сигнал от контроллера безопасности' addr='%I3.3'>SWR1_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик давления воздуха' addr='%I1.4'>SWR1_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I4.0'>SW5_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет в буфере' addr='%I6.0'>SW5_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет для работа' addr='%I4.1'>SW5_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Паллеты готовы' addr='%I6.1'>KA5_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Возврат паллет обратно' addr='%I4.2'>KA5_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия пустой паллеты для укладки' addr='%I6.2'>SW4_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличие первого ряда продукции' addr='%I4.3'>SW4_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия собранной паллеты на выгрузке' addr='%I6.3'>SW4_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I4.4'>SW4_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA4.1' addr='%I6.4'>SW4_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA4.1' addr='%I4.5'>SW4_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик отсечки продукции' addr='%I6.5'>SW25_1_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик затора продукции' addr='%I4.6'>SW25_1_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='датчик отсечки продукции' addr='%I6.6'>SW25_2_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик затора продукции' addr='%I4.7'>SW25_2_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия прокладочного материала в буфере' addr='%I6.7'>SW20_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия прокладочного материала перед роботом' addr='%I5.0'>SW20_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка подтверждения укладки материала на конвейер.' addr='%I7.0'>SW20_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка сброса аварии' addr='%I5.1'>SWR2_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Сигнал от контроллера безопасности' addr='%I7.1'>SWR2_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик давления воздуха' addr='%I5.2'>SWR2_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%I5.6'>SPARE</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%I7.6'>SPARE1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA4.2' addr='%I5.7'>SW4_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA4.2' addr='%I7.7'>SW4_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Выталкивание паллеты на позицию.' addr='%Q0.0'>KA2_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Фиксирования паллеты' addr='%Q2.0'>KA2_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Выталкивание паллеты на позицию.' addr='%Q0.1'>KA3_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Фиксирования паллеты' addr='%Q2.1'>KA3_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Отсекатель потока' addr='%Q0.2'>KA23_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Отсекатель потока' addr='%Q2.2'>KA24_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Поворот продукции' addr='%Q0.3'>KA24_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Зеленый цвет' addr='%Q2.3'>KAR1_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Желтый цвет' addr='%Q0.4'>KAR1_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Красный цвет' addr='%Q2.4'>KAR1_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Звук' addr='%Q0.5'>KAR1_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Зеленый цвет' addr='%Q2.5'>KAR1_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Желтый цвет' addr='%Q0.6'>KAR1_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Красный цвет' addr='%Q2.6'>KAR1_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Звук' addr='%Q0.7'>KAR1_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР2 - БАЙПАС (OVR)' addr='%Q3.2'>RTK1_BAR2_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР3 - СБРОС АВАРИИ (RES)' addr='%Q1.3'>RTK1_BAR3_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР3 - БАЙПАС (OVR)' addr='%Q3.3'>RTK1_BAR3_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q1.4'>SPARE_OUT_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q3.4'>SPARE_OUT_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q1.5'>SPARE_OUT_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q3.5'>SPARE_OUT_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q1.6'>SPARE_OUT_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q3.6'>SPARE_OUT_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q1.7'>SPARE_OUT_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q3.7'>SPARE_OUT_17</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Выталкивание паллеты на позицию.' addr='%Q4.0'>KA4_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Фиксирования паллеты' addr='%Q6.0'>KA4_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Отсекатель потока' addr='%Q4.1'>KA25_1_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Разворот продукции' addr='%Q6.1'>KA25_1_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Отсекатель потока' addr='%Q4.2'>KA25_2_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Разворот продукции' addr='%Q6.2'>KA25_2_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Зеленый цвет' addr='%Q4.3'>KAR2_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Желтый цвет' addr='%Q6.3'>KAR2_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Красный цвет' addr='%Q4.4'>KAR2_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Звук' addr='%Q6.4'>KAR2_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР2 - БАЙПАС (OVR)' addr='%Q5.0'>RTK2_BAR2_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР3 - СБРОС АВАРИИ (RES)' addr='%Q7.0'>RTK2_BAR3_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР3 - БАЙПАС (OVR)' addr='%Q5.1'>RTK2_BAR3_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР4 - СБРОС АВАРИИ (RES)' addr='%Q7.1'>RTK2_BAR4_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР4 - БАЙПАС (OVR)' addr='%Q5.2'>RTK2_BAR4_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q7.2'>SPARE_OUT_29</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q5.3'>SPARE_OUT_30</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q7.3'>SPARE_OUT_31</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q5.4'>SPARE_OUT_32</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q7.4'>SPARE_OUT_33</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q5.5'>SPARE_OUT_34</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q7.5'>SPARE_OUT_35</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q5.6'>SPARE_OUT_36</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q7.6'>SPARE_OUT_37</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q5.7'>SPARE_OUT_38</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q7.7'>SPARE_OUT_39</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Реле наличия вакуума' addr='%I8.0'>SW12_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват паллеты. Открыт' addr='%I8.1'>SW12_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват паллеты. Закрыт' addr='%I8.2'>SW12_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват продукта. Открыт' addr='%I8.3'>SW12_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват продукта. Закрыт' addr='%I8.4'>SW12_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват картона. Опущен' addr='%I8.5'>SW12_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват картона. Поднят' addr='%I8.6'>SW12_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 8' addr='%I8.7'>SW12_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 9' addr='%I9.0'>SW12_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 10' addr='%I9.1'>SW12_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 11' addr='%I9.2'>SW12_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 12' addr='%I9.3'>SW12_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 13' addr='%I9.4'>SW12_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 14' addr='%I9.5'>SW12_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 15' addr='%I9.6'>SW12_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват обратная связь 16' addr='%I9.7'>SW12_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Реле наличия вакуума' addr='%I10.0'>SW14_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват паллеты. Открыт' addr='%I10.1'>SW14_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват паллеты. Закрыт' addr='%I10.2'>SW14_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват продукта. Открыт' addr='%I10.3'>SW14_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват продукта. Закрыт' addr='%I10.4'>SW14_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват картона. Опущен' addr='%I10.5'>SW14_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват картона. Поднят' addr='%I10.6'>SW14_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 8' addr='%I10.7'>SW14_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 9' addr='%I11.0'>SW14_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 10' addr='%I11.1'>SW14_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 11' addr='%I11.2'>SW14_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 12' addr='%I11.3'>SW14_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 13' addr='%I11.4'>SW14_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 14' addr='%I11.5'>SW14_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 15' addr='%I11.6'>SW14_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват обратная связь 16' addr='%I11.7'>SW14_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA3.1' addr='%I12.0'>SW3_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA3.1' addr='%I12.1'>SW3_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA3.2' addr='%I12.2'>SW3_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA3.2' addr='%I12.3'>SW3_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР1 - НЕТ АВАРИИ (AD0)' addr='%I12.4'>RTK1_BAR1_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР1 - АВАРИЯ ЗОНЫ (REQ)' addr='%I12.5'>RTK1_BAR1_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР2 - НЕТ АВАРИИ (AD0)' addr='%I12.6'>RTK1_BAR2_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР2 - АВАРИЯ ЗОНЫ (REQ)' addr='%I12.7'>RTK1_BAR2_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР3 - НЕТ АВАРИИ (AD0)' addr='%I13.0'>RTK1_BAR3_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР3 - АВАРИЯ ЗОНЫ (REQ)' addr='%I13.1'>RTK1_BAR3_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I13.2'>SPARE_IN_31</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I13.3'>SPARE_IN_32</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I13.4'>SPARE_IN_33</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I13.5'>SPARE_IN_34</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I13.6'>SPARE_IN_35</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I13.7'>SPARE_IN_36</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР1 - НЕТ АВАРИИ (AD0)' addr='%I14.0'>RTK2_BAR1_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР1 - АВАРИЯ ЗОНЫ (REQ)' addr='%I14.1'>RTK2_BAR1_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР2 - НЕТ АВАРИИ (AD0)' addr='%I14.2'>RTK2_BAR2_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР2 - АВАРИЯ ЗОНЫ (REQ)' addr='%I14.3'>RTK2_BAR2_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР3 - НЕТ АВАРИИ (AD0)' addr='%I14.4'>RTK2_BAR3_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР3 - АВАРИЯ ЗОНЫ (REQ)' addr='%I14.5'>RTK2_BAR3_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР4 - НЕТ АВАРИИ (AD0)' addr='%I14.6'>RTK2_BAR4_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР4 - АВАРИЯ ЗОНЫ (REQ)' addr='%I14.7'>RTK2_BAR4_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.0'>SPARE_IN_45</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.1'>SPARE_IN_46</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.2'>SPARE_IN_47</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.3'>SPARE_IN_48</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.4'>SPARE_IN_49</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.5'>SPARE_IN_50</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.6'>SPARE_IN_51</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I15.7'>SPARE_IN_52</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.0'>SPARE_IN_53</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.1'>SPARE_IN_54</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.2'>SPARE_IN_55</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.3'>SPARE_IN_56</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.4'>SPARE_IN_57</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.5'>SPARE_IN_58</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.6'>SPARE_IN_59</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I16.7'>SPARE_IN_60</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.0'>SPARE_IN_61</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.1'>SPARE_IN_62</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.2'>SPARE_IN_63</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.3'>SPARE_IN_64</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.4'>SPARE_IN_65</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.5'>SPARE_IN_66</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.6'>SPARE_IN_67</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I17.7'>SPARE_IN_68</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.0'>SPARE_IN_69</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.1'>SPARE_IN_70</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.2'>SPARE_IN_71</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.3'>SPARE_IN_72</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.4'>SPARE_IN_73</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.5'>SPARE_IN_74</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.6'>SPARE_IN_75</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I18.7'>SPARE_IN_76</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.0'>SPARE_IN_77</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.1'>SPARE_IN_78</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.2'>SPARE_IN_79</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.3'>SPARE_IN_80</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.4'>SPARE_IN_81</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.5'>SPARE_IN_82</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.6'>SPARE_IN_83</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I19.7'>SPARE_IN_84</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Включить вакуум.' addr='%Q8.0'>КА12_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Открыть захват паллеты' addr='%Q8.1'>КА12_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Закрыть захват паллеты' addr='%Q8.2'>КА12_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват продукта. Открыть' addr='%Q8.3'>КА12_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват продукта. Закрыть' addr='%Q8.4'>КА12_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват картона опустить' addr='%Q8.5'>КА12_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - Захват картона поднять' addr='%Q8.6'>КА12_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 8' addr='%Q8.7'>КА12_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 9' addr='%Q9.0'>КА12_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 10' addr='%Q9.1'>КА12_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 11' addr='%Q9.2'>КА12_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 12' addr='%Q9.3'>КА12_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 13' addr='%Q9.4'>КА12_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 14' addr='%Q9.5'>КА12_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 15' addr='%Q9.6'>КА12_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 захват управление 16' addr='%Q9.7'>КА12_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Включить вакуум.' addr='%Q10.0'>КА14_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Открыть захват паллеты' addr='%Q10.1'>КА14_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Закрыть захват паллеты' addr='%Q10.2'>КА14_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват продукта. Открыть' addr='%Q10.3'>КА14_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват продукта. Закрыть' addr='%Q10.4'>КА14_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват картона опустить' addr='%Q10.5'>КА14_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - Захват картона поднять' addr='%Q10.6'>КА14_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 8' addr='%Q10.7'>КА14_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 9' addr='%Q11.0'>КА14_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 10' addr='%Q11.1'>КА14_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 11' addr='%Q11.2'>КА14_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 12' addr='%Q11.3'>КА14_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 13' addr='%Q11.4'>КА14_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 14' addr='%Q11.5'>КА14_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 15' addr='%Q11.6'>КА14_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 захват управление 16' addr='%Q11.7'>КА14_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I50.0'>SW6_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет в буфере' addr='%I52.0'>SW6_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет для работа' addr='%I50.1'>SW6_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Паллеты готовы' addr='%I52.1'>KA6_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Возврат паллет обратно' addr='%I50.2'>KA6_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия пустой паллеты для укладки' addr='%I52.2'>SW7_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличие первого ряда продукции' addr='%I50.3'>SW7_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия собранной паллеты на выгрузке' addr='%I52.3'>SW7_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I50.4'>SW7_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA7.1' addr='%I52.4'>SW7_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA7.1' addr='%I50.5'>SW7_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия пустой паллеты для укладки' addr='%I52.5'>SW8_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличие первого ряда продукции' addr='%I50.6'>SW8_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия собранной паллеты на выгрузке' addr='%I52.6'>SW8_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I50.7'>SW8_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA7.2 ' addr='%I52.7'>SW7_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA7.2 ' addr='%I51.0'>SW7_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия прокладочного материала' addr='%I53.0'>SW21_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM1 Готово' addr='%I51.1'>SW26_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM1 Ошибка' addr='%I53.1'>SW26_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM1 Работа' addr='%I51.2'>SW26_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM2 Готово' addr='%I53.2'>SW27_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM2 Ошибка' addr='%I51.3'>SW27_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM2 Работа' addr='%I53.3'>SW27_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка сброса аварии' addr='%I51.4'>SWR3_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Сигнал от контроллера безопасности' addr='%I53.4'>SWR3_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик давления воздуха' addr='%I51.5'>SWR3_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия пустой паллеты для укладки' addr='%I54.0'>SW10_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличие первого ряда продукции' addr='%I56.0'>SW10_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия собранной паллеты на выгрузке' addr='%I54.1'>SW10_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I56.1'>SW10_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA10.1' addr='%I54.2'>SW10_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA10.1' addr='%I56.2'>SW10_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия кары' addr='%I54.3'>SW9_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет в буфере' addr='%I56.3'>SW9_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия стопки пустых паллет для работа' addr='%I54.4'>SW9_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Паллеты готовы' addr='%I56.4'>KA9_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Возврат паллет обратно' addr='%I54.5'>KA9_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM1 Готово' addr='%I56.5'>SW31_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM1 Ошибка' addr='%I54.6'>SW31_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='FORM1 Работа' addr='%I56.6'>SW31_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик наличия прокладочного материала в буфере' addr='%I54.7'>SW22_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка сброса аварии' addr='%I56.7'>SWR4_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Сигнал от контроллера безопасности' addr='%I55.0'>SWR4_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик давления воздуха' addr='%I57.0'>SWR4_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA10_2' addr='%I57.3'>SW10_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA10_2' addr='%I55.4'>SW10_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I57.4'>SPARE_IN_99</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA8_1' addr='%I55.5'>SW8_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA 8_1' addr='%I57.5'>SW8_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='OPN KA8_2' addr='%I55.6'>SW8_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='CLS KA 8_2' addr='%I57.6'>SW8_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Выталкивание паллеты на позицию.' addr='%Q50.0'>KA7_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Фиксирования паллеты' addr='%Q52.0'>KA7_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Выталкивание паллеты на позицию.' addr='%Q50.1'>KA8_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Фиксирования паллеты' addr='%Q52.1'>KA8_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР1 - СБРОС АВАРИИ (RES)' addr='%Q50.2'>RTK3_BAR1_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР1 - БАЙПАС (OVR)' addr='%Q52.2'>RTK3_BAR1_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР2 - СБРОС АВАРИИ (RES)' addr='%Q50.3'>RTK3_BAR2_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР2 - БАЙПАС (OVR)' addr='%Q52.3'>RTK3_BAR2_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Зеленый цвет' addr='%Q50.4'>KAR3_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Желтый цвет' addr='%Q52.4'>KAR3_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Красный цвет' addr='%Q50.5'>KAR3_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Общая световая колонна. Звук' addr='%Q52.5'>KAR3_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Зеленый цвет' addr='%Q50.6'>KAR3_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Желтый цвет' addr='%Q52.6'>KAR3_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Красный цвет' addr='%Q50.7'>KAR3_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Звук' addr='%Q52.7'>KAR3_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор1 - запуск' addr='%Q51.3'>KA26_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор1 - отдать стопки' addr='%Q53.3'>KA26_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор1 - количество слоев ("0" - 1 или 2 слоя; "1" - 3 или 4 слоя)' addr='%Q51.4'>KA26_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор1 - количество слоев ("0" - 1 или 3 слоя; "1" - 2 или 4 слоя)' addr='%Q53.4'>KA26_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор2 - запуск' addr='%Q51.5'>KA27_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор2 - отдать стопки' addr='%Q53.5'>KA27_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор2 - количество слоев ("0" - 1 или 2 слоя; "1" - 3 или 4 слоя)' addr='%Q51.6'>KA27_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK3 элеватор2 - количество слоев ("0" - 1 или 3 слоя; "1" - 2 или 4 слоя)' addr='%Q53.6'>KA27_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Отсекатель потока' addr='%Q51.7'>KA28.1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Поворот продукции' addr='%Q53.7'>KA28.2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Выталкивание паллеты на позицию.' addr='%Q54.0'>KA10_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Пневмораспределитель. Фиксирования паллеты' addr='%Q56.0'>KA10_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР1 - СБРОС АВАРИИ (RES)' addr='%Q54.1'>RTK4_BAR1_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР1 - БАЙПАС (OVR)' addr='%Q56.1'>RTK4_BAR1_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. ZEL цвет' addr='%Q54.2'>KAR4_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Желтый цвет' addr='%Q56.2'>KAR4_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Красный цвет' addr='%Q54.3'>KAR4_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Световая колонна робота. Звук' addr='%Q56.3'>KAR4_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK4 элеватор1 - запуск' addr='%Q56.6'>KA31_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK4 элеватор1 - робот забрал стопки' addr='%Q54.7'>KA31_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK4 элеватор1 - количество слоев ("0" - 1 или 2 слоя; "1" - 3 или 4 слоя)' addr='%Q56.7'>KA31_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='RTK4 элеватор1 - количество слоев ("0" - 1 или 3 слоя; "1" - 2 или 4 слоя)' addr='%Q55.0'>KA31_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.0'>SPARE_OUT_65</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.1'>SPARE_OUT_66</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.1'>SPARE_OUT_67</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.2'>SPARE_OUT_68</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.2'>SPARE_OUT_69</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.3'>SPARE_OUT_70</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.3'>SPARE_OUT_71</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.4'>SPARE_OUT_72</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.4'>SPARE_OUT_73</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.5'>SPARE_OUT_74</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.5'>SPARE_OUT_75</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.6'>SPARE_OUT_76</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.6'>SPARE_OUT_77</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q55.7'>SPARE_OUT_78</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q57.7'>SPARE_OUT_79</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Реле наличия вакуума' addr='%I58.0'>SW16_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват паллеты. Открыт' addr='%I58.1'>SW16_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват паллеты. Закрыт' addr='%I58.2'>SW16_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват продукта. Открыт' addr='%I58.3'>SW16_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват продукта. Закрыт' addr='%I58.4'>SW16_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват картона. Опущен' addr='%I58.5'>SW16_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват картона. Поднят' addr='%I58.6'>SW16_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 8' addr='%I58.7'>SW16_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 9' addr='%I59.0'>SW16_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 10' addr='%I59.1'>SW16_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 11' addr='%I59.2'>SW16_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 12' addr='%I59.3'>SW16_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 13' addr='%I59.4'>SW16_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 14' addr='%I59.5'>SW16_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 15' addr='%I59.6'>SW16_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват обратная связь 16' addr='%I59.7'>SW16_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Реле наличия вакуума' addr='%I60.0'>SW18_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват паллеты. Открыт' addr='%I60.1'>SW18_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват паллеты. Закрыт' addr='%I60.2'>SW18_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват продукта. Открыт' addr='%I60.3'>SW18_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват продукта. Закрыт' addr='%I60.4'>SW18_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват картона. Опущен' addr='%I60.5'>SW18_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват картона. Поднят' addr='%I60.6'>SW18_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 8' addr='%I60.7'>SW18_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 9' addr='%I61.0'>SW18_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 10' addr='%I61.1'>SW18_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 11' addr='%I61.2'>SW18_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 12' addr='%I61.3'>SW18_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 13' addr='%I61.4'>SW18_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 14' addr='%I61.5'>SW18_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 15' addr='%I61.6'>SW18_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват обратная связь 16' addr='%I61.7'>SW18_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР1 - НЕТ АВАРИИ (AD0)' addr='%I62.0'>RTK3_BAR1_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР1 - АВАРИЯ ЗОНЫ (REQ)' addr='%I62.1'>RTK3_BAR1_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР2 - НЕТ АВАРИИ (AD0)' addr='%I62.2'>RTK3_BAR2_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР2 - АВАРИЯ ЗОНЫ (REQ)' addr='%I62.3'>RTK3_BAR2_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР3 - НЕТ АВАРИИ (AD0)' addr='%I62.4'>RTK3_BAR3_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР3 - АВАРИЯ ЗОНЫ (REQ)' addr='%I62.5'>RTK3_BAR3_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I62.6'>SPARE_IN_112</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I62.7'>SPARE_IN_113</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.0'>SPARE_IN_114</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.1'>SPARE_IN_115</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.2'>SPARE_IN_116</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.3'>SPARE_IN_117</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.4'>SPARE_IN_118</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.5'>SPARE_IN_119</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.6'>SPARE_IN_120</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I63.7'>SPARE_IN_121</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР1 - НЕТ АВАРИИ (AD0)' addr='%I64.0'>RTK4_BAR1_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР1 - АВАРИЯ ЗОНЫ (REQ)' addr='%I64.1'>RTK4_BAR1_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР2 - НЕТ АВАРИИ (AD0)' addr='%I64.2'>RTK4_BAR2_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР2 - АВАРИЯ ЗОНЫ (REQ)' addr='%I64.3'>RTK4_BAR2_ALARM</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I64.4'>SPARE_IN_126</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I64.5'>SPARE_IN_127</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I64.6'>SPARE_IN_128</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I64.7'>SPARE_IN_129</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.0'>SPARE_IN_130</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.1'>SPARE_IN_131</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.2'>SPARE_IN_132</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.3'>SPARE_IN_133</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.4'>SPARE_IN_134</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.5'>SPARE_IN_135</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.6'>SPARE_IN_136</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I65.7'>SPARE_IN_137</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Включить вакуум.' addr='%Q58.0'>КА16_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Открыть захват паллеты' addr='%Q58.1'>КА16_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Закрыть захват паллеты' addr='%Q58.2'>КА16_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват продукта. Открыть' addr='%Q58.3'>КА16_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват продукта. Закрыть' addr='%Q58.4'>КА16_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват картона опустить' addr='%Q58.5'>КА16_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - Захват картона поднять' addr='%Q58.6'>КА16_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 8' addr='%Q58.7'>КА16_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 9' addr='%Q59.0'>КА16_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 10' addr='%Q59.1'>КА16_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 11' addr='%Q59.2'>КА16_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 12' addr='%Q59.3'>КА16_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 13' addr='%Q59.4'>КА16_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 14' addr='%Q59.5'>КА16_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 15' addr='%Q59.6'>КА16_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 захват управление 16' addr='%Q59.7'>КА16_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Включить вакуум.' addr='%Q60.0'>КА18_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Открыть захват паллеты' addr='%Q60.1'>КА18_2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Закрыть захват паллеты' addr='%Q60.2'>КА18_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват продукта. Открыть' addr='%Q60.3'>КА18_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват продукта. Закрыть' addr='%Q60.4'>КА18_5</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват картона опустить' addr='%Q60.5'>КА18_6</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - Захват картона поднять' addr='%Q60.6'>КА18_7</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 8' addr='%Q60.7'>КА18_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 9' addr='%Q61.0'>КА18_9</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 10' addr='%Q61.1'>КА18_10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 11' addr='%Q61.2'>КА18_11</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 12' addr='%Q61.3'>КА18_12</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 13' addr='%Q61.4'>КА18_13</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 14' addr='%Q61.5'>КА18_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 15' addr='%Q61.6'>КА18_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 захват управление 16' addr='%Q61.7'>КА18_16</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.0'>SPARE_IN_138</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.1'>SPARE_IN_139</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.2'>SPARE_IN_140</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.3'>SPARE_IN_141</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.4'>SPARE_IN_142</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.5'>SPARE_IN_143</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.6'>SPARE_IN_144</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I66.7'>SPARE_IN_145</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.0'>FA6_FROM_PRESS1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.1'>FA7_FROM_PRESS1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.2'>FA8_FROM_PRESS1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.3'>SPARE_IN_149</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.4'>SPARE_IN_150</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.5'>SPARE_IN_151</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.6'>SPARE_IN_152</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I67.7'>SPARE_IN_153</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.0'>SPARE_OUT_80</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.1'>SPARE_OUT_81</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.2'>SPARE_OUT_82</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.3'>SPARE_OUT_83</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.4'>SPARE_OUT_84</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.5'>SPARE_OUT_85</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.6'>SPARE_OUT_86</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q62.7'>SPARE_OUT_87</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.0'>SPARE_OUT_88</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.1'>SPARE_OUT_89</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.2'>SPARE_OUT_90</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.3'>SPARE_OUT_91</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.4'>SPARE_OUT_92</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.5'>SPARE_OUT_93</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.6'>SPARE_OUT_94</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q63.7'>SPARE_OUT_95</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%IW256'>Tag_3</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%IW280'>Tag_4</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%IW260'>Tag_8</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M147.0'>Tag_14</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M147.1'>Tag_15</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='общая ошибка' addr='%M100.4'>Error_Global</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='режим авто' addr='%M100.2'>Auto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='режим ручной' addr='%M100.1'>Manual</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M102.0'>System_started</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.0'>FA1_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.1'>FA2_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.2'>FA3_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.3'>FA4_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.4'>FA5_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.5'>FA6_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.6'>FA7_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M370.7'>FA8_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.0'>FA9_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.1'>FA10_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.2'>FA20_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.3'>FA23_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.4'>FA24_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.5'>FA25_1_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.6'>FA25_2_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M371.7'>FA26_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M372.0'>FA27_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M372.1'>FA28_1_auto_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.0'>FA1_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.1'>FA2_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.2'>FA3_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.3'>FA4_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.4'>FA5_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.5'>FA6_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.6'>FA7_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M375.7'>FA8_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.0'>FA9_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.1'>FA10_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.2'>FA20_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.3'>FA23_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.4'>FA24_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.5'>FA25_1_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.6'>FA25_2_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M376.7'>FA26_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M377.0'>FA27_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M377.1'>FA28_1_manual_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.0'>FA1_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.1'>FA2_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.2'>FA3_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.3'>FA4_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.4'>FA5_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.5'>FA6_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.6'>FA7_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M380.7'>FA8_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.0'>FA9_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.1'>FA10_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.2'>FA20_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.3'>FA23_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.4'>FA24_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.5'>FA25_1_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.6'>FA25_2_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M381.7'>FA26_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M382.0'>FA27_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M382.1'>FA28_1_is_ok</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.0'>FA1_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.1'>FA2_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.2'>FA3_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.3'>FA4_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.4'>FA5_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.5'>FA6_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.6'>FA7_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M385.7'>FA8_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.0'>FA9_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.1'>FA10_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.2'>FA20_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.3'>FA23_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.4'>FA24_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.5'>FA25_1_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.6'>FA25_2_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M386.7'>FA26_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M387.0'>FA27_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M387.1'>FA28_1_start</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='режим полуавтомат' addr='%M100.3'>HalfManual</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 - нет аварии (от SICK Q6)' addr='%I3.4'>RTK1_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 - нет аварии (от SICK Q12)' addr='%I1.5'>RTK2_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Стоп' addr='%I3.5'>KA1.3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Кнопка. Без названия' addr='%I1.6'>KA1.4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I3.6'>SPARE_IN_29(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I1.7'>SPARE_IN_30(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I3.7'>SPARE_IN_31(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='стоп 5' addr='%I7.2'>KA5_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I5.3'>SPARE_IN_33(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='белая 5' addr='%I7.3'>KA5_4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I5.4'>SPARE_IN_35(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I7.4'>SPARE_IN_36(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I5.5'>SPARE_IN_36(1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I7.5'>SPARE_IN_36(</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 В РЕЖИМЕ АВТО (НА SICK I5)' addr='%Q2.7'>RTK1_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 В РЕЖИМЕ РУЧНОЙ  (НА SICK I6)' addr='%Q1.0'>RTK1_MAN</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 В РЕЖИМЕ РУЧНАЯ СБОРКА  (НА SICK I7)' addr='%Q3.0'>RTK1_MAN_ASSEMBLY</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР1 - СБРОС АВАРИИ (RES)' addr='%Q1.1'>RTK1_BAR1_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР1 - БАЙПАС (OVR)' addr='%Q3.1'>RTK1_BAR1_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК1 БАРЬЕР2 - СБРОС АВАРИИ (RES)' addr='%Q1.2'>RTK1_BAR2_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 В РЕЖИМЕ АВТО (НА SICK I13)' addr='%Q4.5'>RTK2_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 В РЕЖИМЕ РУЧНОЙ  (НА SICK I14)' addr='%Q6.5'>RTK2_MAN</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 В РЕЖИМЕ РУЧНАЯ СБОРКА  (НА SICK I15)' addr='%Q4.6'>RTK2_MAN_ASSEMBLY</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР1 - СБРОС АВАРИИ (RES)' addr='%Q6.6'>RTK2_BAR1_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР1 - БАЙПАС (OVR)' addr='%Q4.7'>RTK2_BAR1_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК2 БАРЬЕР2 - СБРОС АВАРИИ (RES)' addr='%Q6.7'>RTK2_BAR2_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='датчик отсечки продукции' addr='%I53.5'>SW28.1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Датчик затора продукции' addr='%I51.6'>SW28.2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 - нет аварии (от SICK Q5)' addr='%I53.6'>RTK3_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 - нет аварии (от SICK Q9)' addr='%I51.7'>RTK4_OK</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный вход' addr='%I53.7'>SPARE_IN(2)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 кнопеа стоп на 9 транспортере' addr='%I55.1'>KA9_3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР1 - АКТИВАЦИЯ ЗОНЫ' addr='%I57.1'>SPARE__67(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР1 - АВАРИЯ ЗОНЫ' addr='%I55.2'>SPARE__68(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР2 - АКТИВАЦИЯ ЗОНЫ' addr='%I57.2'>SPARE__69(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР2 - АВАРИЯ ЗОНЫ' addr='%I55.3'>SPARE__70(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР3 - АКТИВАЦИЯ ЗОНЫ' addr='%I55.7'>SPARE__78(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР3 - АВАРИЯ ЗОНЫ' addr='%I57.7'>SPARE__79(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 В РЕЖИМЕ АВТО (НА SICK I5)' addr='%Q51.0'>RTK3_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 В РЕЖИМЕ РУЧНОЙ  (НА SICK I6)' addr='%Q53.0'>RTK3_MAN</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 В РЕЖИМЕ РУЧНАЯ СБОРКА  (НА SICK I7)' addr='%Q51.1'>RTK3_MAN_ASSEMBLY</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР3 - СБРОС АВАРИИ (RES)' addr='%Q53.1'>RTK3_BAR3_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК3 БАРЬЕР3 - БАЙПАС (OVR)' addr='%Q51.2'>RTK3_BAR3_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='Свободный выход' addr='%Q53.2'>SPARE_OUT</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 В РЕЖИМЕ АВТО (НА SICK I13)' addr='%Q54.4'>RTK4_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 В РЕЖИМЕ РУЧНОЙ  (НА SICK I14)' addr='%Q56.4'>RTK4_MAN</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 В РЕЖИМЕ РУЧНАЯ СБОРКА  (НА SICK I15)' addr='%Q54.5'>RTK4_MAN_ASSEMBLY</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР2 - СБРОС АВАРИИ (RES)' addr='%Q56.5'>RTK4_BAR2_RESET</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='РТК4 БАРЬЕР2 - БАЙПАС (OVR)' addr='%Q54.6'>RTK4_BAR2_BYPASS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M111.1'>Manual1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M111.2'>Auto1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M111.3'>HalfManual1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M112.1'>Manual2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M112.2'>Auto2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M112.3'>HalfManual2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M113.1'>Manual3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M113.2'>Auto3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M113.3'>HalfManual3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M114.1'>Manual4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M114.2'>Auto4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M114.3'>HalfManual4</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M100.7'>Press_Reset_Button</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M100.6'>StopSw</Tag>
+  <Tag type='Byte' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MB300'>RTK3_EL1_Lay</Tag>
+  <Tag type='Byte' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MB301'>RTK3_EL2_Lay</Tag>
+  <Tag type='Byte' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MB302'>RTK4_EL1_Lay</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M10.5'>Meandr 0.5s</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M5.1'>Tag_24</Tag>
+  <Tag type='Timer' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%T9'>T9</Tag>
+  <Tag type='Timer' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%T10'>T10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M100.0'>Emergency_Security</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M50.0'>ndr</Tag>
+  <Tag type='Byte' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MB48'>Tag_28</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MW52'>StatReciev</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MW54'>ADD_INFO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M50.1'>ErrorReciev</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M50.2'>CHECK_IOPS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M60.0'>DONE</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M60.1'>ErrorSend</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%MW62'>StatusSend</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M60.2'>CHECK_IOCS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.0'>KA2_1_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.1'>KA2_2_AUTO</Tag>
+  <Tag type='Word' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%IW272'>FA1_1_IN1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.2'>KA3_1_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.3'>KA3_2_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.0'>FA1_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.1'>FA2_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.2'>FA3_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.3'>FA9_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.5'>FA4_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.4'>KA10_1_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.5'>KA10_2_AUTO</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.0'>FA10_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.1'>FA10_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.2'>FA9_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.3'>FA9_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.4'>FA1_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.5'>FA1_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.6'>FA2_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M201.7'>FA2_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.0'>FA3_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.1'>FA3_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.4'>FA10_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.6'>FA5_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M373.7'>FA20_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M372.7'>FA6_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M372.6'>FA7_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M372.5'>FA8_1_reversmode</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M111.4'>FA1_Pause</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.7'>FA1_reversManu</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.6'>FA1_reversAuto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.6'>KA24_1_auto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M200.7'>KA24_2_auto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M199.0'>KA23_1_auto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.5'>FA9_reversAuto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.4'>FA9_reversManu</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M302.0'>m302_0</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M302.1'>m302_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='сброс состояния конвеера 3' addr='%M388.0'>resetSW3</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='сброс состояния конвеера 2' addr='%M388.1'>resetSW2</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='сброс состояния конвеера 10' addr='%M388.2'>resetSW10</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M374.0'>FA4_1_reversmode(1)</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.2'>FA4_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M202.3'>FA4_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.0'>FA5_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.1'>FA5_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.2'>FA5_reversManu</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.3'>FA5_reversAuto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.6'>FA20_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.7'>FA20_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M111.5'>FA5_Pause</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.5'>FA7_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M203.4'>FA7_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.0'>FA8_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.1'>FA8_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.3'>FA6_TO_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.4'>FA6_FROM_PRESS</Tag>
+</Tagtable>
