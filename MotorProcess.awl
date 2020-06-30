@@ -327,6 +327,26 @@ TITLE = RTK3 FA6_1
       O "HalfManual3";
       = "Manual";
 
+      A(;
+      A "FA6_TO_PRESS";
+      A "SW6_3";
+      );
+      O(;
+      A "FA6_FROM_PRESS";
+      O "FA6_FROM_PRESS1";
+      A "SW6_2";
+      );
+      = "FA6_1_manual_start";
+
+      A "FA6_FROM_PRESS";
+      O "FA6_FROM_PRESS1";
+      A "Manual";
+      O "Auto";
+      R "FA6_1_reversmode";
+      A "FA6_TO_PRESS";
+      A "Manual";
+      S "FA6_1_reversmode";
+
 
 
 
@@ -351,6 +371,31 @@ TITLE = RTK3 FA6_1
 
 NETWORK
 TITLE = RTK3 FA7_1
+
+
+      A(;
+      A "FA7_TO_PRESS";
+      A "SW7_1";
+      );
+      O(;
+      A "FA7_FROM_PRESS";
+      O "FA7_FROM_PRESS1";
+      A "SW7_3";
+      );
+      = "FA7_1_manual_start";
+
+      A "FA7_FROM_PRESS";
+      O "FA7_FROM_PRESS1";
+      A "Manual";
+      O "Auto";
+      R "FA7_1_reversmode";
+      A "FA7_TO_PRESS";
+      A "Manual";
+      S "FA7_1_reversmode";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA7_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA7_1_BSpeed , 
@@ -370,6 +415,29 @@ TITLE = RTK3 FA7_1
 
 NETWORK
 TITLE = RTK3 FA8_1
+      A(;
+      A "FA8_TO_PRESS";
+      A "SW8_1";
+      );
+      O(;
+      A "FA8_FROM_PRESS";
+      O "FA8_FROM_PRESS1";
+      A "SW8_3";
+      );
+      = "FA8_1_manual_start";
+
+      A "FA8_FROM_PRESS";
+      O "FA8_FROM_PRESS1";
+      A "Manual";
+      O "Auto";
+      R "FA8_1_reversmode";
+      A "FA8_TO_PRESS";
+      A "Manual";
+      S "FA8_1_reversmode";
+
+
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA8_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA8_1_BSpeed , 
