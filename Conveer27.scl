@@ -1,0 +1,154 @@
+﻿FUNCTION "Conveer27" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_TEMP 
+      run : Bool;
+      error : Bool;
+      form : Bool;
+      formLeft : Bool;
+      formRight : Bool;
+      sensorCount : Bool;
+      sensorBrake : Bool;
+      Brake : Bool;
+      workRight : Bool;
+      workLeft : Bool;
+      FlowLeft : Bool;
+      cutoff : Bool;
+      "counter" : Int;
+      quantityLeft : Int;
+      quantityRight : Int;
+      stop_box_time : Time;
+   END_VAR
+
+
+BEGIN
+	
+	"FA27_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	
+	// "IEC_Timer_28tr_DB".TON(IN:=#sensorBrake,
+	//                         PT:=T#3s,
+	//                         Q=>#Brake,
+	//                         ET=>#stop_box_time);
+	
+	IF "Auto3" THEN
+	    "KA27_2" := "Robot18".FDO00;//сброс елеватора по команде робота "забрал"
+	    "Robot16".TDI00 := "SW27_1";//готово от елеватора роботу
+	END_IF;
+	
+	
+	//IF "Robot18".FDO00 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	IF "Robot16".FDO22 //если крайний то по 3
+	THEN
+	    "KA27_3" := FALSE;//слои
+	    "KA27_4" := TRUE;//слои
+	    
+	    
+	ELSE
+	    "KA27_3" := TRUE;//слои
+	    "KA27_4" := TRUE;//слои
+	    
+	    
+	END_IF;
+	//END_IF;
+	
+	
+	IF "Manual3" THEN
+	    "KA27_3" := "m301_0";//слои
+	    "KA27_4" := "m301_1";//слои
+	END_IF;
+	
+	
+	//"DB_Counters".SW27.GEAR := TRUE;
+	//"DB_Counters".SW27.SP := 4;
+	//"DB_Counters".SW27.RESET := FALSE;
+	
+	//"00_CounterInteger"(DB_Counter:= "DB_Counters",
+	//                     FirstByte:= 36,
+	//                     SetValue:= "DB_Counters".SW27.SP,
+	//                     Count:= "SW27.1",
+	//                     ValueIncrement:= 1,
+	//                     CountCurrent:= "DB_Counters".SW27.ACT);
+	
+	
+	//"KA27_1" := "SW27_2";
+	//IF "DB_Counters".SW27.SET_OK THEN
+	//    "KA27_1" := TRUE;
+	//END_IF;
+	
+	
+	// CASE "Conveer_status"."28_step" OF//db6.dbw0 
+	//     0://стоп
+	        
+	        
+	//         IF "SW3_1"= FALSE AND "SW3_3" = FALSE THEN //если на входе нет коробок
+	//             "Conveer_status"."28_step":=10;
+	//         END_IF;
+	//         IF "SW3_1" = TRUE AND "SW3_3" = FALSE THEN //если на входе есть коробки
+	//             "Conveer_status"."28_step" := 20;
+	//         END_IF;
+	        
+	//         ;
+	//     10://нет на входе
+	        
+	        
+	        
+	//         IF "SW3_1" = TRUE AND "Robot12".FDO03 = TRUE THEN //если на входе есть коробки
+	//             "Conveer_status"."28_step" := 20;
+	//         END_IF;
+	        
+	//         ;
+	//     20://есть на входе и не готово
+	        
+	        
+	        
+	//         IF "SW3_1"= TRUE AND "SW3_3" = FALSE AND "Robot12".FDO11 = TRUE THEN
+	//             //если стопор чегото там
+	//             "Conveer_status"."28_step" := 30;
+	//         END_IF;
+	        
+	//         ;
+	//     30://загружаем
+	        
+	        
+	          
+	//         IF "SW3_3" = TRUE THEN //если  счетчик досчитал
+	//             "Conveer_status"."28_step" := 40;
+	//         END_IF;
+	//         ;
+	//     40://подсчет и проверка
+	        
+	        
+	        
+	//         IF "SW3_3" = TRUE THEN //если  проверка успешна
+	//             "Conveer_status"."28_step" := 50;
+	//         END_IF;
+	        
+	//         ;
+	//     50://выполненно
+	        
+	        
+	//         IF "SW3_4" = FALSE OR "SW3_3" = FALSE THEN //если кара то она забирает паллету
+	//             "Conveer_status"."28_step" := 0;// не будем ждать пока заберут, робота нужно обслуживать
+	//         END_IF;
+	        
+	//         ;
+	//     60://забирают
+	        
+	        
+	//         IF "SW3_4" = TRUE OR "SW3_3" = FALSE OR "SW3_1" = TRUE THEN //если кара или забрали или поставили то
+	//             "Conveer_status"."28_step" := 0;
+	//         END_IF;
+	         
+	//         ;
+	        
+	//     70://возврата нет
+	//                "Conveer_status"."28_step" := 0;
+	//         ;
+	        
+	//         ;
+	//     ELSE:
+	//         ;
+	// END_CASE;
+	    
+END_FUNCTION
+
