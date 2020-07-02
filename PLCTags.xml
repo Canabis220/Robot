@@ -684,4 +684,10 @@
   <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.1'>FA8_FROM_PRESS</Tag>
   <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.3'>FA6_TO_PRESS</Tag>
   <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M204.4'>FA6_FROM_PRESS</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M300.0'>m300_0</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M300.1'>m300_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M301.0'>m301_0</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M301.1'>m301_1</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M199.1'>KA25_1_1_auto</Tag>
+  <Tag type='Bool' hmiVisible='True' hmiWriteable='True' hmiAccessible='True' remark='' addr='%M199.2'>KA25_1_2_auto</Tag>
 </Tagtable>
