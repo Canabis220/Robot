@@ -38,6 +38,9 @@ TITLE =
       CALL "ExchageRobot12";
       CALL "Robot12_main";
 
+      CALL "ExchageRobot14";
+      CALL "Robot14_main";
+
       CALL "ExchageRobot16";
       CALL "Robot16_main";
 
