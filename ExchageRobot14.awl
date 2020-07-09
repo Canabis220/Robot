@@ -6,5 +6,67 @@ BEGIN
 NETWORK
 TITLE = 
 
+
+
+      L "PN-INPUT".a2;
+      T %DB3.DBB3          ;//захват команды
+
+      L "PN-INPUT".b2;
+      T %DB3.DBB4          ;//состояния
+
+      L "PN-INPUT".c2;
+      T %DB3.DBB5          ;//ошибки
+
+      L "PN-INPUT".d2;
+      T %DB3.DBB19         ;//UO
+
+      L "PN-INPUT".e2;
+      T "Robot14".FDO_BYTE1;//тек ряд 1
+
+      L "PN-INPUT".f2;
+      T "Robot14".FDO_BYTE2;//тек поз 1
+
+      L "PN-INPUT".g2;
+      T "Robot14".FDO_BYTE3;//тек ряд 2
+
+
+      L "PN-INPUT".h2;
+      T "Robot14".FDO_BYTE4;//тек поз 2
+
+      L "PN-INPUT".i2;
+      T "Robot14".FDO_BYTE5;//тек мото 1
+
+      L "PN-INPUT".J2;
+      T "Robot14".FDO_BYTE6;//тек мото 2
+
+
+
+
+
+
+
+
+
+
+      L %DB3.DBB0          ;//датчики захвата
+      T "PN-OUTPUT".a2;
+
+      L %DB3.DBB1          ;//датчики паллет
+      T "PN-OUTPUT".b2;
+
+      L %DB3.DBB2          ;//присоски
+      T "PN-OUTPUT".c2;
+
+      L %DB3.DBB18         ;//UI
+      T "PN-OUTPUT".d2;
+
+
+      L "Robot14".FDI_BYTE1;//Скорость
+      T "PN-OUTPUT".e2;
+
+
+
+
+
 END_FUNCTION
 
