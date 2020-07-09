@@ -25,6 +25,7 @@ BEGIN
 	
 	"FA24_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	"DB_Counters".SW24.GEAR := TRUE;
+	"DB_Counters"._08.GEAR := TRUE;
 	//"DB_Counters".SW24.RESET := FALSE;
 	
 	
@@ -48,8 +49,19 @@ BEGIN
 	                     Count:= "SW24_1",
 	                     ValueIncrement:= 1,
 	                     CountCurrent:= "DB_Counters".SW24.ACT);
-	
+	 
+	 
+	 "00_CounterInteger"(DB_Counter := "DB_Counters", //считаем бутылки
+	                     FirstByte := 42,
+	                     SetValue := "DB_Counters"._08.SP,
+	                     Count := "SW24_2",
+	                     ValueIncrement := 1,
+	                     CountCurrent := "DB_Counters"._08.ACT);
+	 
+	 
+	 
 	 "DB_Counters".SW24.RESET := "Robot12".FDO01; //сброс счета по команде робота "забрал"
+	 "DB_Counters"._08.RESET := "Robot12".FDO01; //сброс счета по команде робота "забрал"
 	 
 	
 	"IEC_Timer_24tr_DB".TON(IN := "DB_Counters".SW24.SET_OK,//задержка перед командой "готово" чтоб доехала бутылка
@@ -70,7 +82,7 @@ BEGIN
 	END_IF;
 	 
 	 "KA24_1_auto" := "SW24_1";
-	 IF "DB_Counters".SW24.SET_OK THEN
+	 IF "DB_Counters".SW24.SET_OK OR "Robot12".FDO01 THEN
 	     "KA24_1_auto" := TRUE;
 	 END_IF;
 	
