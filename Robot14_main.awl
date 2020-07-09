@@ -1,0 +1,152 @@
+﻿FUNCTION "Robot14_main" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = РТК2 - Закрыть захват продукта
+      AN "Auto2";
+      JC M1;
+      A "Robot14".FDO05;
+      A "Auto2";
+      = "КА14_5";
+
+      A "Robot14".FDO04;
+      A "Auto2";
+      = "КА14_4";
+
+NETWORK
+TITLE = РТК2 - Закрыть захват паллеты
+      A "Robot14".FDO07;
+      A "Auto2";
+      = "КА14_3";
+
+      A "Robot14".FDO06;
+      A "Auto2";
+      = "КА14_2";
+NETWORK
+TITLE = РТК2 - Включить вакуум.
+      A "Robot14".FDO08;
+      A "Auto2";
+      = "КА14_1";
+NETWORK
+TITLE = РТК2 - Захват картона опустить
+      A "Robot14".FDO19;
+      A "Auto2";
+      = "КА14_6";
+
+      A "Robot14".FDO20;
+      A "Auto2";
+      = "КА14_7";
+
+NETWORK
+TITLE = DI2 Паллета на месте 1
+M1:      AN "SW4_1"            ;//есть палета
+      A "SW4_8"            ;// есть захват
+      S "Robot14".TDI02    ;//палета на месте
+
+      A "SW4_1"            ;//нет палеты
+      A "SW4_2"            ;// нет первого ряда
+      AN "SW4_8"            ;// нет захвата
+      AN "SW4_3"            ;//доехала
+      O "resetSW3";
+      R "Robot14".TDI02    ;// палета не на месте
+
+NETWORK
+TITLE = DI3 Паллета на месте 2
+      AN "SW2_1";//есть палета
+      A "SW2_8";// есть захват
+      S "Robot14".TDI03    ;//палета на месте
+
+
+      A "SW2_1"            ;//нет палеты
+      A "SW2_2"            ;// нет первого ряда
+      AN "SW2_8"            ;// нет захвата
+      AN "SW2_3"            ;//доехала
+      O "resetSW2";
+      R "Robot14".TDI03    ;// палета не на месте
+
+NETWORK
+TITLE = DI4 Захват открыт (продукт)
+      A "SW14_4";
+      = "Robot14".TDI04;
+
+      A "SW14_5";
+      = "Robot14".TDI05;
+
+NETWORK
+TITLE = DI6 Паллета отпущена захватом
+      A "SW14_2";
+      = "Robot14".TDI06;
+
+      A "SW14_3";
+      = "Robot14".TDI07;
+
+
+NETWORK
+TITLE = DI8 Наличие вакуума в присоске(объект захвачен)
+      A "SW14_1";
+      = "Robot14".TDI08;
+
+NETWORK
+TITLE = DI14 Наличие стопки паллет
+      AN "SW5_3";
+      = "Robot14".TDI12;
+
+
+
+NETWORK
+TITLE = DI13 Заблокировал смену стопки паллет
+      A "Robot14".FDO12;
+      S "Robot14".TDI13;
+
+      A "Robot14".FDO13;
+      R "Robot14".TDI13;
+
+
+NETWORK
+TITLE = DI15 Датчик 1го ряда линия 1
+      AN "SW3_2";
+      = "Robot14".TDI15;
+
+NETWORK
+TITLE = DI16 Датчик 1го ряда линия 2
+      AN "SW2_2";
+      = "Robot14".TDI16;
+
+NETWORK
+TITLE = DI19 Присоски опущены (датчик поиска)
+      A "SW14_6";
+      = "Robot14".TDI19;
+
+      A "SW14_7";
+      = "Robot14".TDI20;
+
+NETWORK
+TITLE = DI21 Картон в наличии
+      A "SW19_1";
+      = "Robot14".TDI21;
+
+NETWORK
+TITLE = EnableMove Разрешено двигаться
+      O "Auto2";
+      O "Manual2";
+      AN "Error_Global";
+      = "Robot14".UI3;
+      = "Robot14".UI5;
+
+NETWORK
+TITLE = IMSTP Экстренный останов
+      AN "Emergency_Security";
+      = "Robot14".UI1;
+
+NETWORK
+TITLE = Hold временный останов
+      O "Manual2";
+      O(;
+      A "Auto2";
+      A "RTK1_OK";
+      );
+      = "Robot14".UI2;
+END_FUNCTION
+
