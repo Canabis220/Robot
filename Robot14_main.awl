@@ -106,7 +106,7 @@ TITLE = DI13 Заблокировал смену стопки паллет
 
 NETWORK
 TITLE = DI15 Датчик 1го ряда линия 1
-      AN "SW3_2";
+      AN "SW4_2";
       = "Robot14".TDI15;
 
 NETWORK
