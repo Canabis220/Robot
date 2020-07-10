@@ -3,13 +3,27 @@
 VERSION : 0.1
 
 BEGIN
+	IF "KA9_4" THEN //отложенная загрузка
+	    "FA9_Load" := TRUE;
+	END_IF;
+	
+	
+	IF "KA9_2" OR "KA9_1" OR NOT "KA9_3" THEN//нажали любую другую кнопку
+	    "FA9_Load" := FALSE;
+	END_IF;
+	
+	
+	IF "SW9_2" AND NOT "SW9_3" THEN//доехала отложенная загрузка
+	    "FA9_Load" := FALSE;
+	END_IF;
+	
 	
 	"FA9_reversAuto" := FALSE;
 	CASE "Conveer_status"."09_step" OF//db6.dbw0 
 	    0://стоп
 	        "FA9_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
 	        
-	        IF "KA9_1"  //если кнопка к_роботу
+	        IF "KA9_1"  OR ("FA9_Load" AND "SW9_1") //если кнопка к_роботу
 	            AND NOT "Robot18".TDI13 //и нет блокировки
 	        THEN
 	            "Conveer_status"."09_step" := 30;
