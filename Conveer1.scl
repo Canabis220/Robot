@@ -3,14 +3,18 @@
 VERSION : 0.1
 
 BEGIN
-	IF NOT "KA1.3" THEN
-	    SET(S_BIT := "FA1_Pause",
-	        N := 1);
+	IF "KA1_4" THEN //отложенная загрузка
+	    "FA1_Load" := TRUE;
 	END_IF;
-	                
-	IF "KA1_2" OR "KA1_1" THEN
-	    RESET(S_BIT := "FA1_Pause",
-	          N := 1);
+	
+	
+	IF "KA1_2" OR "KA1_1" OR NOT "KA1.3" THEN//нажали любую другую кнопку
+	    "FA1_Load" := FALSE;
+	END_IF;
+	
+	
+	IF "SW1_2" AND NOT "SW1_3" THEN//доехала отложенная загрузка
+	    "FA1_Load" := FALSE;
 	END_IF;
 	
 	"FA1_reversAuto" := FALSE;
