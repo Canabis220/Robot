@@ -593,12 +593,19 @@ TITLE = RTK4 FA10_1
       );
       = "FA10_1_manual_start";
 
-      A "FA10_FROM_PRESS";
-      A "Manual";
-      S "FA10_1_reversmode";
+      AN "FA10_FROM_PRESS";
       A "FA10_TO_PRESS";
+      = "FA10_reversManu";
+
+
       A "Manual";
-      R "FA10_1_reversmode";
+      A "FA10_reversManu";
+      O(;
+      A "Auto";
+
+      A "FA10_reversAuto";
+      );
+      = "FA10_1_reversmode";
 
 
 
