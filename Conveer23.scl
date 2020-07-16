@@ -26,6 +26,11 @@ BEGIN
 	//"DB_Counters".SW23.RESET := FALSE;
 	"DB_Counters".SW23.GEAR := TRUE;
 	
+	//молоко бутылки
+	
+	
+	
+	
 	"00_CounterInteger"(DB_Counter := "DB_Counters", //счетчик бутылок для ряда
 	                    FirstByte := 0,
 	                    SetValue := "DB_Counters".SW23.SP,
@@ -34,33 +39,31 @@ BEGIN
 	                    CountCurrent := "DB_Counters".SW23.ACT);
 	
 	
+	"DB_Counters".SW23.RESET := "Robot12".FDO00; //сброс счета по команде робота "забрал"
 	
 	
 	"IEC_Timer_23tr_DB".TON(IN := "DB_Counters".SW23.SET_OK,//выполненно с задержкой чтоб доехала последняя бутылка
-	                        PT := T#3s,
+	                        PT := T#2s,
 	                        Q => "Robot12".TDI00,
 	                        ET => #stop_box_time);
 	
 	
 	
-	IF "Robot12".FDO22 AND "Robot12".FDO00//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
-	THEN
-	    "DB_Counters".SW23.SP := 5;
-	ELSE
-	    "DB_Counters".SW23.SP := 6;//обычно по 6
+	
+	
+	IF "Robot12".FDO00 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	    IF "Robot12".FDO22 //если нет сигнала то по 5
+	    THEN
+	        "DB_Counters".SW23.SP := 6;//обычно по 6
+	        
+	    ELSE
+	        "DB_Counters".SW23.SP := 5;
+	        
+	    END_IF;
 	END_IF;
-	
-	
-	
-	
-	
-	
-	//"DB_Counters".SW23.RESET := "Robot12".FDO00;//сброс счетчика по команде робота "забрал"
-	
-	
 	 
 	 "KA23_1_auto" := "SW23_2";//тормозим каждую бутылку чтоб счетчик видел пробелы между бутылками
-	 IF "DB_Counters".SW23.SET_OK THEN //если досчитали то больше не пускаем
+	 IF "DB_Counters".SW23.SET_OK OR "Robot12".FDO00 THEN //если досчитали то больше не пускаем
 	     "KA23_1_auto" := TRUE;
 	 END_IF;
 	
