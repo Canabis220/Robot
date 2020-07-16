@@ -5,6 +5,8 @@ VERSION : 0.1
 BEGIN
 NETWORK
 TITLE = РТК1 - Закрыть захват продукта
+      AN "Auto3";
+      JC M1;
       A "Robot16".FDO05;
       A "Auto3";
       = "КА16_5";
@@ -39,7 +41,7 @@ TITLE = РТК1 - Захват картона опустить
 
 NETWORK
 TITLE = DI2 Паллета на месте 1
-      A "SW7_1";
+M1:      A "SW7_1";
       = "Robot16".TDI02;
 
 NETWORK
