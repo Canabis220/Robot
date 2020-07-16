@@ -25,10 +25,8 @@ BEGIN
 	
 	"FA24_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	"DB_Counters".SW24.GEAR := TRUE;
-	"DB_Counters"._08.GEAR := TRUE;
-	//"DB_Counters".SW24.RESET := FALSE;
 	
-	
+	//йогурт бутылки
 	
 	IF "Robot12".FDO23  //поршень разворота по команде робота "разверни"
 	THEN
@@ -40,9 +38,6 @@ BEGIN
 	
 	
 	
-	//"Robot12".TDI01 := "DB_Counters".SW24.SET_OK;
-	
-	
 	"00_CounterInteger"(DB_Counter:= "DB_Counters", //считаем бутылки
 	                     FirstByte:= 6,
 	                     SetValue:= "DB_Counters".SW24.SP,
@@ -50,45 +45,39 @@ BEGIN
 	                     ValueIncrement:= 1,
 	                     CountCurrent:= "DB_Counters".SW24.ACT);
 	 
-	 
-	 "00_CounterInteger"(DB_Counter := "DB_Counters", //считаем бутылки
-	                     FirstByte := 42,
-	                     SetValue := "DB_Counters"._08.SP,
-	                     Count := "SW24_2",
-	                     ValueIncrement := 1,
-	                     CountCurrent := "DB_Counters"._08.ACT);
+	
 	 
 	 
 	 
 	 "DB_Counters".SW24.RESET := "Robot12".FDO01; //сброс счета по команде робота "забрал"
-	 "DB_Counters"._08.RESET := "Robot12".FDO01; //сброс счета по команде робота "забрал"
+	 
 	 
 	
 	"IEC_Timer_24tr_DB".TON(IN := "DB_Counters".SW24.SET_OK,//задержка перед командой "готово" чтоб доехала бутылка
-	                        PT := T#4s,
+	                        PT := T#2s,
 	                        Q => "Robot12".TDI01,
 	                        ET => #stop_box_time);
 	
 	
 	IF "Robot12".FDO01 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
-	    IF "Robot12".FDO23 //если крайний то по 8
+	    IF "Robot12".FDO23 //если крайний то по 5
 	    THEN
 	        "DB_Counters".SW24.SP := 8;
 	        
 	    ELSE
-	        "DB_Counters".SW24.SP := 10;//обычно по 10
+	        "DB_Counters".SW24.SP := 10;//обычно по 6
 	        
 	    END_IF;
 	END_IF;
 	 
-	 "KA24_1_auto" := "SW24_1";
-	 IF "DB_Counters".SW24.SET_OK OR "Robot12".FDO01 THEN
+	"KA24_1_auto" := "SW24_1";//тормозим каждую бутылку чтоб счетчик видел пробелы между бутылками
+	IF "DB_Counters".SW24.SET_OK OR "Robot12".FDO01 THEN //если досчитали то больше не пускаем
 	     "KA24_1_auto" := TRUE;
 	 END_IF;
 	
 	 IF "Auto1" THEN
-	     "KA24_1" := "KA24_1_auto";
-	     "KA24_2" := "KA24_2_auto";
+	     "KA24_1" := "KA24_1_auto";// тормоз бутылок работает только в автомате
+	     "KA24_2" := "KA24_2_auto";// разворот бутылок работает только в автомате
 	 END_IF;
 	 
 	 
