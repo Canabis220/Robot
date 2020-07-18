@@ -6,11 +6,11 @@ BEGIN
 NETWORK
 TITLE = RTK1
 
-      CALL "Conveer1";
-      CALL "Conveer2";
-      CALL "Conveer3";
-      CALL "Conveer23";
-      CALL "Conveer24";
+      CALL "Conveer1PU";
+      CALL "Conveer2PO";
+      CALL "Conveer3PO";
+      CALL "Conveer23BU";
+      CALL "Conveer24BU";
 
 
 
@@ -18,10 +18,10 @@ TITLE = RTK1
 
 NETWORK
 TITLE = RTK2
-      CALL "Conveer4";
-      CALL "Conveer5";
-      CALL "Conveer25_1";
-      CALL "Conveer25_2";
+      CALL "Conveer4PO";
+      CALL "Conveer5PU";
+      CALL "Conveer25_1BU";
+      CALL "Conveer25_2BU";
 
 
 NETWORK
@@ -29,16 +29,16 @@ TITLE = RTK3
 //    CALL  "Conveer6"
 //    CALL  "Conveer7"
 //     CALL  "Conveer8"
-      CALL "Conveer26";
-      CALL "Conveer27";
+      CALL "Conveer26FO";
+      CALL "Conveer27FO";
 
 
 
 NETWORK
 TITLE = RTK4
-      CALL "Conveer9";
-      CALL "Conveer10";
-      CALL "Conveer28";
+      CALL "Conveer9PU";
+      CALL "Conveer10PO";
+      CALL "Conveer28FO";
 
 
 END_FUNCTION
