@@ -1,0 +1,22 @@
+﻿DATA_BLOCK "Errors"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   STRUCT 
+      "01" : Int;
+      "02" : Int;
+      "03" : Int;
+      "04" : Int;
+      "05" : Int;
+      "06" : Int;
+      "07" : Int;
+      "08" : Int;
+      "09" : Int;
+      "10" : Int;
+      "11" : Int;
+   END_STRUCT;
+
+
+BEGIN
+
+END_DATA_BLOCK
+
