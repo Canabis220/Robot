@@ -1,0 +1,76 @@
+﻿FUNCTION "Conveer23BU" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_TEMP 
+      run : Bool;
+      error : Bool;
+      form : Bool;
+      formLeft : Bool;
+      formRight : Bool;
+      sensorCount : Bool;
+      sensorBrake : Bool;
+      Brake : Bool;
+      workRight : Bool;
+      workLeft : Bool;
+      FlowLeft : Bool;
+      cutoff : Bool;
+      "counter" : Int;
+      quantityLeft : Int;
+      quantityRight : Int;
+      stop_box_time : Time;
+   END_VAR
+
+
+BEGIN
+	"FA23_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	//"DB_Counters".SW23.RESET := FALSE;
+	"DB_Counters".SW23.GEAR := TRUE;
+	
+	//молоко бутылки
+	
+	
+	
+	
+	"00_CounterInteger"(DB_Counter := "DB_Counters", //счетчик бутылок для ряда
+	                    FirstByte := 0,
+	                    SetValue := "DB_Counters".SW23.SP,
+	                    Count := "SW23_2",
+	                    ValueIncrement := 1,
+	                    CountCurrent := "DB_Counters".SW23.ACT);
+	
+	
+	"DB_Counters".SW23.RESET := "Robot12".FDO00; //сброс счета по команде робота "забрал"
+	
+	
+	"IEC_Timer_23tr_DB".TON(IN := "DB_Counters".SW23.SET_OK,//выполненно с задержкой чтоб доехала последняя бутылка
+	                        PT := T#1s,
+	                        Q => "Robot12".TDI00,
+	                        ET => #stop_box_time);
+	
+	
+	
+	
+	
+	IF "Robot12".FDO00 OR "Robot12".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	    IF "Robot12".FDO22 //если нет сигнала то по 5
+	    THEN
+	        "DB_Counters".SW23.SP := 6;//обычно по 6
+	        
+	    ELSE
+	        "DB_Counters".SW23.SP := 5;
+	        
+	    END_IF;
+	END_IF;
+	 
+	 "KA23_1_auto" := "SW23_2";//тормозим каждую бутылку чтоб счетчик видел пробелы между бутылками
+	 IF "DB_Counters".SW23.SET_OK OR "Robot12".FDO00 THEN //если досчитали то больше не пускаем
+	     "KA23_1_auto" := TRUE;
+	 END_IF;
+	
+	 IF "Auto1" THEN
+	     "KA23_1" := "KA23_1_auto";// тормоз бутылок работает только в автомате
+	 END_IF;
+	 
+	
+END_FUNCTION
+
