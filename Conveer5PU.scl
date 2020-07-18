@@ -1,0 +1,74 @@
+﻿FUNCTION "Conveer5PU" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+	IF "KA5_4" THEN //отложенная загрузка
+	    "FA5_Load":= TRUE;
+	END_IF;
+	
+	
+	IF "KA5_2" OR "KA5_1" OR NOT "KA5_3" THEN//нажали любую другую кнопку
+	    "FA5_Load" := FALSE;
+	END_IF;
+	
+	
+	IF "SW5_2" AND NOT "SW5_3"  THEN//доехала отложенная загрузка
+	    "FA5_Load" := FALSE;
+	END_IF;
+	
+	"FA5_reversAuto" := FALSE;
+	
+	
+	CASE "Conveer_status"."05_step" OF//db6.dbw0 
+	    0://стоп
+	        "FA5_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        
+	        IF "KA5_1" OR ("FA5_Load" AND "SW5_1") //если кнопка к_роботу
+	    
+	            AND NOT "Robot14".TDI13 //и нет блокировки
+	        THEN
+	            "Conveer_status"."05_step":=30;
+	        END_IF;
+	        
+	        IF "KA5_2"//если кнопка от_робота
+	            AND NOT "Robot14".TDI13 //и нет блокировки
+	        THEN
+	            "Conveer_status"."05_step" := 70;
+	        END_IF;
+	        
+	        
+	        
+	    30://к роботу
+	       "FA5_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA5_reversAuto" := FALSE;// реверс к роботу   
+	        
+	        IF     NOT "SW5_1"//если кара
+	            OR NOT "KA5_3"// или кнопка СТОП
+	            OR NOT "SW5_3"// или приехали
+	        THEN 
+	            "Conveer_status"."05_step" := 0;//стоп
+	        END_IF;        
+	        
+	        
+	        
+	        
+	    70://от робота
+	         "FA5_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA5_reversAuto" := TRUE;// реверс к роботу   
+	        
+	        IF NOT "SW5_1"//если кара
+	            OR NOT "KA5_3"// или кнопка СТОП
+	            OR NOT "SW5_2"// или приехали
+	        THEN
+	            "Conveer_status"."05_step" := 0;//стоп
+	        END_IF;
+	        ;
+	        
+	        ;
+	    ELSE:
+	        ;
+	END_CASE;
+	    
+END_FUNCTION
+
