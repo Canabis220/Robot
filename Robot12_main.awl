@@ -142,11 +142,14 @@ TITLE = IMSTP Экстренный останов
 
 NETWORK
 TITLE = Hold временный останов
+
+
       O "Manual1";
       O(;
       A "Auto1";
-      A "RTK1_OK";
       );
+      A "RTK1_OK";
+      AN "pause_rob12";
       = "Robot12".UI2;
 END_FUNCTION
 
