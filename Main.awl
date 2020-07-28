@@ -28,6 +28,12 @@ TITLE = "MotorProcess"
       NOP 0;
       CALL "PN_IN_OUT";
 
+      A "ErrorReciev";
+      = %DB13.DBX1.0;
+
+
+      AN "SW19_1";
+      = %DB13.DBX1.1;
 
 NETWORK
 TITLE = 
