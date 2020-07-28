@@ -24,7 +24,9 @@ VERSION : 0.1
 BEGIN
 	
 	"FA25_1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
-	"DB_Counters".SW25_1.GEAR := TRUE;
+	"DB_Counters".SW25_1_1.GEAR := TRUE;//РАЗРЕШЕНИЕ НА СЧЕТ
+	"DB_Counters".SW25_1_3.GEAR := TRUE;
+	"DB_Counters".SW25_1_4.GEAR := TRUE;
 	
 	
 	
@@ -42,47 +44,88 @@ BEGIN
 	
 	"00_CounterInteger"(DB_Counter:= "DB_Counters", //считаем бутылки
 	                    FirstByte:= 12,
-	                     SetValue:= "DB_Counters".SW25_1.SP,
+	                     SetValue:= "DB_Counters".SW25_1_1.SP,
 	                     Count:= "SW25_1_1",
 	                     ValueIncrement:= 1,
-	                     CountCurrent:= "DB_Counters".SW25_1.ACT);
+	                     CountCurrent:= "DB_Counters".SW25_1_1.ACT);
 	 
 	
-	 
-	 
-	 
-	 "DB_Counters".SW25_1.RESET := "Robot14".FDO00; //сброс счета по команде робота "забрал"
+	"00_CounterInteger"(DB_Counter := "DB_Counters", //считаем бутылки
+	                    FirstByte := 42,
+	                    SetValue := "DB_Counters".SW25_1_3.SP,
+	                    Count := "SW25_1_3",
+	                    ValueIncrement := 1,
+	                    CountCurrent := "DB_Counters".SW25_1_3.ACT);
 	
+	"00_CounterInteger"(DB_Counter := "DB_Counters", //считаем бутылки
+	                    FirstByte := 48,
+	                    SetValue := "DB_Counters".SW25_1_4.SP,
+	                    Count := "SW25_1_4",
+	                    ValueIncrement := 1,
+	                    CountCurrent := "DB_Counters".SW25_1_4.ACT);
 	 
 	 
-	 "IEC_Timer_25_1tr_DB".TON(IN := "DB_Counters".SW25_1.SET_OK,//задержка перед командой "готово" чтоб доехала бутылка
-	                        PT := T#4s,
-	                        Q => "Robot14".TDI00,
-	                        ET => #stop_box_time);
+	 
+	 "DB_Counters".SW25_1_1.RESET := "Robot14".FDO00; //сброс счета по команде робота "забрал"
+	 "DB_Counters".SW25_1_3.RESET := "Robot14".FDO00; //сброс счета по команде робота "забрал"
+	 "DB_Counters".SW25_1_4.RESET := "Robot14".FDO00; //сброс счета по команде робота "забрал"
+	 
+	 
+	 
+	 "IEC_Timer_25_1tr_DB".TON(IN := "DB_Counters".SW25_1_1.SET_OK,//задержка перед командой "готово" чтоб доехала бутылка
+	                           PT := T#4s,
+	                           Q => "Robot14".TDI00,
+	                           ET => #stop_box_time);
 	
 	
-	IF "Robot14".FDO00 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	IF "Robot14".FDO00 OR "Robot14".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
 	    IF "Robot14".FDO22 //если крайний то по 8
 	    THEN
-	        "DB_Counters".SW25_1.SP := 8;
+	        "DB_Counters".SW25_1_1.SP := 8;
 	        
 	    ELSE
-	        "DB_Counters".SW25_1.SP := 10;//обычно по 10
+	        "DB_Counters".SW25_1_1.SP := 10;//обычно по 10
 	        
 	    END_IF;
 	END_IF;
-	 
-	"KA25_1_1_auto" := "SW25_1_1";
-	IF "DB_Counters".SW25_1.SET_OK OR "Robot14".FDO00 THEN
-	    "KA25_1_1_auto" := TRUE;
+	"DB_Counters".SW25_1_3.SP := 5;//уставка счета делителя
+	"DB_Counters".SW25_1_4.SP := 3;//уставка счета делителя
+	
+	"KA25_1_1_auto" := "SW25_1_1";//отсекать по дачтику бутылки друг от друга
+	IF "DB_Counters".SW25_1_1.SET_OK OR "Robot14".FDO00 THEN
+	    "KA25_1_1_auto" := TRUE;//если досчитали или забирает робот
 	 END_IF;
 	
 	 IF "Auto2" THEN
 	     "KA25_1_1" := "KA25_1_1_auto";
 	     "KA25_1_2" := "KA25_1_2_auto";
+	     IF "DB_Counters".SW25_1_3.SET_OK
+	         AND NOT "SW25_1_3"
+	         
+	     THEN
+	         "KA25_1_3_OPN" := TRUE;
+	     ELSIF "Robot14".FDO00 = TRUE
+	     THEN
+	         "KA25_1_3_OPN" := FALSE;
+	     END_IF;
+	     
+	     
+	     IF "DB_Counters".SW25_1_4.SET_OK
+	         AND NOT "SW25_1_4"
+	     THEN
+	         "KA25_1_4_OPN" := TRUE;
+	     ELSIF "Robot14".FDO00 = TRUE
+	     THEN
+	         "KA25_1_4_OPN" := FALSE;
+	     END_IF;
+	    
 	 END_IF;
 	 
+	 "KA25_1_3_CLS" := NOT "KA25_1_3_OPN";
+	 "KA25_1_4_CLS" := NOT "KA25_1_4_OPN";
 	 
-	
+	 
+	 
+	 
 END_FUNCTION
 
