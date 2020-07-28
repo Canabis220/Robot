@@ -3,7 +3,14 @@
 VERSION : 0.1
 
 BEGIN
+	//линия 2
+	IF "resetSW7" THEN
+	    "Conveer_status"."07_step" := 0;
+	END_IF;
+	
 	CASE "Conveer_status"."07_step" OF//
+	        
+	       
 	    0://стоп
 	        "FA7_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
 	        
@@ -11,35 +18,38 @@ BEGIN
 	            "Conveer_status"."07_step":=10;
 	        END_IF;
 	        IF "SW7_1" = TRUE
-	            AND "Robot16".FDO02 = TRUE  THEN //если на входе есть и робот поставил новую паллету
+	            AND "Robot16".FDO03 = TRUE  THEN //если на входе есть и робот поставил новую паллету
 	            "Conveer_status"."07_step" := 20;
 	        END_IF;
 	        
 	        ;
 	    10://нет на входе
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        "KA7_1" := FALSE; //не вытолкнуть
-	        "KA7_2" := FALSE; //не фиксировать
+	        "KA7_1_auto" := FALSE; //не вытолкнуть
+	        "KA7_2_auto" := FALSE; //не фиксировать
 	        
-	        IF "SW7_1" = TRUE
-	            AND "Robot16".FDO02 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
+	        IF "SW7_1" = FALSE
+	            AND "Robot16".FDO03 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
 	            "Conveer_status"."07_step" := 20;
 	        END_IF;
 	        
 	        ;
 	    20://есть на входе и не готово
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        "KA7_1" := TRUE; //вытолкнуть
-	        "KA7_2" := TRUE; //зафиксировать
-	        IF "SW7_1"= TRUE AND "SW7_3" = FALSE AND "Robot16".FDO10 = TRUE THEN
+	        
+	        "KA7_1_auto" := TRUE; //вытолкнуть
+	        "KA7_2_auto" := TRUE; //зафиксировать
+	        IF "SW7_1"= false
+	            AND "SW7_3" = TRUE
+	            AND "Robot16".FDO11 = TRUE THEN
 	            //если на входе есть, на выходе нет и робот закончил, тогда загружаем
 	            "Conveer_status"."07_step" := 30;
 	        END_IF;
 	        
 	        ;
 	    30://загружаем
-	        "KA7_1" := FALSE; //не вытолкнуть
-	        "KA7_2" := FALSE; //не фиксировать
+	        "KA7_1_auto" := FALSE; //не вытолкнуть
+	        "KA7_2_auto" := FALSE; //не фиксировать
 	        
 	        IF "SW7_4" = TRUE  THEN //если кара уехала 
 	            "FA7_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
@@ -47,17 +57,17 @@ BEGIN
 	            "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        END_IF;
 	        
-	        IF "SW7_3" = TRUE THEN //если  на выходе есть, тогда проверка
+	        IF "SW7_3" = FALSE THEN //если  на выходе есть, тогда проверка
 	            "Conveer_status"."07_step" := 40;
 	        END_IF;
 	        ;
 	    40://подсчет и проверка
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        "KA7_1" := FALSE; //не вытолкнуть
-	        "KA7_2" := FALSE; //не фиксировать
+	        "KA7_1_auto" := FALSE; //не вытолкнуть
+	        "KA7_2_auto" := FALSE; //не фиксировать
 	        
-	        IF "SW7_3" = TRUE THEN //если  на выходе есть, то все проверили
-	            "Conveer_status"."07_step" := 50;
+	        IF "SW7_3" = false THEN //если  на выходе есть, то все проверили
+	            "Conveer_status"."07_step" := 0;
 	        END_IF;
 	        
 	        ;
@@ -85,6 +95,13 @@ BEGIN
 	    ELSE:
 	        ;
 	END_CASE;
-	    
+	
+	
+	
+	IF "Auto3" THEN
+	    "KA7_1" := "KA7_1_auto";
+	    "KA7_2" := "KA7_2_auto";
+	END_IF;
+	
 END_FUNCTION
 
