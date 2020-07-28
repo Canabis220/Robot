@@ -353,6 +353,7 @@ TITLE = RTK3 FA6_1
       = "System_started";
 
       A "Manual3";
+
       O "HalfManual3";
       = "Manual";
 
