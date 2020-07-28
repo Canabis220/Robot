@@ -17,6 +17,7 @@ TITLE = режим ручной
 
       A "Manual3";
       O "HalfManual3";
+      O "Auto3";
       = "RTK3_MAN";
 
       A "Manual4";
