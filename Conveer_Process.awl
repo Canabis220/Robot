@@ -26,9 +26,9 @@ TITLE = RTK2
 
 NETWORK
 TITLE = RTK3
-//    CALL  "Conveer6"
-//    CALL  "Conveer7"
-//     CALL  "Conveer8"
+      CALL "Conveer6PU";
+      CALL "Conveer7PO";
+      CALL "Conveer8PO";
       CALL "Conveer26FO";
       CALL "Conveer27FO";
 
