@@ -1,0 +1,61 @@
+﻿FUNCTION "Conveer20BM" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+	IF "SW20_3" THEN //отложенная загрузка
+	    "FA20_Load":= TRUE;
+	   
+	END_IF;
+	
+	
+	
+	IF "SW20_2" AND NOT "SW20_1"  THEN//доехала отложенная загрузка
+	    "FA20_Load" := FALSE;
+	END_IF;
+	
+	"FA20_reversAuto" := FALSE;
+	
+	
+	CASE "Conveer_status"."20_step" OF//db6.dbw0 
+	    0://стоп
+	        "FA20_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        
+	        IF  "FA20_Load" AND "SW20_1" //если кнопка к_роботу
+	    
+	           THEN
+	            "Conveer_status"."20_step":=30;
+	        END_IF;
+	        
+	        
+	        
+	    30://к роботу
+	       "FA20_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA20_reversAuto" := FALSE;// реверс к роботу   
+	        
+	        IF NOT "SW20_1"// приехали
+	        THEN
+	            "Conveer_status"."20_step" := 0;//стоп
+	        END_IF;
+	        
+	        
+	        
+	        
+	    70://от робота
+	         "FA20_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA20_reversAuto" := TRUE;// реверс к роботу   
+	        
+	        IF 
+	            NOT "SW20_2"// или приехали
+	        THEN
+	            "Conveer_status"."20_step" := 0;//стоп
+	        END_IF;
+	        ;
+	        
+	        ;
+	    ELSE:
+	        ;
+	END_CASE;
+	    
+END_FUNCTION
+
