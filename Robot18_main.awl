@@ -105,6 +105,17 @@ TITLE = DI13 Заблокировал смену стопки паллет
 
 
 NETWORK
+TITLE = DI14 Новая стопка паллет
+      A "FA9_1_start"      ;// если транспортер палет работал
+      O "Robot18".UI6;
+      S "Robot18".TDI14;
+
+      A "Robot18".FDO13;
+      R "Robot18".TDI14;
+
+
+
+NETWORK
 TITLE = DI15 Датчик 1го ряда линия 1
       AN "SW10_2";
       = "Robot18".TDI15;
@@ -147,6 +158,9 @@ TITLE = Hold временный останов
       A "RTK4_OK";
       AN "pause_rob18";
       = "Robot18".UI2;
+
+      AN "Robot18".UO2;
+      R "pause_rob18";
 
 END_FUNCTION
 
