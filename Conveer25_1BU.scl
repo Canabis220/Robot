@@ -22,7 +22,7 @@ VERSION : 0.1
 
 
 BEGIN
-	
+	//1 линия
 	"FA25_1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	"DB_Counters".SW25_1_1.GEAR := TRUE;//РАЗРЕШЕНИЕ НА СЧЕТ
 	"DB_Counters".SW25_1_3.GEAR := TRUE;
@@ -30,8 +30,8 @@ BEGIN
 	
 	
 	
-	
 	IF "Robot14".FDO22  //поршень разворота по команде робота "разверни"
+	    AND "Robot14".FDO00//и забрал
 	THEN
 	    "KA25_1_2_auto":=false;
 	ELSE
@@ -78,7 +78,8 @@ BEGIN
 	                           ET => #stop_box_time);
 	
 	
-	IF "Robot14".FDO00 OR "Robot14".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	 IF "Robot14".FDO00 OR
+	     "Robot14".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
 	    IF "Robot14".FDO22 //если крайний то по 8
 	    THEN
 	        "DB_Counters".SW25_1_1.SP := 8;
@@ -99,26 +100,33 @@ BEGIN
 	 IF "Auto2" THEN
 	     "KA25_1_1" := "KA25_1_1_auto";
 	     "KA25_1_2" := "KA25_1_2_auto";
-	     IF "DB_Counters".SW25_1_3.SET_OK
-	         AND NOT "SW25_1_3"
+	     IF "DB_Counters".SW25_1_3.SET_OK//счетчик делителя досчитал
+	         AND NOT "SW25_1_3"// и бутылка ушла с датчика
 	         
 	     THEN
-	         "KA25_1_3_OPN" := TRUE;
-	     ELSIF "Robot14".FDO00 = TRUE
+	         "KA25_1_3_OPN" := TRUE;//выдвинуть делитель
+	     ELSIF "Robot14".FDO00 = TRUE//если робот забрал
 	     THEN
-	         "KA25_1_3_OPN" := FALSE;
+	         "KA25_1_3_OPN" := FALSE;//убрать делитель
 	     END_IF;
 	     
 	     
-	     IF "DB_Counters".SW25_1_4.SET_OK
-	         AND NOT "SW25_1_4"
+	     IF "DB_Counters".SW25_1_4.SET_OK//счетчик делителя досчитал
+	         AND NOT "SW25_1_4"// и бутылка ушла с датчика
 	     THEN
-	         "KA25_1_4_OPN" := TRUE;
-	     ELSIF "Robot14".FDO00 = TRUE
+	         "KA25_1_4_OPN" := TRUE;//выдвинуть делитель
+	     ELSIF "Robot14".FDO00 = TRUE//если робот забрал
 	     THEN
+	         "KA25_1_4_OPN" := FALSE;//убрать делитель
+	     END_IF;
+	     
+	     IF "KA25_1_2_auto"//при развороте
+	     THEN
+	         "KA25_1_3_OPN" := FALSE; //делители не работают
 	         "KA25_1_4_OPN" := FALSE;
 	     END_IF;
-	    
+	     
+	     
 	 END_IF;
 	 
 	 "KA25_1_3_CLS" := NOT "KA25_1_3_OPN";
