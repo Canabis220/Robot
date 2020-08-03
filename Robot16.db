@@ -51,8 +51,8 @@ VERSION : 0.1
       FDO22 : Bool;   // DO22
       FDO23 : Bool;   // DO23
       FDI_BYTE1 : Byte;   // DI_BYTE1 Скорость робота
-      FDI_BYTE2 : Byte;   // DI_BYTE2
-      FDI_BYTE3 : Byte;   // DI_BYTE3
+      FDI_BYTE2 : Byte;   // DI_BYTE2 Код продукта 1
+      FDI_BYTE3 : Byte;   // DI_BYTE3 Код продукта2
       FDI_BYTE4 : Byte;   // DI_BYTE4
       FDO_BYTE1 : Byte;   // DO_BYTE1 Текущий ряд, линия 1
       FDO_BYTE2 : Byte;   // DO_BYTE2 Позиция в ряду, линия 1
