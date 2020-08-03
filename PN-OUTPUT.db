@@ -28,8 +28,8 @@ VERSION : 0.1
       c3 : Byte;   // 3DI_BYTE3 присоски
       d3 : Byte;   // 3DI_BYTE4 UI
       e3 : Byte;   // 3DI_BYTE5 Скорость робота
-      f3 : Byte;   // 3
-      g3 : Byte;   // 3
+      f3 : Byte;   // 3DI_BYTE6 код продукта1
+      g3 : Byte;   // 3DI_BYTE7 код продукта2
       N3 : DWord;   // 3
       O3 : DWord;   // 3
       P3 : Byte;   // RTK3--------------------------------
