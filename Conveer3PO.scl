@@ -8,15 +8,18 @@ BEGIN
 	END_IF;
 	
 	CASE "Conveer_status"."03_step" OF//db6.dbw0 
-	    0://стоп
+	    0://иниц
 	        "FA3_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        "KA3_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA3_2_AUTO" := FALSE; //не фиксировать
 	        
-	        IF "SW3_1" = TRUE AND "SW3_3" = TRUE THEN //если на входе нет и на выходе нет, тогда другой шаг
+	        IF "SW3_1" = TRUE
+	            AND "SW3_2" = TRUE THEN //если на входе нет и на выходе нет, тогда другой шаг
 	            "Conveer_status"."03_step" := 10;
 	        END_IF;
-	        IF "SW3_1" = FALSE
-	            AND "Robot12".FDO02 = TRUE THEN //если на входе есть и на выходе нет, тогда другой шаг
-	            "Conveer_status"."03_step" := 20;
+	        IF "SW3_1" = FALSE//если на входе есть 
+	            AND "Robot12".FDO02 = TRUE THEN //и робот поставил полету
+	            "Conveer_status"."03_step" := 20;//тогда зажимаем
 	        END_IF;
 	        
 	        ;
@@ -25,9 +28,9 @@ BEGIN
 	        "KA3_1_AUTO" := FALSE; //не вытолкнуть
 	        "KA3_2_AUTO" := FALSE; //не фиксировать
 	        
-	        IF "SW3_1" = FALSE
-	            AND "Robot12".FDO02 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
-	            "Conveer_status"."03_step" := 20;
+	        IF "SW3_1" = FALSE//если на входе есть
+	            AND "Robot12".FDO02 = TRUE THEN  //и робот поставил новую паллету
+	            "Conveer_status"."03_step" := 20;//тогда зажимаем
 	        END_IF;
 	        
 	        ;
