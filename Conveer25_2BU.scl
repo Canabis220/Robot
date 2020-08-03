@@ -22,7 +22,7 @@ VERSION : 0.1
 
 
 BEGIN
-	
+	//2 линия
 	"FA25_2_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	"DB_Counters".SW25_2_1.GEAR := TRUE;//РАЗРЕШЕНИЕ НА СЧЕТ
 	"DB_Counters".SW25_2_3.GEAR := TRUE;
@@ -31,6 +31,7 @@ BEGIN
 	
 	
 	IF "Robot14".FDO23  //поршень разворота по команде робота "разверни"
+	    AND "Robot14".FDO01//и забрал
 	THEN
 	    "KA25_2_2_auto":=false;
 	ELSE
@@ -79,7 +80,8 @@ BEGIN
 	                           ET => #stop_box_time);
 	
 	
-	 IF "Robot14".FDO01 OR "Robot14".FDO11 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	 IF "Robot14".FDO01
+	     OR "Robot14".FDO11 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
 	     IF "Robot14".FDO23 //если крайний то по 8
 	     THEN
 	         "DB_Counters".SW25_2_1.SP := 8;
@@ -126,10 +128,17 @@ BEGIN
 	         AND NOT "SW25_2_4"
 	     THEN
 	         "KA25_2_4_OPN" := TRUE;
-	     ELSIF "Robot14".FDO01= TRUE
+	     ELSIF "Robot14".FDO01 = TRUE
 	     THEN
 	         "KA25_2_4_OPN" := FALSE;
 	     END_IF;
+	     
+	     IF "KA25_2_2_auto"//при развороте
+	     THEN
+	         "KA25_2_3_OPN" := FALSE; //делители не работают
+	         "KA25_2_4_OPN" := FALSE;
+	     END_IF;
+	     
 	 END_IF;
 	 
 	 "KA25_2_3_CLS" := NOT "KA25_2_3_OPN";
