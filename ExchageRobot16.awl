@@ -64,6 +64,11 @@ TITLE =
       L "Robot16".FDI_BYTE1;//Скорость
       T "PN-OUTPUT".e3;
 
+      L "Robot16".FDI_BYTE2;//код продукта 1
+      T "PN-OUTPUT".f3;
+
+      L "Robot16".FDI_BYTE3;//код продукта 2
+      T "PN-OUTPUT".g3;
 
 
 
