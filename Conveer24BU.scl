@@ -59,7 +59,8 @@ BEGIN
 	                        ET => #stop_box_time);
 	
 	
-	IF "Robot12".FDO01 OR "Robot12".FDO11 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	IF "Robot12".FDO01
+	    OR "Robot12".FDO11 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
 	    IF "Robot12".FDO23 //если крайний то по 5
 	    THEN
 	        "DB_Counters".SW24.SP := 8;
