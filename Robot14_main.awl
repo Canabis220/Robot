@@ -116,7 +116,7 @@ TITLE = DI13 Заблокировал смену стопки паллет
 NETWORK
 TITLE = DI14 Новая стопка паллет
       A "FA5_1_start"      ;// если транспортер палет работал
-      O "Robot14".UI6;
+   // O     "Robot14".UI6
       S "Robot14".TDI14;
 
       A "Robot14".FDO13;
@@ -143,7 +143,7 @@ TITLE = DI19 Присоски опущены (датчик поиска)
 
 NETWORK
 TITLE = DI21 Картон в наличии
-      A "SW19_1";
+      AN "SW20_1";
       = "Robot14".TDI21;
 
 NETWORK
@@ -164,7 +164,7 @@ TITLE = Hold временный останов
       O "Manual2";
       O "Auto2";
 
-      A "RTK1_OK";
+      A "RTK2_OK";
       AN "pause_rob14";
       = "Robot14".UI2;
 
