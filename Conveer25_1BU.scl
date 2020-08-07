@@ -30,13 +30,21 @@ BEGIN
 	
 	
 	
-	IF "Robot14".FDO22  //поршень разворота по команде робота "разверни"
-	    AND "Robot14".FDO00//и забрал
+	IF "Robot14".FDO00 = TRUE //если забрал
+	    OR "Robot14".FDO10= TRUE//или закончил
 	THEN
-	    "KA25_1_2_auto":=false;
+	    //"KA25_1_2_auto" := NOT "Robot14".FDO22;//разворот по команде от робота
+	    IF "Robot14".FDO22  //поршень разворота по команде робота "разверни"
+	    THEN
+	        "KA25_1_2_auto" := false;
+	    ELSE
+	        "KA25_1_2_auto" := TRUE;
+	    END_IF;
 	ELSE
-	    "KA25_1_2_auto":=TRUE;
+	    "KA25_1_2_auto" := "KA25_1_2_auto";
 	END_IF;
+	
+	
 	
 	
 	
@@ -102,10 +110,11 @@ BEGIN
 	     "KA25_1_2" := "KA25_1_2_auto";
 	     IF "DB_Counters".SW25_1_3.SET_OK//счетчик делителя досчитал
 	         AND NOT "SW25_1_3"// и бутылка ушла с датчика
-	         
 	     THEN
 	         "KA25_1_3_OPN" := TRUE;//выдвинуть делитель
-	     ELSIF "Robot14".FDO00 = TRUE//если робот забрал
+	     END_IF;
+	     
+	     IF "Robot14".FDO00 = TRUE//если робот забрал
 	     THEN
 	         "KA25_1_3_OPN" := FALSE;//убрать делитель
 	     END_IF;
@@ -115,12 +124,15 @@ BEGIN
 	         AND NOT "SW25_1_4"// и бутылка ушла с датчика
 	     THEN
 	         "KA25_1_4_OPN" := TRUE;//выдвинуть делитель
-	     ELSIF "Robot14".FDO00 = TRUE//если робот забрал
+	     END_IF;
+	    
+	     IF "Robot14".FDO00 = TRUE//если робот забрал
+	         OR "DB_Counters".SW25_1_4.ACT =0
 	     THEN
 	         "KA25_1_4_OPN" := FALSE;//убрать делитель
 	     END_IF;
 	     
-	     IF "KA25_1_2_auto"//при развороте
+	     IF "KA25_1_2"//при развороте
 	     THEN
 	         "KA25_1_3_OPN" := FALSE; //делители не работают
 	         "KA25_1_4_OPN" := FALSE;
