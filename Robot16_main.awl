@@ -119,12 +119,12 @@ TITLE = DI14 Новая стопка паллет
 
 NETWORK
 TITLE = DI15 Датчик 1го ряда линия 1
-      A "SW8_2";
+      AN "SW8_2";
       = "Robot16".TDI15;
 
 NETWORK
 TITLE = DI16 Датчик 1го ряда линия 2
-      A "SW7_2";
+      AN "SW7_2";
       = "Robot16".TDI16;
 
 NETWORK
