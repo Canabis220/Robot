@@ -23,6 +23,8 @@ TITLE = RTK1 FA1_1
       );
       = "FA1_1_manual_start";
 
+      A "pause_rob12";// при переходе в ручной режим
+      R "FA1_1_manual_start";// тормозим то что вкл в полу
 
 
       A "FA1_FROM_PRESS";
@@ -57,7 +59,7 @@ TITLE = RTK1 FA1_1
       );
 
 
-   // BEU
+
 NETWORK
 TITLE = RTK1 FA2_1
       A(;
@@ -69,6 +71,10 @@ TITLE = RTK1 FA2_1
       A "SW2_3";
       );
       = "FA2_1_manual_start";
+
+      A "pause_rob12";
+      R "FA2_1_manual_start";
+
 
       A "FA2_FROM_PRESS";
       A "Manual";
@@ -109,6 +115,10 @@ TITLE = RTK1 FA3_1
       );
       = "FA3_1_manual_start";
 
+      A "pause_rob12";
+      R "FA3_1_manual_start";
+
+
       A "FA3_FROM_PRESS";
       A "Manual";
       O "Auto";
@@ -138,6 +148,10 @@ TITLE = RTK1 FA3_1
 
 NETWORK
 TITLE = RTK1 FA23_1
+      A "pause_rob12";
+      R "FA23_1_manual_start";
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA23_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA23_1_BSpeed , 
@@ -156,6 +170,9 @@ TITLE = RTK1 FA23_1
 
 NETWORK
 TITLE = RTK1 FA24_1
+      A "pause_rob12";
+      R "FA24_1_manual_start";
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA24_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA24_1_BSpeed , 
@@ -191,6 +208,10 @@ TITLE = RTK2 FA4_1
       A "SW4_3";
       );
       = "FA4_1_manual_start";
+
+      A "pause_rob14";
+      R "FA23_1_manual_start";
+
 
       A "FA4_FROM_PRESS";
       A "Manual";
@@ -228,6 +249,9 @@ TITLE = RTK2 FA5_1
       A "SW5_2";
       );
       = "FA5_1_manual_start";
+
+      A "pause_rob14";
+      R "FA5_1_manual_start";
 
 
 
@@ -274,6 +298,8 @@ TITLE = RTK2 FA20_1
       );
       = "FA20_1_manual_start";
 
+      A "pause_rob14";
+      R "FA20_1_manual_start";
 
 
       A "FA20_FROM_PRESS";
@@ -311,6 +337,7 @@ TITLE = RTK2 FA20_1
 
 NETWORK
 TITLE = RTK2 FA25_1
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA25_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA25_1_BSpeed , 
@@ -329,6 +356,9 @@ TITLE = RTK2 FA25_1
 
 NETWORK
 TITLE = RTK2 FA25_2
+      A "pause_rob14";
+      R "FA25_1_1_manual_start";
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA25_2_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA25_2_BSpeed , 
@@ -367,6 +397,10 @@ TITLE = RTK3 FA6_1
       A "SW6_2";
       );
       = "FA6_1_manual_start";
+
+      A "pause_rob16";
+      R "FA6_1_manual_start";
+
 
       A "FA6_FROM_PRESS";
       O "FA6_FROM_PRESS1";
@@ -414,6 +448,11 @@ TITLE = RTK3 FA7_1
       );
       = "FA7_1_manual_start";
 
+
+      A "pause_rob16";
+      R "FA6_1_manual_start";
+
+
       A "FA7_FROM_PRESS";
       O "FA7_FROM_PRESS1";
       A "Manual";
@@ -456,6 +495,12 @@ TITLE = RTK3 FA8_1
       );
       = "FA8_1_manual_start";
 
+
+      A "pause_rob16";
+      R "FA8_1_manual_start";
+
+
+
       A "FA8_FROM_PRESS";
       O "FA8_FROM_PRESS1";
       A "Manual";
@@ -487,6 +532,10 @@ TITLE = RTK3 FA8_1
 
 NETWORK
 TITLE = RTK3 FA26_1
+
+      A "pause_rob16";
+      R "FA6_1_manual_start";
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA26_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA26_1_BSpeed , 
@@ -505,6 +554,10 @@ TITLE = RTK3 FA26_1
 
 NETWORK
 TITLE = RTK3 FA27_1
+
+      A "pause_rob16";
+      R "FA6_1_manual_start";
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA27_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA27_1_BSpeed , 
@@ -541,6 +594,11 @@ TITLE = RTK4 FA9_1
       A "SW9_2";
       );
       = "FA9_1_manual_start";
+
+
+      A "pause_rob18";
+      R "FA9_1_manual_start";
+
 
       A "FA9_FROM_PRESS";
       A "Manual";
@@ -599,6 +657,11 @@ TITLE = RTK4 FA10_1
       = "FA10_reversManu";
 
 
+      A "pause_rob18";
+      R "FA10_1_manual_start";
+
+
+
       A "Manual";
       A "FA10_reversManu";
       O(;
@@ -628,6 +691,11 @@ TITLE = RTK4 FA10_1
 
 NETWORK
 TITLE = RTK4 FA28_1
+
+      A "pause_rob18";
+      R "FA28_1_manual_start";
+
+
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA28_1_ETA , 
          Motor_X_Input_2             := "PN-INPUT".FA28_1_BSpeed , 
