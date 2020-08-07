@@ -1,0 +1,25 @@
+﻿FUNCTION "Error" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = 
+      A "ErrorReciev";
+      = %DB13.DBX1.0;
+
+
+      AN "SW19_1";
+      = %DB13.DBX1.1;
+
+      A "SW20_1";
+      = %DB13.DBX1.2;
+
+      AN "SW21_1";
+      = %DB13.DBX1.3;
+
+      AN "SW22_1";
+      = %DB13.DBX1.4;
+
+END_FUNCTION
+
