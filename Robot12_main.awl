@@ -115,7 +115,7 @@ TITLE = DI13 Заблокировал смену стопки паллет
 NETWORK
 TITLE = DI14 Новая стопка паллет
       A "FA1_1_start";// если транспортер палет работал
-      O "Robot12".UI6;
+   // O     "Robot12".UI6
       S "Robot12".TDI14;
 
       A "Robot12".FDO13;
@@ -163,9 +163,7 @@ TITLE = Hold временный останов
 
 
       O "Manual1";
-      O(;
-      A "Auto1";
-      );
+      O "Auto1";
       A "RTK1_OK";
       AN "pause_rob12";
       = "Robot12".UI2;
