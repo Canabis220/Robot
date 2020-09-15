@@ -9,15 +9,14 @@ BEGIN
 	    0://стоп
 	        "FA4_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
 	        "KA4_1_AUTO" := FALSE; //не вытолкнуть
-	       
 	        "KA4_2_AUTO" := FALSE; //не фиксировать
 	        
 	        
 	        IF "SW4_1"= TRUE  THEN //если на входе нет, тогда другой шаг
 	            "Conveer_status"."04_step":=10;
 	        END_IF;
-	        IF "SW4_1" = FALSE
-	            AND "Robot14".FDO02 = TRUE THEN //если на входе есть , тогда другой шаг
+	        
+	        IF "SW4_1" = FALSE THEN //если на входе есть , тогда другой шаг
 	            "Conveer_status"."04_step" := 20;
 	        END_IF;
 	        
@@ -26,12 +25,15 @@ BEGIN
 	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA4_1_AUTO" := FALSE; //не вытолкнуть
 	        "KA4_2_AUTO" := FALSE; //не фиксировать
+	        "Robot14".TDI02 := FALSE;// палета не на месте
 	        
 	        IF "SW4_1" = FALSE
 	            AND "Robot14".FDO02 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
 	            "Conveer_status"."04_step" := 20;
 	        END_IF;
-	        
+	        IF "resetSW4" THEN
+	            "Conveer_status"."04_step" := 0;
+	        END_IF;
 	        ;
 	    20://есть на входе и не готово
 	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
@@ -40,29 +42,53 @@ BEGIN
 	        IF "SW4_6" = TRUE THEN
 	            "KA4_2_AUTO" := TRUE; //зафиксировать
 	        END_IF;
-	        IF "SW4_1" = FALSE
-	            AND "SW4_3" = TRUE AND "Robot14".FDO10 = TRUE THEN
-	            //если на входе есть, на выходе нет и робот закончил, тогда загружаем
+	        
+	        IF "SW4_8" = TRUE THEN
+	            "Conveer_status"."04_step" := 22;
+	        END_IF;
+	        ;
+	    22://укладка
+	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        "KA4_1_AUTO" := TRUE; //вытолкнуть
+	        "KA4_2_AUTO" := TRUE; //зафиксировать
+	        
+	        IF "Robot14".FDO11 = TRUE THEN
+	            //если робот закончил, тогда готово
+	            "Conveer_status"."04_step" := 28;
+	        END_IF;
+	        
+	        
+	        IF "SW4_1" = TRUE THEN
+	            //если на входе нет, тогда предошибка
+	            "Conveer_status"."04_step" := 50;
+	        END_IF;
+	        ;
+	        
+	    28://готово
+	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
+	        "KA4_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA4_2_AUTO" := FALSE; //не зафиксировать
+	        
+	        IF "SW4_7" = TRUE THEN
+	            //если разжали, тогда выезжаем
 	            "Conveer_status"."04_step" := 30;
 	        END_IF;
 	        
-	        IF "SW4_1" = TRUE THEN
-	            //если на входе нет, тогда сброс
-	            "Conveer_status"."04_step" := 0;
-	        END_IF;
-	        
 	        ;
+	        
 	    30://загружаем
 	        "KA4_1_AUTO" := FALSE; //не вытолкнуть
 	        "KA4_2_AUTO" := FALSE; //не фиксировать
 	        
-	        IF "SW4_4" = TRUE  THEN //если кара уехала 
+	        IF "SW4_4" = TRUE  //если кара уехала 
+	            OR "SW4_3" = TRUE THEN//и нет выехавшей паллеты
 	            "FA4_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	        ELSE    //если кара близко
 	            "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        END_IF;
 	        
-	        IF "SW4_3" = FALSE THEN //если  на выходе есть, тогда проверка
+	        IF "SW4_3" = FALSE //если  на выходе есть, 
+	            OR "SW4_1" = TRUE THEN //а на входе нет, тогда проверка
 	            "Conveer_status"."04_step" := 40;
 	        END_IF;
 	        ;
@@ -72,25 +98,34 @@ BEGIN
 	        "KA4_2_AUTO" := FALSE; //не фиксировать
 	        
 	        IF "SW4_3" = FALSE THEN //если  на выходе есть, то все проверили
-	            "Conveer_status"."04_step" := 50;
+	            "Conveer_status"."04_step" := 0;
 	        END_IF;
 	        
 	        ;
-	    50://выполненно
+	    50://предошибка
 	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW4_4" = FALSE
-	            OR "SW4_3" = TRUE
-	            OR "SW4_1" = FALSE
-	            
-	        THEN //если кара то она забирает паллету
-	            "Conveer_status"."04_step" := 0;// не будем ждать пока заберут, робота нужно обслуживать
+	        "KA4_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA4_2_AUTO" := FALSE; //не фиксировать
+	        "Robot14".TDI02 := FALSE;// палета не на месте
+	        
+	        
+	        IF "Robot14".FDO17 = FALSE
+	        THEN //если  то 
+	            "Conveer_status"."04_step" := 60;// ошибка
 	        END_IF;
-	       
+	        
+	        IF "resetSW4" THEN
+	            "Conveer_status"."04_step" := 0;
+	        END_IF;
+	        
 	        
 	        ;
-	    60://забирают
+	    60://ошибка
 	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
-	        IF "SW4_4" = TRUE OR "SW4_3" = TRUE OR "SW4_1" = TRUE THEN //если кара или забрали или поставили то
+	        "KA4_1_AUTO" := FALSE; //не вытолкнуть
+	        "KA4_2_AUTO" := FALSE; //не фиксировать
+	        
+	        IF "resetSW4" THEN
 	            "Conveer_status"."04_step" := 0;
 	        END_IF;
 	         
