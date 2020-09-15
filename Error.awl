@@ -4,22 +4,83 @@ VERSION : 0.1
 
 BEGIN
 NETWORK
-TITLE = 
+TITLE = ОБЩ
       A "ErrorReciev";
       = %DB13.DBX1.0;
 
 
+
+
+
+
+NETWORK
+TITLE = RTK1
+
       AN "SW19_1";
       = %DB13.DBX1.1;
 
-      A "SW20_1";
+
+      AN "SW1_3";
       = %DB13.DBX1.2;
 
+NETWORK
+TITLE = RTK2
+
+      A "SW20_1";
+      = %DB13.DBX5.1;
+
+      A "SW5_3";
+      = %DB13.DBX5.2;
+
+NETWORK
+TITLE = RTK3
+
       AN "SW21_1";
-      = %DB13.DBX1.3;
+      = %DB13.DBX9.1;
+
+      AN "SW9_3";
+      = %DB13.DBX9.2;
+
+NETWORK
+TITLE = RTK4
 
       AN "SW22_1";
-      = %DB13.DBX1.4;
+      = %DB13.DBX13.1;
+
+      AN "SW9_3";
+      = %DB13.DBX13.2;
+
+NETWORK
+TITLE = Авария возникновение
+      L "Errors"."00";
+      L "Errors_OLD"."00";
+      >D;
+      S "AlarmFP1";
+
+      L "Errors"."04";
+      L "Errors_OLD"."04";
+      >D;
+      S "AlarmFP2";
+
+      L "Errors"."08";
+      L "Errors_OLD"."08";
+      >D;
+      S "AlarmFP3";
+
+      L "Errors"."12";
+      L "Errors_OLD"."12";
+      >D;
+      S "AlarmFP4";
+
+
+      L "Errors"."00";
+      T "Errors_OLD"."00";
+      L "Errors"."04";
+      T "Errors_OLD"."04";
+      L "Errors"."08";
+      T "Errors_OLD"."08";
+      L "Errors"."12";
+      T "Errors_OLD"."12";
 
 END_FUNCTION
 
