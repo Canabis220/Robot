@@ -24,7 +24,7 @@ VERSION : 0.1
 BEGIN
 	"FA23_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	//"DB_Counters".SW23.RESET := FALSE;
-	"DB_Counters".SW23.GEAR := TRUE;
+	"DB_Counters".SW23.GEAR := "Auto1";
 	
 	//молоко бутылки
 	
