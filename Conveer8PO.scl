@@ -52,8 +52,9 @@ BEGIN
 	        "FA8_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA8_1_auto" := TRUE; //вытолкнуть
 	        "KA8_2_auto" := TRUE; //зафиксировать
+	        "Robot16".TDI02 := TRUE;// палета на месте
 	        
-	        IF "Robot16".FDO11 = TRUE THEN
+	        IF "Robot16".FDO10 = TRUE THEN
 	            //если робот закончил, тогда готово
 	            "Conveer_status"."08_step" := 28;
 	        END_IF;
@@ -81,7 +82,7 @@ BEGIN
 	        "KA8_2_auto" := FALSE; //не фиксировать
 	        
 	        IF "SW8_4" = TRUE  //если кара уехала 
-	            OR "SW8_3" = TRUE THEN//и нет выехавшей паллеты
+	            AND "SW8_3" = TRUE THEN//и нет выехавшей паллеты
 	            "FA8_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	        ELSE    //если кара близко
 	            "FA8_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
