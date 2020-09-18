@@ -24,9 +24,9 @@ VERSION : 0.1
 BEGIN
 	//1 линия
 	"FA25_1_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
-	"DB_Counters".SW25_1_1.GEAR := TRUE;//РАЗРЕШЕНИЕ НА СЧЕТ
-	"DB_Counters".SW25_1_3.GEAR := TRUE;
-	"DB_Counters".SW25_1_4.GEAR := TRUE;
+	"DB_Counters".SW25_1_1.GEAR := "Auto2";//РАЗРЕШЕНИЕ НА СЧЕТ
+	"DB_Counters".SW25_1_3.GEAR := "Auto2";
+	"DB_Counters".SW25_1_4.GEAR := "Auto2";
 	
 	
 	
