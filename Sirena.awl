@@ -4,7 +4,7 @@ VERSION : 0.1
 
 BEGIN
 NETWORK
-TITLE =  световая колонна. Звук RTK1
+TITLE = световая колонна. Звук RTK1
       A "AlarmFP1";
       S "DB_Counters".Sirena1.GEAR;
       R "DB_Counters".Sirena1.RESET;
@@ -57,6 +57,7 @@ TITLE = Световая колонна робота. Звук RTK3
       R "DB_Counters".Sirena3.RESET;
       S "KAR3_4";
 
+
       CALL "00_CounterInteger"
       (  DB_Counter                  := "DB_Counters" , 
          FirstByte                   := 114 , 
@@ -91,7 +92,7 @@ TITLE = Световая колонна робота. Звук RTK4
       A "DB_Counters".Sirena4.SET_OK;
       S "DB_Counters".Sirena4.RESET;
       R "AlarmFP4";
-      R     "KAR4_4";
+      R "KAR4_4";
 
 END_FUNCTION
 
