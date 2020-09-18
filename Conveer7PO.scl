@@ -27,7 +27,7 @@ BEGIN
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA7_1_auto" := FALSE; //не вытолкнуть
 	        "KA7_2_auto" := FALSE; //не фиксировать
-	        "Robot16".TDI02 := FALSE;// палета не на месте
+	        "Robot16".TDI03 := FALSE;// палета не на месте
 	        
 	        IF "SW7_1" = FALSE
 	            AND "Robot16".FDO03 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
@@ -56,6 +56,7 @@ BEGIN
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA7_1_auto" := TRUE; //вытолкнуть
 	        "KA7_2_auto" := TRUE; //зафиксировать
+	        "Robot14".TDI03 := TRUE;// палета  на месте
 	        
 	        IF "Robot16".FDO11 = TRUE THEN
 	            //если робот закончил, тогда готово
@@ -109,9 +110,9 @@ BEGIN
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA7_1_auto" := FALSE; //не вытолкнуть
 	        "KA7_2_auto" := FALSE; //не фиксировать
-	        "Robot16".TDI02 := FALSE;// палета не на месте
+	        "Robot16".TDI03 := FALSE;// палета не на месте
 	        
-	        IF "Robot16".FDO17 = FALSE
+	        IF "Robot16".FDO18 = FALSE
 	        THEN //если  то 
 	            "Conveer_status"."07_step" := 60;// ошибка
 	        END_IF;
