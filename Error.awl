@@ -20,8 +20,14 @@ TITLE = RTK1
       = %DB13.DBX1.1;
 
 
-      AN "SW1_3";
+      A "SW1_3";
       = %DB13.DBX1.2;
+
+      A "Robot12".FDO18;
+      = %DB13.DBX1.3;//conv2
+
+      A "Robot12".FDO17;
+      = %DB13.DBX1.4;//conv3
 
 NETWORK
 TITLE = RTK2
@@ -32,14 +38,26 @@ TITLE = RTK2
       A "SW5_3";
       = %DB13.DBX5.2;
 
+      A "Robot14".FDO18;
+      = %DB13.DBX5.3;//noop
+
+      A "Robot14".FDO17;
+      = %DB13.DBX5.4;//conv4
+
 NETWORK
 TITLE = RTK3
 
       AN "SW21_1";
       = %DB13.DBX9.1;
 
-      AN "SW9_3";
+      A "SW9_3";
       = %DB13.DBX9.2;
+
+      A "Robot16".FDO18;
+      = %DB13.DBX9.3;//conv7
+
+      A "Robot16".FDO17;
+      = %DB13.DBX9.4;//conv8
 
 NETWORK
 TITLE = RTK4
@@ -47,8 +65,14 @@ TITLE = RTK4
       AN "SW22_1";
       = %DB13.DBX13.1;
 
-      AN "SW9_3";
+      A "SW9_3";
       = %DB13.DBX13.2;
+
+      A "Robot18".FDO18;
+      = %DB13.DBX13.3;//noop
+
+      A "Robot18".FDO17;
+      = %DB13.DBX13.4;//conv10
 
 NETWORK
 TITLE = Авария возникновение
