@@ -1,0 +1,40 @@
+TYPE "VState"
+AUTHOR : knitall
+FAMILY : Control
+NAME : VState
+VERSION : 2.0
+
+
+  STRUCT 	
+   command : BYTE ;	
+   color : BYTE ;	
+   count : BYTE ;	
+   TimerRunning : BOOL ;	
+   TimerOverflow : BOOL ;	
+   output : BOOL ;	
+   existAlarm : BOOL ;	
+   un12 : BOOL ;	
+   un13 : BOOL ;	
+   un14 : BOOL ;	
+   un15 : BOOL ;	
+   IsOpened : BOOL ;	
+   IsClosed : BOOL ;	
+   un1 : BOOL ;	
+   un2 : BOOL ;	
+   IsOOS : BOOL ;	//Out of service
+   IsLock : BOOL ;	
+   IsAuto : BOOL  := TRUE;	
+   IsManual : BOOL ;	////הכÿ סמגלוסעטלמסעט
+   Open : BOOL ;	
+   Close : BOOL  := TRUE;	
+   IsAlarm : BOOL ;	
+   AckAlarm : BOOL ;	
+   AlarmOpening : BOOL ;	
+   AlarmClosing : BOOL ;	
+   forceOpen : BOOL ;	
+   forceClose : BOOL ;	
+   countOpening : BYTE  := B#16#5;	
+   countClosing : BYTE  := B#16#5;	
+  END_STRUCT ;	
+END_TYPE
+
