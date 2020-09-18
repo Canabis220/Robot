@@ -3,18 +3,18 @@
 VERSION : 0.1
 
 BEGIN
-	
+	//2 линия
 	
 	
 	CASE "Conveer_status"."02_step" OF//
 	    0://стоп
-	        "FA2_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
+	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
 	        "KA2_2_AUTO" := FALSE; //не фиксировать
 	        
 	        
-	        IF "SW2_1"= true  THEN //если на входе нет, тогда другой шаг
-	            "Conveer_status"."02_step":=10;
+	        IF "SW2_1" = true THEN //если на входе нет, тогда другой шаг
+	            "Conveer_status"."02_step" := 10;
 	        END_IF;
 	        
 	        IF "SW2_1" = FALSE THEN //если на входе есть, то след шаг
@@ -26,7 +26,7 @@ BEGIN
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
 	        "KA2_2_AUTO" := FALSE; //не фиксировать
-	        "Robot12".TDI02 := FALSE;// палета не на месте
+	        "Robot12".TDI03 := FALSE;// палета не на месте
 	        
 	        IF "SW2_1" = FALSE
 	            AND "Robot12".FDO03 = TRUE THEN //если на входе есть и робот поставил новую паллету, то след шаг
@@ -53,13 +53,14 @@ BEGIN
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA2_1_AUTO" := TRUE; //вытолкнуть
 	        "KA2_2_AUTO" := TRUE; //зафиксировать
+	        "Robot12".TDI03 := TRUE;// палета  на месте
 	        
-	        IF  "Robot12".FDO11 = TRUE THEN
+	        IF "Robot12".FDO11 = TRUE THEN
 	            //если робот закончил, тогда готово
 	            "Conveer_status"."02_step" := 28;
 	        END_IF;
 	        
-	        IF "SW2_1" = TRUE  THEN
+	        IF "SW2_1" = TRUE THEN
 	            //если на входе нет, тогда предошибка
 	            "Conveer_status"."02_step" := 50;
 	        END_IF;
@@ -82,7 +83,7 @@ BEGIN
 	        "KA2_2_AUTO" := FALSE; //не фиксировать
 	        
 	        IF "SW2_4" = TRUE   //если кара уехала 
-	            OR "SW2_3" = TRUE THEN//и нет выехавшей паллеты
+	            AND "SW2_3" = TRUE THEN//и нет выехавшей паллеты
 	            "FA2_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	        ELSE    //если кара близко
 	            "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
@@ -107,9 +108,9 @@ BEGIN
 	        "FA2_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA2_1_AUTO" := FALSE; //не вытолкнуть
 	        "KA2_2_AUTO" := FALSE; //не фиксировать
-	        "Robot12".TDI02 := FALSE;// палета не на месте
+	        "Robot12".TDI03 := FALSE;// палета не на месте
 	        
-	        IF "Robot12".FDO17 = FALSE
+	        IF "Robot12".FDO18 = TRUE
 	        THEN //если  то 
 	            "Conveer_status"."02_step" := 60;// ошибка
 	        END_IF;
@@ -131,7 +132,7 @@ BEGIN
 	        ;
 	        
 	    70://возврата нет
-	               "Conveer_status"."02_step" := 0;
+	        "Conveer_status"."02_step" := 0;
 	        ;
 	        
 	        ;
