@@ -3,7 +3,7 @@
 VERSION : 0.1
 
 BEGIN
-	
+	//единственная линия
 	
 	CASE "Conveer_status"."04_step" OF//
 	    0://стоп
@@ -51,8 +51,9 @@ BEGIN
 	        "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA4_1_AUTO" := TRUE; //вытолкнуть
 	        "KA4_2_AUTO" := TRUE; //зафиксировать
+	        "Robot14".TDI02 := TRUE;// палета  на месте
 	        
-	        IF "Robot14".FDO11 = TRUE THEN
+	        IF "Robot14".FDO10 = TRUE THEN
 	            //если робот закончил, тогда готово
 	            "Conveer_status"."04_step" := 28;
 	        END_IF;
@@ -81,14 +82,14 @@ BEGIN
 	        "KA4_2_AUTO" := FALSE; //не фиксировать
 	        
 	        IF "SW4_4" = TRUE  //если кара уехала 
-	            OR "SW4_3" = TRUE THEN//и нет выехавшей паллеты
+	            AND "SW4_3" = TRUE THEN//и нет выехавшей паллеты
 	            "FA4_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	        ELSE    //если кара близко
 	            "FA4_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        END_IF;
 	        
 	        IF "SW4_3" = FALSE //если  на выходе есть, 
-	            OR "SW4_1" = TRUE THEN //а на входе нет, тогда проверка
+	            AND "SW4_1" = TRUE THEN //а на входе нет, тогда проверка
 	            "Conveer_status"."04_step" := 40;
 	        END_IF;
 	        ;
