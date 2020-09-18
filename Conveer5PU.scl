@@ -8,12 +8,15 @@ BEGIN
 	END_IF;
 	
 	
-	IF "KA5_2" OR "KA5_1" OR NOT "KA5_3" THEN//нажали любую другую кнопку
+	IF "KA5_2"
+	    OR "KA5_1"
+	    OR NOT "KA5_3" THEN//нажали любую другую кнопку
 	    "FA5_Load" := FALSE;
 	END_IF;
 	
 	
-	IF "SW5_2" AND NOT "SW5_3"  THEN//доехала отложенная загрузка
+	IF "SW5_2"
+	    AND NOT "SW5_3"  THEN//доехала отложенная загрузка
 	    "FA5_Load" := FALSE;
 	END_IF;
 	
@@ -24,8 +27,8 @@ BEGIN
 	    0://стоп
 	        "FA5_1_auto_start":=FALSE;//двигатель транспортера в автомате не работает
 	        
-	        IF "KA5_1" OR ("FA5_Load" AND "SW5_1") //если кнопка к_роботу
-	    
+	        IF "KA5_1"
+	            OR ("FA5_Load" AND "SW5_1"AND "SW5_3") //если кнопка к_роботу
 	            AND NOT "Robot14".TDI13 //и нет блокировки
 	        THEN
 	            "Conveer_status"."05_step":=30;
@@ -40,17 +43,20 @@ BEGIN
 	        
 	        
 	    30://к роботу
-	       "FA5_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	        "FA5_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	        "FA5_reversAuto" := FALSE;// реверс к роботу   
+	        
 	        
 	        IF     NOT "SW5_1"//если кара
 	            OR NOT "KA5_3"// или кнопка СТОП
 	            OR NOT "SW5_3"// или приехали
 	        THEN 
 	            "Conveer_status"."05_step" := 0;//стоп
-	        END_IF;        
+	        END_IF;
 	        
-	        
+	        IF NOT "SW5_3" THEN //если некуда ехать, то не едем, даже если дурак жмет кнопку
+	            "FA5_1_auto_start" := FALSE;
+	        END_IF;
 	        
 	        
 	    70://от робота
@@ -63,9 +69,9 @@ BEGIN
 	        THEN
 	            "Conveer_status"."05_step" := 0;//стоп
 	        END_IF;
-	        ;
-	        
-	        ;
+	        IF NOT "SW5_2" THEN //если некуда ехать, то не едем, даже если дурак жмет кнопку
+	            "FA5_1_auto_start" := FALSE;
+	        END_IF;
 	    ELSE:
 	        ;
 	END_CASE;
