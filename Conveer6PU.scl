@@ -53,6 +53,10 @@ BEGIN
 	        THEN
 	            "Conveer_status"."06_step" := 0;//стоп
 	        END_IF;
+	        
+	        IF NOT "SW6_3" THEN //если некуда ехать, то не едем, даже если дурак жмет кнопку
+	            "FA6_1_auto_start" := FALSE;
+	        END_IF;
 	        ;
 	 
 	           
@@ -65,6 +69,9 @@ BEGIN
 	            OR NOT "SW6_2"// или приехали
 	        THEN
 	            "Conveer_status"."06_step" := 0;//стоп
+	        END_IF;
+	        IF NOT "SW6_2" THEN //если некуда ехать, то не едем, даже если дурак жмет кнопку
+	            "FA6_1_auto_start" := FALSE;
 	        END_IF;
 	    ELSE:
 	        ;
