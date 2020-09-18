@@ -1,0 +1,362 @@
+FUNCTION "ValveControl" : VOID
+TITLE =ValveControl
+//COMMAND'S
+//
+//1 = АВТОМАТ
+//2 = РУЧНОЕ
+//3 = ОТКРЫТЬ
+//4 = ЗАКРЫТЬ
+//5 = АСК
+AUTHOR : knitall
+FAMILY : Control
+NAME : Valve
+VERSION : 2.0
+
+
+VAR_INPUT
+  Valve : "VState";	
+  NC : BOOL ;	
+  Horn : BOOL ;	
+END_VAR
+VAR_IN_OUT
+  Open : BOOL ;	
+  Close : BOOL ;	
+  Output : BOOL ;	
+END_VAR
+VAR_TEMP
+  pAny : ANY ;	
+  retval : INT ;	
+  this : "VState";	
+  ARStore : DWORD ;	
+  CommandOSS : BOOL ;	
+END_VAR
+BEGIN
+NETWORK
+TITLE =Load
+
+
+//      TAR1  #ARStore
+//      L     0
+      L     P##Valve; 
+      LAR1  ; 
+
+      L     W [AR1,P#0.0]; //db num
+      T     LW     4; 
+
+      OPN   DB [LW 4]; 
+
+      L     P#DBX 0.0; 
+      L     W [AR1,P#4.0]; 
+      +D    ; 
+      LAR1  ; 
+
+      L     DBD [AR1,P#0.0]; 
+      T     LD    12; 
+
+      L     DBD [AR1,P#4.0]; 
+      T     LD    16; 
+
+NETWORK
+TITLE =Command
+
+
+      A     #this.IsLock; 
+      JC    RCMD; 
+
+      L     #this.command; 
+      L     0; // нет команды
+      ==I   ; 
+      JC    ECMD; 
+
+      INC   1; // АВТОМАТ
+      ==I   ; 
+      S     #this.IsAuto; 
+      JC    RCMD; 
+
+      INC   1; // РУЧНОЕ
+      ==I   ; 
+      R     #this.IsAuto; 
+      JC    RCMD; 
+
+      INC   1; // ОТКРЫТЬ
+      ==I   ; 
+      S     #this.Open; 
+      R     #this.Close; 
+      JC    RCMD; 
+
+      INC   1; // ЗАКРЫТЬ
+      ==I   ; 
+      S     #this.Close; 
+      R     #this.Open; 
+      JC    RCMD; 
+
+      INC   1; // СБРОСИТЬ АВАРИЮ (АСК)
+      ==I   ; 
+      S     #this.AckAlarm; 
+      JC    RCMD; 
+
+      INC   1; // Вывести из обслуживания
+      ==I   ; 
+      S     #CommandOSS; 
+
+RCMD: L     0; 
+      T     #this.command; 
+
+      AN    #this.IsAuto; 
+      =     #this.IsManual; 
+
+ECMD: CLR   ; 
+
+NETWORK
+TITLE =Обработка NC в начале
+
+
+      A     #NC; 
+      JC    NCDB; // NC detect at begin of block
+
+      AN    #Output; 
+      =     #Output; 
+
+NCDB: CLR   ; 
+
+NETWORK
+TITLE =ЭТОТ НЕТВОРК НАДО УБИТЬ ПРИ ЗАГРУЗКЕ В КОНТРОЛЛЕР
+//ИММИТАЦИЯ РАБОТЫ ВЕНТИЛЯ...
+//////////////////////////////////////////////////
+      A     #Output; //;
+      =     #Open; //;
+      AN    #Output; //;
+      =     #Close; //;
+
+//      SET   
+//      R     #this.output                // для данного проекта нет автоматов для клапанов
+
+//////////////////////////////////////////////////
+NETWORK
+TITLE =Check state
+
+
+//Is opened
+      A     #Open; 
+      AN    #Close; 
+      A     #Output; 
+      =     #this.IsOpened; 
+
+//Is closed 
+      AN    #Open; 
+      A     #Close; 
+      AN    #Output; 
+      =     #this.IsClosed; 
+
+NETWORK
+TITLE =ПРОВЕРКА НА АВАРИЮ ОТКРЫТИЯ / ЗАКРЫТИЯ
+
+
+      X     #this.IsOpened; 
+      X     #this.IsClosed; 
+      R     #this.TimerOverflow; 
+      R     #this.TimerRunning; 
+      JC    EXT; 
+      A     #this.TimerOverflow; 
+      JC    EXT; 
+      A     #this.TimerRunning; 
+      JC    TMR; 
+      L     0; 
+      T     #this.count; 
+      S     #this.TimerRunning; 
+TMR:  A     "Pulse_1_sec"; 
+      JCN   EXT; 
+      L     #this.count; 
+      L     B#16#1; 
+      +I    ; 
+      T     #this.count; 
+      CLR   ; 
+      A     #Output; 
+      JCN   CHKC; 
+      L     #this.countOpening; 
+      JU    CMP; 
+CHKC: L     #this.countClosing; 
+CMP:  >=I   ; 
+      JCN   EXT; 
+      R     #this.TimerRunning; 
+      S     #this.TimerOverflow; 
+EXT:  CLR   ; 
+
+NETWORK
+TITLE =Alarm
+
+
+      A     #this.AckAlarm; // если комманда сброса аварии
+      R     #this.IsAlarm; // сбрасываем аварийный бит
+
+      A     #this.TimerOverflow; 
+      =     #this.IsAlarm; 
+
+      A     #this.IsAlarm; 
+      A     #Output; 
+      AN    #this.IsOpened; 
+      =     #this.AlarmOpening; 
+
+      A     #this.IsAlarm; 
+      AN    #Output; 
+      AN    #this.IsClosed; 
+      =     #this.AlarmClosing; 
+
+      A(    ; 
+      A     #this.IsAlarm; 
+      A     #Horn; 
+      AN    #this.AckAlarm; 
+      S     M     10.0; 
+      )     ; 
+      AN    #this.existAlarm; 
+      S     "ExistLevel"; 
+      S     #this.existAlarm; 
+
+      AN    #this.IsAlarm; 
+      R     #this.AckAlarm; 
+      R     #this.existAlarm; 
+
+NETWORK
+TITLE =Set valve position
+
+
+//Open
+      A     #Open; 
+      =     #this.IsOpened; 
+
+//Close
+      A     #Close; 
+      =     #this.IsClosed; 
+
+NETWORK
+TITLE =Color
+
+
+// Reset color code
+      L     0; 
+
+// Alarm in process
+      CLR   ; 
+      A     #this.TimerRunning; 
+      JC    SALR; 
+
+// Alarm opening
+      AN    #this.AlarmOpening; 
+      JC    N1; 
+      L     5; 
+      JU    SALR; 
+
+// Alarm closing
+N1:   AN    #this.AlarmClosing; 
+      JC    N2; 
+      L     6; 
+      JU    SALR; 
+
+// Valve is open
+N2:   AN    #this.IsOpened; 
+      JC    N3; 
+      L     1; 
+      JU    CMAN; 
+
+// Valve is close
+N3:   AN    #this.IsClosed; 
+      JC    SALR; 
+      L     3; 
+      JU    CMAN; 
+
+// Manual mode
+CMAN: A     #this.IsAuto; //Manual mode
+      JC    SALR; 
+      L     1; 
+      +I    ; 
+
+SALR: T     #this.color; 
+
+NETWORK
+TITLE =Control in auto
+
+
+      A     #this.IsAuto; 
+      JCN   ECAM; 
+
+      A     #this.output; 
+      =     #Output; 
+
+ECAM: CLR   ; 
+
+NETWORK
+TITLE =Control in manual
+
+
+      AN    #this.IsAuto; 
+      JCN   ECMM; 
+
+      AN    #this.forceClose; 
+      A(    ; 
+      O     #this.Open; 
+      O     #this.forceOpen; 
+      )     ; 
+      S     #Output; 
+
+      A(    ; 
+      O     #this.Close; 
+      O     #this.forceClose; 
+      )     ; 
+      R     #Output; 
+
+ECMM: CLR   ; 
+
+NETWORK
+TITLE =Global manual 
+
+
+//Если управление идет с тумблеров или вообще руками крутят
+      A     M      2.0; 
+      R     #Output; 
+
+NETWORK
+TITLE =Обработка NC в конце
+
+
+      A     #NC; 
+      JC    NCDE; // NC detect at end of block
+
+      AN    #Output; 
+      =     #Output; 
+
+NCDE: CLR   ; 
+
+NETWORK
+TITLE =OOS
+
+
+      A     #CommandOSS; 
+      R     #CommandOSS; 
+      JCN   NOOS; 
+
+      AN    #this.IsOOS; 
+      =     #this.IsOOS; 
+
+NOOS: CLR   ; 
+
+NETWORK
+TITLE =Stop button pressed
+
+
+      A     "Emergy Stop"; 
+      R     #Output; 
+
+NETWORK
+TITLE =Save
+
+
+      L     LD    12; 
+      T     DBD [AR1,P#0.0]; 
+
+      L     LD    16; 
+      T     DBD [AR1,P#4.0]; 
+
+      LAR1  #ARStore; 
+
+END_FUNCTION
+
