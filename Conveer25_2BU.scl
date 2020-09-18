@@ -24,9 +24,9 @@ VERSION : 0.1
 BEGIN
 	//2 линия
 	"FA25_2_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
-	"DB_Counters".SW25_2_1.GEAR := TRUE;//РАЗРЕШЕНИЕ НА СЧЕТ
-	"DB_Counters".SW25_2_3.GEAR := TRUE;
-	"DB_Counters".SW25_2_4.GEAR := TRUE;
+	"DB_Counters".SW25_2_1.GEAR := "Auto2";//РАЗРЕШЕНИЕ НА СЧЕТ
+	"DB_Counters".SW25_2_3.GEAR := "Auto2";
+	"DB_Counters".SW25_2_4.GEAR := "Auto2";
 	
 	
 	
@@ -85,7 +85,7 @@ BEGIN
 	
 	
 	 IF "Robot14".FDO01
-	     OR "Robot14".FDO11 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
+	     OR "Robot14".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
 	     IF "Robot14".FDO23 //если крайний то по 8
 	     THEN
 	         "DB_Counters".SW25_2_1.SP := 8;
