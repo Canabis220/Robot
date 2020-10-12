@@ -26,7 +26,7 @@ END_VAR
 VAR_TEMP
   pAny : ANY ;	
   retval : INT ;	
-  this : "VState";	
+  thises : "VState";	
   ARStore : DWORD ;	
   CommandOSS : BOOL ;	
 END_VAR
@@ -60,39 +60,39 @@ NETWORK
 TITLE =Command
 
 
-      A     #this.IsLock; 
+      A     #thises.IsLock; 
       JC    RCMD; 
 
-      L     #this.command; 
+      L     #thises.command; 
       L     0; // нет команды
       ==I   ; 
       JC    ECMD; 
 
       INC   1; // АВТОМАТ
       ==I   ; 
-      S     #this.IsAuto; 
+      S     #thises.IsAuto; 
       JC    RCMD; 
 
       INC   1; // РУЧНОЕ
       ==I   ; 
-      R     #this.IsAuto; 
+      R     #thises.IsAuto; 
       JC    RCMD; 
 
       INC   1; // ОТКРЫТЬ
       ==I   ; 
-      S     #this.Open; 
-      R     #this.Close; 
+      S     #thises.Open; 
+      R     #thises.Close; 
       JC    RCMD; 
 
       INC   1; // ЗАКРЫТЬ
       ==I   ; 
-      S     #this.Close; 
-      R     #this.Open; 
+      S     #thises.Close; 
+      R     #thises.Open; 
       JC    RCMD; 
 
       INC   1; // СБРОСИТЬ АВАРИЮ (АСК)
       ==I   ; 
-      S     #this.AckAlarm; 
+      S     #thises.AckAlarm; 
       JC    RCMD; 
 
       INC   1; // Вывести из обслуживания
@@ -100,10 +100,10 @@ TITLE =Command
       S     #CommandOSS; 
 
 RCMD: L     0; 
-      T     #this.command; 
+      T     #thises.command; 
 
-      AN    #this.IsAuto; 
-      =     #this.IsManual; 
+      AN    #thises.IsAuto; 
+      =     #thises.IsManual; 
 
 ECMD: CLR   ; 
 
@@ -129,7 +129,7 @@ TITLE =ЭТОТ НЕТВОРК НАДО УБИТЬ ПРИ ЗАГРУЗКЕ В КОНТРОЛЛЕР
       =     #Close; //;
 
 //      SET   
-//      R     #this.output                // для данного проекта нет автоматов для клапанов
+//      R     #thises.output                // для данного проекта нет автоматов для клапанов
 
 //////////////////////////////////////////////////
 NETWORK
@@ -140,81 +140,81 @@ TITLE =Check state
       A     #Open; 
       AN    #Close; 
       A     #Output; 
-      =     #this.IsOpened; 
+      =     #thises.IsOpened; 
 
 //Is closed 
       AN    #Open; 
       A     #Close; 
       AN    #Output; 
-      =     #this.IsClosed; 
+      =     #thises.IsClosed; 
 
 NETWORK
 TITLE =ПРОВЕРКА НА АВАРИЮ ОТКРЫТИЯ / ЗАКРЫТИЯ
 
 
-      X     #this.IsOpened; 
-      X     #this.IsClosed; 
-      R     #this.TimerOverflow; 
-      R     #this.TimerRunning; 
+      X     #thises.IsOpened; 
+      X     #thises.IsClosed; 
+      R     #thises.TimerOverflow; 
+      R     #thises.TimerRunning; 
       JC    EXT; 
-      A     #this.TimerOverflow; 
+      A     #thises.TimerOverflow; 
       JC    EXT; 
-      A     #this.TimerRunning; 
+      A     #thises.TimerRunning; 
       JC    TMR; 
       L     0; 
-      T     #this.count; 
-      S     #this.TimerRunning; 
+      T     #thises.count; 
+      S     #thises.TimerRunning; 
 TMR:  A     "Pulse_1_sec"; 
       JCN   EXT; 
-      L     #this.count; 
+      L     #thises.count; 
       L     B#16#1; 
       +I    ; 
-      T     #this.count; 
+      T     #thises.count; 
       CLR   ; 
       A     #Output; 
       JCN   CHKC; 
-      L     #this.countOpening; 
+      L     #thises.countOpening; 
       JU    CMP; 
-CHKC: L     #this.countClosing; 
+CHKC: L     #thises.countClosing; 
 CMP:  >=I   ; 
       JCN   EXT; 
-      R     #this.TimerRunning; 
-      S     #this.TimerOverflow; 
+      R     #thises.TimerRunning; 
+      S     #thises.TimerOverflow; 
 EXT:  CLR   ; 
 
 NETWORK
 TITLE =Alarm
 
 
-      A     #this.AckAlarm; // если комманда сброса аварии
-      R     #this.IsAlarm; // сбрасываем аварийный бит
+      A     #thises.AckAlarm; // если комманда сброса аварии
+      R     #thises.IsAlarm; // сбрасываем аварийный бит
 
-      A     #this.TimerOverflow; 
-      =     #this.IsAlarm; 
+      A     #thises.TimerOverflow; 
+      =     #thises.IsAlarm; 
 
-      A     #this.IsAlarm; 
+      A     #thises.IsAlarm; 
       A     #Output; 
-      AN    #this.IsOpened; 
-      =     #this.AlarmOpening; 
+      AN    #thises.IsOpened; 
+      =     #thises.AlarmOpening; 
 
-      A     #this.IsAlarm; 
+      A     #thises.IsAlarm; 
       AN    #Output; 
-      AN    #this.IsClosed; 
-      =     #this.AlarmClosing; 
+      AN    #thises.IsClosed; 
+      =     #thises.AlarmClosing; 
 
       A(    ; 
-      A     #this.IsAlarm; 
+      A     #thises.IsAlarm; 
       A     #Horn; 
-      AN    #this.AckAlarm; 
+      AN    #thises.AckAlarm; 
       S     M     10.0; 
       )     ; 
-      AN    #this.existAlarm; 
-      S     "ExistLevel"; 
-      S     #this.existAlarm; 
+      AN    #thises.existAlarm; 
+ //     S     "ExistLevel"; 
+      S     #thises.existAlarm; 
 
-      AN    #this.IsAlarm; 
-      R     #this.AckAlarm; 
-      R     #this.existAlarm; 
+      AN    #thises.IsAlarm; 
+      R     #thises.AckAlarm; 
+      R     #thises.existAlarm; 
 
 NETWORK
 TITLE =Set valve position
@@ -222,11 +222,11 @@ TITLE =Set valve position
 
 //Open
       A     #Open; 
-      =     #this.IsOpened; 
+      =     #thises.IsOpened; 
 
 //Close
       A     #Close; 
-      =     #this.IsClosed; 
+      =     #thises.IsClosed; 
 
 NETWORK
 TITLE =Color
@@ -237,49 +237,49 @@ TITLE =Color
 
 // Alarm in process
       CLR   ; 
-      A     #this.TimerRunning; 
+      A     #thises.TimerRunning; 
       JC    SALR; 
 
 // Alarm opening
-      AN    #this.AlarmOpening; 
+      AN    #thises.AlarmOpening; 
       JC    N1; 
       L     5; 
       JU    SALR; 
 
 // Alarm closing
-N1:   AN    #this.AlarmClosing; 
+N1:   AN    #thises.AlarmClosing; 
       JC    N2; 
       L     6; 
       JU    SALR; 
 
 // Valve is open
-N2:   AN    #this.IsOpened; 
+N2:   AN    #thises.IsOpened; 
       JC    N3; 
       L     1; 
       JU    CMAN; 
 
 // Valve is close
-N3:   AN    #this.IsClosed; 
+N3:   AN    #thises.IsClosed; 
       JC    SALR; 
       L     3; 
       JU    CMAN; 
 
 // Manual mode
-CMAN: A     #this.IsAuto; //Manual mode
+CMAN: A     #thises.IsAuto; //Manual mode
       JC    SALR; 
       L     1; 
       +I    ; 
 
-SALR: T     #this.color; 
+SALR: T     #thises.color; 
 
 NETWORK
 TITLE =Control in auto
 
 
-      A     #this.IsAuto; 
+      A     #thises.IsAuto; 
       JCN   ECAM; 
 
-      A     #this.output; 
+      A     #thises.output; 
       =     #Output; 
 
 ECAM: CLR   ; 
@@ -288,19 +288,19 @@ NETWORK
 TITLE =Control in manual
 
 
-      AN    #this.IsAuto; 
+      AN    #thises.IsAuto; 
       JCN   ECMM; 
 
-      AN    #this.forceClose; 
+      AN    #thises.forceClose; 
       A(    ; 
-      O     #this.Open; 
-      O     #this.forceOpen; 
+      O     #thises.Open; 
+      O     #thises.forceOpen; 
       )     ; 
       S     #Output; 
 
       A(    ; 
-      O     #this.Close; 
-      O     #this.forceClose; 
+      O     #thises.Close; 
+      O     #thises.forceClose; 
       )     ; 
       R     #Output; 
 
@@ -334,8 +334,8 @@ TITLE =OOS
       R     #CommandOSS; 
       JCN   NOOS; 
 
-      AN    #this.IsOOS; 
-      =     #this.IsOOS; 
+      AN    #thises.IsOOS; 
+      =     #thises.IsOOS; 
 
 NOOS: CLR   ; 
 
@@ -343,8 +343,8 @@ NETWORK
 TITLE =Stop button pressed
 
 
-      A     "Emergy Stop"; 
-      R     #Output; 
+ //     A     "Emergy Stop"; 
+ //     R     #Output; 
 
 NETWORK
 TITLE =Save
