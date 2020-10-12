@@ -13,12 +13,12 @@ BEGIN
 	        "KA7_2_auto" := FALSE; //не фиксировать
 	        
 	        
-	        IF "SW7_1"= FALSE  THEN //если на входе нет , тогда другой шаг
+	        IF "SW7_1"= TRUE  THEN //если на входе нет , тогда другой шаг
 	            "Conveer_status"."07_step":=10;
 	        END_IF;
 	        
-	        IF "SW7_1" = TRUE
-	            AND "Robot16".FDO03 = TRUE  THEN //если на входе есть и робот поставил новую паллету
+	        IF "SW7_1" = FALSE
+	             THEN //если на входе есть и робот поставил новую паллету
 	            "Conveer_status"."07_step" := 20;
 	        END_IF;
 	        
@@ -56,7 +56,7 @@ BEGIN
 	        "FA7_1_auto_start" := FALSE;//двигатель транспортера в автомате не работает
 	        "KA7_1_auto" := TRUE; //вытолкнуть
 	        "KA7_2_auto" := TRUE; //зафиксировать
-	        "Robot14".TDI03 := TRUE;// палета  на месте
+	        "Robot16".TDI03 := TRUE;// палета  на месте
 	        
 	        IF "Robot16".FDO11 = TRUE THEN
 	            //если робот закончил, тогда готово
