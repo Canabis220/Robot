@@ -30,12 +30,12 @@ BEGIN
 	
 	
 	
-	IF ("Robot14".FDO01
-	   OR "Robot14".FDO11)
+	IF ("Robot14".FDO01//забрал бутылки со 2 линии
+	   OR "Robot14".FDO10)//закончил укладку на выходном тр-ре
 	THEN
-	    IF "Robot14".FDO23  //поршень разворота по команде робота "разверни"
+	    IF "Robot14".FDO23  // команда робота "разверни 2 линию"
 	   THEN
-	    "KA25_2_2_auto":=false;
+	       "KA25_2_2_auto":=false;//поршень разворота 
 	   ELSE
 	       "KA25_2_2_auto":=TRUE;
 	   END_IF;
@@ -84,24 +84,21 @@ BEGIN
 	                           ET => #stop_box_time);
 	
 	
-	 IF "Robot14".FDO01
-	     OR "Robot14".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
-	     IF "Robot14".FDO23 //если крайний то по 8
+	 IF "Robot14".FDO01//забрал бутылки со 2 линии
+	     OR "Robot14".FDO10 THEN//или закончил сбор паллеты
+	     IF "Robot14".FDO23 //то по 8
 	     THEN
 	         "DB_Counters".SW25_2_1.SP := 8;
 	     ELSE
-	         "DB_Counters".SW25_2_1.SP := 10;//обычно по 10
-	      ///   "DB_Counters".SW25_2_3.SP := 0;//уставка счета делителя
-	      //   "DB_Counters".SW25_2_4.SP := 0;//уставка счета делителя
+	         "DB_Counters".SW25_2_1.SP := 10;//иначе по 10
 	     END_IF;
 	 END_IF;
 	
 	 "DB_Counters".SW25_2_3.SP := 5;//уставка счета делителя
 	 "DB_Counters".SW25_2_4.SP := 3;//уставка счета делителя
 	 
-	
-	
-	"KA25_2_1_auto" := "SW25_2_1";//отсекать по дачтику бутылки друг от друга
+	 "KA25_2_1_auto" := "SW25_2_1";//отсекать по дачтику бутылки друг от друга
+	 
 	IF "DB_Counters".SW25_2_1.SET_OK//если досчитали 
 	    OR "Robot14".FDO01 THEN//или процедура забора
 	    "KA25_2_1_auto" := TRUE;//не пускаем бутылки
@@ -112,21 +109,6 @@ BEGIN
 	     "KA25_2_2" := "KA25_2_2_auto";
 	     
 	     
-	  //   IF NOT "Robot14".FDO23
-	 //    THEN
-	  //       "KA25_2_3_OPN" := FALSE;
-	         
-	 //    ELSIF "DB_Counters".SW25_2_3.SET_OK
-	 //        AND NOT "SW25_2_3"
-	     
-	 //    THEN
-	 //        "KA25_2_3_OPN" := TRUE;
-	  //   ELSIF "Robot14".FDO01= TRUE
-	  //   THEN
-	  //       "KA25_2_3_OPN" := FALSE;
-	 //    END_IF;
-	    
-	  
 	     IF "DB_Counters".SW25_2_4.SET_OK//если досчитал
 	         AND NOT "SW25_2_4"//и ушла бутылка
 	     THEN
