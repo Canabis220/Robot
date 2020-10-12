@@ -36,25 +36,28 @@ BEGIN
 	END_IF;
 	
 	
-	//IF "Robot18".FDO00 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
-	IF "Robot16".FDO22 //если крайний то по 3
+	IF "SW27_1" AND NOT "Tag_5"
+	THEN//меняем уставку счетчика по сигналам робота 
+	    IF "Robot16".FDO22 //если крайний то по 3
+	        AND "Auto3"
 	THEN
 	    "KA27_3" := FALSE;//слои
 	    "KA27_4" := TRUE;//слои
-	    
-	    
+	    "m300_0" := FALSE;
+	    "m300_1" := tRUE;
 	ELSE
 	    "KA27_3" := TRUE;//слои
 	    "KA27_4" := TRUE;//слои
-	    
+	    "m300_0" := TRUE;
+	    "m300_1" := tRUE;
 	    
 	END_IF;
-	//END_IF;
-	
+	END_IF;
+	"Tag_5" := "SW27_1";
 	
 	IF "Manual3" OR "HalfManual3" THEN
-	    "KA27_3" := "m301_0";//слои
-	    "KA27_4" := "m301_1";//слои
+	    "KA27_3" := "m300_0";//слои
+	    "KA27_4" := "m300_1";//слои
 	END_IF;
 	
 	IF "Auto3" THEN
