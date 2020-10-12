@@ -31,14 +31,14 @@ BEGIN
 	
 	
 	IF "Robot14".FDO00 = TRUE //если забрал
-	    OR "Robot14".FDO10= TRUE//или закончил
+	    OR "Robot14".FDO10= TRUE//или закончил на выходном тр-ре
 	THEN
-	    //"KA25_1_2_auto" := NOT "Robot14".FDO22;//разворот по команде от робота
-	    IF "Robot14".FDO22  //поршень разворота по команде робота "разверни"
+	    
+	    IF "Robot14".FDO22  //команда робота "разверни 1 линию"
 	    THEN
-	        "KA25_1_2_auto" := false;
+	        "KA25_1_2_auto" := false;//поворот
 	    ELSE
-	        "KA25_1_2_auto" := TRUE;
+	        "KA25_1_2_auto" := TRUE;//поворот
 	    END_IF;
 	ELSE
 	    "KA25_1_2_auto" := "KA25_1_2_auto";
@@ -82,18 +82,18 @@ BEGIN
 	 
 	 "IEC_Timer_25_1tr_DB".TON(IN := "DB_Counters".SW25_1_1.SET_OK,//задержка перед командой "готово" чтоб доехала бутылка
 	                           PT := T#4s,
-	                           Q => "Robot14".TDI00,
+	                           Q => "Robot14".TDI00,//забери упаковки
 	                           ET => #stop_box_time);
 	
 	
-	 IF "Robot14".FDO00 OR
-	     "Robot14".FDO10 THEN//меняем уставку счетчика по сигналам робота "разверни" и "забрал"
-	    IF "Robot14".FDO22 //если крайний то по 8
+	 IF "Robot14".FDO00 //забрал бутылки с 1 линии
+	     OR "Robot14".FDO10 THEN//или закончил сбор паллеты
+	    IF "Robot14".FDO22 // то по 8
 	    THEN
 	        "DB_Counters".SW25_1_1.SP := 8;
 	        
 	    ELSE
-	        "DB_Counters".SW25_1_1.SP := 10;//обычно по 10
+	        "DB_Counters".SW25_1_1.SP := 10;//иначе по 10
 	        
 	    END_IF;
 	END_IF;
@@ -101,20 +101,24 @@ BEGIN
 	"DB_Counters".SW25_1_4.SP := 3;//уставка счета делителя
 	
 	"KA25_1_1_auto" := "SW25_1_1";//отсекать по дачтику бутылки друг от друга
-	IF "DB_Counters".SW25_1_1.SET_OK OR "Robot14".FDO00 THEN
-	    "KA25_1_1_auto" := TRUE;//если досчитали или забирает робот
+	
+	IF "DB_Counters".SW25_1_1.SET_OK//если досчитали 
+	    OR "Robot14".FDO00 THEN//или процедура забора
+	    "KA25_1_1_auto" := TRUE;//не пускаем отсекателем
 	 END_IF;
 	
 	 IF "Auto2" THEN
 	     "KA25_1_1" := "KA25_1_1_auto";
 	     "KA25_1_2" := "KA25_1_2_auto";
+	     
 	     IF "DB_Counters".SW25_1_3.SET_OK//счетчик делителя досчитал
 	         AND NOT "SW25_1_3"// и бутылка ушла с датчика
 	     THEN
 	         "KA25_1_3_OPN" := TRUE;//выдвинуть делитель
 	     END_IF;
-	     
+	    
 	     IF "Robot14".FDO00 = TRUE//если робот забрал
+	         OR "DB_Counters".SW25_1_4.ACT =0
 	     THEN
 	         "KA25_1_3_OPN" := FALSE;//убрать делитель
 	     END_IF;
