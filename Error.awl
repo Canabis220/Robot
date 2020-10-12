@@ -29,6 +29,15 @@ TITLE = RTK1
       A "Robot12".FDO17;
       = %DB13.DBX1.4;//conv3
 
+      A "Robot12".UO4;
+      = %DB13.DBX1.5;
+
+      O %DB13.DBX1.1;
+      O %DB13.DBX1.2;
+      = "YellowErrRTK1";
+
+      AN "SWR1_3";
+      = "RedErrRTK1";
 NETWORK
 TITLE = RTK2
 
@@ -44,13 +53,25 @@ TITLE = RTK2
       A "Robot14".FDO17;
       = %DB13.DBX5.4;//conv4
 
+      A "Robot14".UO4;
+      = %DB13.DBX5.5;
+
+
+
+      O %DB13.DBX5.1;
+      O %DB13.DBX5.2;
+      = "YellowErrRTK2";
+
+      AN "SWR2_3";
+      = "RedErrRTK2";
+
 NETWORK
 TITLE = RTK3
 
       AN "SW21_1";
       = %DB13.DBX9.1;
 
-      A "SW9_3";
+      A "SW6_3";
       = %DB13.DBX9.2;
 
       A "Robot16".FDO18;
@@ -58,6 +79,17 @@ TITLE = RTK3
 
       A "Robot16".FDO17;
       = %DB13.DBX9.4;//conv8
+
+      A "Robot16".UO4;
+      = %DB13.DBX9.5;
+
+
+      O %DB13.DBX9.1;
+      O %DB13.DBX9.2;
+      = "YellowErrRTK3";
+
+      AN "SWR3_3";
+      = "RedErrRTK3";
 
 NETWORK
 TITLE = RTK4
@@ -73,6 +105,17 @@ TITLE = RTK4
 
       A "Robot18".FDO17;
       = %DB13.DBX13.4;//conv10
+
+      A "Robot18".UO4;
+      = %DB13.DBX13.5;
+
+
+      O %DB13.DBX13.1;
+      O %DB13.DBX13.2;
+      = "YellowErrRTK4";
+
+      AN "SWR4_3";
+      = "RedErrRTK4";
 
 NETWORK
 TITLE = Авария возникновение
