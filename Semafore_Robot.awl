@@ -4,27 +4,40 @@ VERSION : 0.1
 
 BEGIN
 NETWORK
-TITLE = Световая колонна 12 робота. Желтый цвет
+TITLE = Световая колонна 12 робота. Желтый цвет 
+////включено и не ошибка и не выполняется
+
       A "Robot12".UO1;
       AN "Robot12".UO4;
       AN "Robot12".UO2;
+      AN "YellowErrRTK1";
+
+      O(;
+      A "YellowErrRTK1";
+      A "Meandr 0.5s";
+      );
       = "KAR1_6";
 
 NETWORK
 TITLE = Световая колонна 12 робота. Зеленый цвет
+////включено и не ошибка и выполняется
       A "Robot12".UO1;
       AN "Robot12".UO4;
       A "Robot12".UO2;
+      O "HalfManual1";
       = "KAR1_5";
 
 NETWORK
 TITLE = Световая колонна 12 робота. Красный цвет
+////включено и ошибка или не включено и моргалка
       O(;
       A "Robot12".UO1;
       A "Robot12".UO4;
+      AN "RedErrRTK1";
       );
       O(;
-      AN "Robot12".UO1;
+      ON "Robot12".UO1;
+      O "RedErrRTK1";
       A "Meandr 0.5s";
       );
       = "KAR1_7";
@@ -33,6 +46,13 @@ TITLE = Световая колонна 14 робота. Желтый цвет
       A "Robot14".UO1;
       AN "Robot14".UO4;
       AN "Robot14".UO2;
+      AN "YellowErrRTK2";
+
+      O(;
+      A "YellowErrRTK2";
+      A "Meandr 0.5s";
+      );
+
       = "KAR2_2";
 
 NETWORK
@@ -47,9 +67,11 @@ TITLE = Световая колонна 14 робота. Красный цвет
       O(;
       A "Robot14".UO1;
       A "Robot14".UO4;
+      AN "RedErrRTK2";
       );
       O(;
-      AN "Robot14".UO1;
+      ON "Robot14".UO1;
+      O "RedErrRTK2";
       A "Meandr 0.5s";
       );
       = "KAR2_3";
@@ -58,6 +80,12 @@ TITLE = Световая колонна 16 робота. Желтый цвет
       A "Robot16".UO1;
       AN "Robot16".UO4;
       AN "Robot16".UO2;
+      AN "YellowErrRTK3";
+
+      O(;
+      A "YellowErrRTK3";
+      A "Meandr 0.5s";
+      );
       = "KAR3_6";
 
 NETWORK
@@ -72,9 +100,11 @@ TITLE = Световая колонна 16 робота. Красный цвет
       O(;
       A "Robot16".UO1;
       A "Robot16".UO4;
+      AN "RedErrRTK3";
       );
       O(;
-      AN "Robot16".UO1;
+      ON "Robot16".UO1;
+      O "RedErrRTK3";
       A "Meandr 0.5s";
       );
       = "KAR3_7";
@@ -83,6 +113,13 @@ TITLE = Световая колонна 18 робота. Желтый цвет
       A "Robot18".UO1;
       AN "Robot18".UO4;
       AN "Robot18".UO2;
+      AN "YellowErrRTK4";
+
+      O(;
+      A "YellowErrRTK4";
+      A "Meandr 0.5s";
+      );
+
       = "KAR4_2";
 
 NETWORK
@@ -97,9 +134,11 @@ TITLE = Световая колонна 18 робота. Красный цвет
       O(;
       A "Robot18".UO1;
       A "Robot18".UO4;
+      AN "RedErrRTK4";
       );
       O(;
-      AN "Robot18".UO1;
+      ON "Robot18".UO1;
+      O "RedErrRTK4";
       A "Meandr 0.5s";
       );
       = "KAR4_3";
