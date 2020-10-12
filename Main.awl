@@ -24,7 +24,7 @@ TITLE = "MotorProcess"
 
       CALL "MotorProcess";
       CALL "Conveer_Process";
-
+      CALL "Call_valve";
       NOP 0;
       CALL "PN_IN_OUT";
 
@@ -50,6 +50,7 @@ NETWORK
 TITLE = 
       CALL "Error";
       CALL "Semafore_Robot";
+      CALL "Sirena";
       CALL "SICK";
 
 
