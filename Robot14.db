@@ -36,8 +36,8 @@ VERSION : 0.1
       FDO07 : Bool;   // DO7 Захват зафиксируй паллету
       FDO08 : Bool;   // DO8 Включи вакуум присоски
       FDO09 : Bool;   // DO9
-      FDO10 : Bool;   // DO10 Закончил укладку 1
-      FDO11 : Bool;   // DO11 Закончил укладку 2
+      FDO10 : Bool;   // DO10 Закончил 4тр-р сменить уст. на обеих линиях
+      FDO11 : Bool;   // DO11 не используем
       FDO12 : Bool;   // DO12 Собираюсь забрать паллету из стопки
       FDO13 : Bool;   // DO13 Забрал паллету из стопки
       FDO14 : Bool;   // DO14 Робот включен
@@ -48,8 +48,8 @@ VERSION : 0.1
       FDO19 : Bool;   // DO19 Опустить присоски
       FDO20 : Bool;   // DO20 Подними присоски
       FDO21 : Bool;   // DO21
-      FDO22 : Bool;   // DO22
-      FDO23 : Bool;   // DO23
+      FDO22 : Bool;   // 8 делим и не разворачиваем 1 линию
+      FDO23 : Bool;   // 8 делим и не разворачиваем 2 линию
       FDI_BYTE1 : Byte;   // DI_BYTE1 Скорость робота
       FDI_BYTE2 : Byte;   // DI_BYTE2
       FDI_BYTE3 : Byte;   // DI_BYTE3
