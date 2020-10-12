@@ -1,0 +1,22 @@
+﻿FUNCTION "Call_valve" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+
+BEGIN
+NETWORK
+TITLE = 
+      A "KA2_1_AUTO";
+      = "Valves".V001.output;
+
+      CALL "ValveControl"
+      (  Valve                       := "Valves".V001 , 
+         NC                          := true , 
+         Horn                        := true , 
+         Open                        := "SW2_5" , 
+         Close                       := "SW2_6" , 
+         Output                      := "KA2_1"
+      );
+
+
+END_FUNCTION
+
