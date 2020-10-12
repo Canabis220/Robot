@@ -48,8 +48,8 @@ VERSION : 0.1
       FDO19 : Bool;   // DO19 Опустить присоски
       FDO20 : Bool;   // DO20 Подними присоски
       FDO21 : Bool;   // DO21
-      FDO22 : Bool;   // DO22
-      FDO23 : Bool;   // DO23
+      FDO22 : Bool;   // DO22 1линия
+      FDO23 : Bool;   // DO23 2 линия
       FDI_BYTE1 : Byte;   // DI_BYTE1 Скорость робота
       FDI_BYTE2 : Byte;   // DI_BYTE2 Код продукта 1
       FDI_BYTE3 : Byte;   // DI_BYTE3 Код продукта2
