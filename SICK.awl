@@ -7,22 +7,22 @@ NETWORK
 TITLE = режим ручной
       A "Manual1";
       O "HalfManual1";
-      O "Auto1";
+//    O     "Auto1"
       = "RTK1_MAN";
 
       A "Manual2";
       O "HalfManual2";
-      O "Auto2";
+    //O     "Auto2"
       = "RTK2_MAN";
 
       A "Manual3";
       O "HalfManual3";
-      O "Auto3";
+//      O     "Auto3"
       = "RTK3_MAN";
 
       A "Manual4";
       O "HalfManual4";
-      O "Auto4";
+    //O     "Auto4"
       = "RTK4_MAN";
 
 
