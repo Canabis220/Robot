@@ -405,10 +405,11 @@ TITLE = RTK3 FA6_1
       A "FA6_FROM_PRESS";
       O "FA6_FROM_PRESS1";
       A "Manual";
-      O "Auto";
+ // O     "Auto"
       R "FA6_1_reversmode";
       A "FA6_TO_PRESS";
       A "Manual";
+      O "Auto";
       S "FA6_1_reversmode";
 
 
@@ -533,8 +534,9 @@ TITLE = RTK3 FA8_1
 NETWORK
 TITLE = RTK3 FA26_1
 
-      A "pause_rob16";
-      R "FA6_1_manual_start";
+      A "SW26_3";
+      = "FA26_1_manual_start";
+      = "FA26_1_auto_start";
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA26_1_ETA , 
@@ -555,8 +557,10 @@ TITLE = RTK3 FA26_1
 NETWORK
 TITLE = RTK3 FA27_1
 
-      A "pause_rob16";
-      R "FA6_1_manual_start";
+      A "SW27_3";
+      = "FA27_1_manual_start";
+      = "FA27_1_auto_start";
+
 
       CALL "00_Motors_control"
       (  Motor_X_Input_1             := "PN-INPUT".FA27_1_ETA , 
