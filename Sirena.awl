@@ -55,7 +55,7 @@ TITLE = Световая колонна робота. Звук RTK3
       A "AlarmFP3";
       S "DB_Counters".Sirena3.GEAR;
       R "DB_Counters".Sirena3.RESET;
-      S "KAR3_4";
+      S "KAR3_8";
 
 
       CALL "00_CounterInteger"
@@ -71,7 +71,7 @@ TITLE = Световая колонна робота. Звук RTK3
       A "DB_Counters".Sirena3.SET_OK;
       S "DB_Counters".Sirena3.RESET;
       R "AlarmFP3";
-      R "KAR3_4";
+      R "KAR3_8";
 
 NETWORK
 TITLE = Световая колонна робота. Звук RTK4
