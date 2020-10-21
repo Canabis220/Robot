@@ -117,6 +117,7 @@ BEGIN
 	     
 	     IF "Robot14".FDO01 = TRUE//если робот забрал
 	         OR "DB_Counters".SW25_2_4.ACT =0
+	         OR "Robot14".UO8
 	     THEN
 	         "KA25_2_4_OPN" := FALSE;//убрать делитель
 	     END_IF;
