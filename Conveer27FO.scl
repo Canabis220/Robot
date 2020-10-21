@@ -23,7 +23,7 @@ VERSION : 0.1
 
 BEGIN
 	//1 линия
-	"FA27_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
+	//"FA27_1_auto_start" := TRUE;//двигатель транспортера в автомате работает
 	
 	// "IEC_Timer_28tr_DB".TON(IN:=#sensorBrake,
 	//                         PT:=T#3s,
@@ -36,7 +36,8 @@ BEGIN
 	END_IF;
 	
 	
-	IF "SW27_1" AND NOT "Tag_5"
+	IF "SW27_1" AND NOT "Tag_5"//фронт команды "забрали"
+	    OR "Robot16".FDO10 //или закончил сбор паллеты
 	THEN//меняем уставку счетчика по сигналам робота 
 	    IF "Robot16".FDO22 //если крайний то по 3
 	        AND "Auto3"
