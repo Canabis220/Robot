@@ -1,10 +1,20 @@
 ﻿FUNCTION "Conveer2PO" : Void
 { S7_Optimized_Access := 'FALSE' }
 VERSION : 0.1
+   VAR_TEMP 
+      stop_box_time : Time;
+   END_VAR
+
 
 BEGIN
 	//2 линия
 	
+	
+	
+	"IEC_Timer_SW2_1".TON(IN :=  "SW2_1",//выполненно с задержкой чтоб Уехала паллета
+	                        PT := T#5s,
+	                        Q => "SW2_1X",
+	                        ET => #stop_box_time);
 	
 	CASE "Conveer_status"."02_step" OF//
 	    0://стоп
@@ -90,8 +100,10 @@ BEGIN
 	        END_IF;
 	        
 	        IF "SW2_3" = false //если  на выходе есть
-	            AND "SW2_1" = TRUE THEN //а на входе нет, тогда проверка
-	            "Conveer_status"."02_step" := 40;
+	            AND "SW2_1" = TRUE  //а на входе нет, тогда проверка
+	            AND "SW2_1X" = TRUE //и задержка отъезда
+	            
+	        THEN "Conveer_status"."02_step" := 40;
 	        END_IF;
 	        ;
 	    40://проверка
