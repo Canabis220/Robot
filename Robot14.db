@@ -76,8 +76,8 @@ VERSION : 0.1
       UO4 : Bool;   // Fault активная ошибка
       UO5 : Bool;   // TP Enable пульт робота включен
       UO6 : Bool;   // Batt Alarm батарейки сели
-      UO7 : Bool;
-      UO8 : Bool;
+      UO7 : Bool;   // убрать пневмо 1 линия
+      UO8 : Bool;   // убрать пневмо 2 линия
    END_STRUCT;
 
 
